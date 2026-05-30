@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejo Labs — Capabilities &amp; AI Services</title>
+  <meta name="description" content="Ejo Labs builds production-ready AI systems that speak Kinyarwanda and understand Rwanda. Services overview for partners and clients.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ══════════════════════════════════════════════
+       DESIGN TOKENS & CORE SYSTEMS
+       ══════════════════════════════════════════════ */
+    :root {
+      --orange:       #E87722;
+      --orange-light: #FDF3EB;
+      --orange-soft:  #F9A85D;
+      --orange-glow:  rgba(232, 119, 34, 0.08);
+      --navy:         #2B3A52;
+      --navy-dark:    #162235;
+      --navy-deep:    #0F172A;
+      --white:        #FFFFFF;
+      --grey-dark:    #334155;
+      --grey:         #64748B;
+      --grey-light:   #E2E8F0;
+      --grey-border:  #E5E7EB;
+      --light-card:   #FCFBF9;
+      --cream:        #FAF6F0;
+      --accent-blue:  #94A3B8;
+
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      --shadow-sm: 0 2px 8px rgba(22, 34, 53, 0.04);
+      --shadow-md: 0 8px 30px rgba(22, 34, 53, 0.06);
+      --shadow-lg: 0 16px 40px rgba(22, 34, 53, 0.08);
+    }
+
+    /* ══════════════════════════════════════════════
+       RESET & BASE (Web Native Layout)
+       ══════════════════════════════════════════════ */
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--grey-dark);
+      background: #F8F9FA;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    /* ══════════════════════════════════════════════
+       WEB WRAPPER — High-End Dashboard Style
+       ══════════════════════════════════════════════ */
+    .app-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    /* ══════════════════════════════════════════════
+       FLUID SECTIONS (Perfect for screen & print)
+       ══════════════════════════════════════════════ */
+    .section-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      padding: 48px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(22, 34, 53, 0.05);
+      position: relative;
+    }
+
+    /* ══════════════════════════════════════════════
+       PAGE 1 — COVER SECTION
+       ══════════════════════════════════════════════ */
+    .cover-hero {
+      text-align: center;
+      padding: 60px 40px;
+      background: 
+        radial-gradient(circle at 100% 0%, rgba(232, 119, 34, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(43, 58, 82, 0.04) 0%, transparent 60%),
+        var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 550px;
+    }
+
+    .cover-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 8px 16px rgba(232, 119, 34, 0.15));
+    }
+
+    .cover-brand {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      color: var(--navy-dark);
+      margin-bottom: 4px;
+    }
+
+    .cover-tagline {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .cover-tagline::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    .cover-headline {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--navy-dark);
+    }
+    .cover-headline .orange { 
+      color: var(--orange);
+      background: linear-gradient(90deg, var(--orange), #F59E0B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cover-sub {
+      font-size: 0.95rem;
+      color: var(--grey);
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--navy-dark);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      box-shadow: var(--shadow-sm);
+    }
+    .pillar {
+      padding: 24px 16px;
+      text-align: center;
+      position: relative;
+    }
+    .pillar + .pillar::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 25%; bottom: 25%;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--orange-soft);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .pillar-desc {
+      font-size: 0.72rem;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════════════════
+       INNER HEADER SYSTEM
+       ══════════════════════════════════════════════ */
+    .section-header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--grey-light);
+      margin-bottom: 32px;
+    }
+    .section-header img {
+      width: 28px; 
+      height: 28px;
+      object-fit: contain;
+      margin-right: 12px;
+    }
+    .section-header .brand-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      flex: 1;
+    }
+    .section-header .header-meta {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--grey);
+    }
+
+    /* ══════════════════════════════════════════════
+       SECTION LABELS & UTILITIES
+       ══════════════════════════════════════════════ */
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--orange-glow), transparent);
+    }
+
+    .intro-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--grey-dark);
+      text-align: justify;
+      margin-bottom: 32px;
+      font-weight: 450;
+    }
+
+    /* ══════════════════════════════════════════════
+       SERVICE CARDS (Clean Asymmetrical Grid)
+       ══════════════════════════════════════════════ */
+    .service-card {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--grey-light);
+      background: var(--light-card);
+      min-height: 290px;
+    }
+
+    .service-image-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      background: #F8FAFC;
+    }
+
+    .service-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-left: 1px solid var(--grey-light);
+    }
+
+    .service-card-header {
+      display: flex;
+      align-items: center;
+      background: var(--navy-dark);
+      padding: 8px 20px;
+    }
+
+    .service-num {
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-right: 12px;
+      font-family: var(--font-display);
+    }
+
+    .service-card-header h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0;
+    }
+
+    .service-body {
+      padding: 8px 20px 10px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-subtitle {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--orange);
+      font-weight: 750;
+      margin-bottom: 4px;
+    }
+
+    .service-desc {
+      font-size: 0.76rem;
+      line-height: 1.5;
+      color: var(--grey-dark);
+      text-align: justify;
+      margin-bottom: 6px;
+    }
+
+    .service-bullets {
+      list-style: none;
+      margin-bottom: 4px;
+    }
+
+    .service-bullets li {
+      font-size: 0.72rem;
+      color: var(--grey-dark);
+      padding: 2px 0 2px 16px;
+      position: relative;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .service-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 6px;
+      overflow: hidden;
+    }
+
+    .service-tags span {
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(232, 119, 34, 0.06);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(232, 119, 34, 0.12);
+      white-space: nowrap;
+    }
+
+    /* ══════════════════════════════════════════════
+       DISCOVERY SESSION BLOCK
+       ══════════════════════════════════════════════ */
+    .discovery-block {
+      background: var(--navy-dark);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-md);
+      background: 
+        radial-gradient(circle at 100% 100%, rgba(232, 119, 34, 0.08) 0%, transparent 60%),
+        var(--navy-dark);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .discovery-block h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--orange-soft);
+      margin-bottom: 10px;
+    }
+    
+    .discovery-block .disc-text {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: #94A3B8;
+      text-align: justify;
+      margin-bottom: 14px;
+    }
+    
+    .discovery-block ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+    
+    .discovery-block li {
+      font-size: 0.72rem;
+      color: #E2E8F0;
+      padding: 3px 0 3px 16px;
+      position: relative;
+      line-height: 1.45;
+    }
+    
+    .discovery-block li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--orange-soft);
+      font-weight: 700;
+    }
+    
+    .discovery-tags {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .discovery-tags span {
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: var(--orange-soft);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(249, 168, 93, 0.08);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(249, 168, 93, 0.15);
+    }
+
+    /* ══════════════════════════════════════════════
+       CTA BAR (Modern Split Layout)
+       ══════════════════════════════════════════════ */
+    .cta-bar {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .cta-left {
+      background: linear-gradient(135deg, var(--orange), #D06A1A);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-left h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.3;
+      z-index: 2;
+    }
+    
+    .cta-right {
+      background: var(--navy-dark);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .cta-right h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--orange-soft);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    
+    .cta-right p {
+      font-size: 0.74rem;
+      color: #94A3B8;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .page-footer {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+    }
+
+    /* ══════════════════════════════════════════════
+       PRINT / PDF SPECIFIC STYLES
+       ══════════════════════════════════════════════ */
+    @media print {
+      body {
+        background: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .app-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Transform standard section cards into seamless pages in print */
+      .section-card {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 20mm !important; /* Perfect print padding margins */
+        width: 100% !important;
+        height: 296mm !important; /* Forces A4 page size exactly */
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+        background: var(--white) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+
+      /* Cover hero size calibration in print */
+      .cover-hero {
+        height: 296mm !important;
+        min-height: 296mm !important;
+        padding: 40mm 20mm 30mm !important;
+        justify-content: space-between !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .service-card {
+        height: 290px !important;
+        min-height: 290px !important;
+        page-break-inside: avoid !important;
+      }
+
+      .page-footer {
+        position: absolute !important;
+        bottom: 20px !important;
+        left: 0 !important;
+        right: 0 !important;
+        border-top: 2px solid var(--orange) !important;
+        padding-top: 12px !important;
+        font-size: 0.72rem !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 0 !important; /* Removes browser default header/footer margins */
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 1 — COVER CAPABILITIES
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card cover-hero" id="cover">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="cover-logo">
+        <div class="cover-brand">EJO LABS</div>
+        <div class="cover-tagline">Practical AI for Rwanda &amp; Africa</div>
+      </div>
+
+      <div>
+        <h1 class="cover-headline">
+          <span class="navy">AI Services That Move</span>
+          <span class="orange">Rwanda Forward.</span>
+        </h1>
+        <div class="cover-sub">A Capabilities Overview for Partners &amp; Clients</div>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-title">Kinyarwanda-First AI</div>
+          <div class="pillar-desc">Built for Rwandan speech, not translated from English</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Production-Ready</div>
+          <div class="pillar-desc">Fully deployed systems, not unscalable prototypes</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Agentic Reasoning</div>
+          <div class="pillar-desc">Autonomous AI agents that reason, act, and report</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 2 — WHO WE ARE + SERVICES 01 & 02
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="services-page-1">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">AI Services for Rwanda</span>
+      </div>
+
+      <div class="section-label">Who We Are</div>
+      <p class="intro-text">
+        Ejo Labs builds AI systems that speak Kinyarwanda and understand Rwanda.
+        We combine large language models, computer vision, and agentic pipelines with
+        deep local knowledge to deliver production-ready solutions for Rwandan organisations.
+        We build AI for low-resource languages like Kinyarwanda — where big tech isn't looking.
+      </p>
+
+      <div class="section-label">Our Services</div>
+
+      <!-- SERVICE 01 -->
+      <div class="service-card" id="svc-01">
+        <div class="service-image-container">
+          <img src="assets/svc01_ejochat.png" alt="EjoChat Screenshot" class="service-image" style="object-position: center 70%;">
+        </div>
+        <div class="service-content">
+          <div class="service-card-header">
+            <span class="service-num">01</span>
+            <h3>EjoChat — Kinyarwanda AI Assistant</h3>
+          </div>
+          <div class="service-body">
+            <div>
+              <div class="service-subtitle">Rwanda's first production-ready Kinyarwanda conversational AI</div>
+              <p class="service-desc">
+                EjoChat is fine-tuned on curated Rwandan language data to understand natural
+                Kinyarwanda — informal speech, idioms, and local context. Integrate via REST API
+                into citizen portals, mobile apps, USSD, or WhatsApp.
+              </p>
+              <ul class="service-bullets">
+                <li>Kinyarwanda-first, multilingual fallback, domain-tunable</li>
+                <li>REST API for web, mobile, USSD &amp; WhatsApp</li>
+                <li>Ideal for: citizen services, NGO outreach, enterprise helpdesks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 02 -->
+      <div class="service-card" id="svc-02">
+        <div class="service-image-container">
+          <img src="assets/svc02_agentic_rag.png" alt="Agentic AI Screenshot" class="service-image" style="object-position: center center;">
+        </div>
+        <div class="service-content">
+          <div class="service-card-header">
+            <span class="service-num">02</span>
+            <h3>Agentic AI, RAG &amp; Computer Vision</h3>
+          </div>
+          <div class="service-body">
+            <div>
+              <div class="service-subtitle">Intelligent agents that retrieve, reason, act — and see</div>
+              <p class="service-desc">
+                RAG agents ingest your documents and data feeds, reason over them, and produce
+                structured outputs. For security, this extends to AI-powered video surveillance
+                with real-time object detection and anomaly alerts — powered by Qdrant vector search.
+              </p>
+              <ul class="service-bullets">
+                <li>Document RAG: PDFs, databases → cited, structured answers</li>
+                <li>Video surveillance: object detection, person ID, anomaly alerts</li>
+                <li>Image analysis: scene classification, evidence documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 3 — SERVICE 03 + DISCOVERY + CTA
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="services-page-2">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">AI Services for Rwanda</span>
+      </div>
+
+      <div class="section-label">Our Services</div>
+
+      <!-- SERVICE 03 -->
+      <div class="service-card" id="svc-03">
+        <div class="service-image-container">
+          <img src="assets/svc03_consultancy.png" alt="Consultancy Session Screenshot" class="service-image" style="object-position: center center;">
+        </div>
+        <div class="service-content">
+          <div class="service-card-header">
+            <span class="service-num">03</span>
+            <h3>AI Consultancy — We Solve Your Problem</h3>
+          </div>
+          <div class="service-body">
+            <div>
+              <div class="service-subtitle">Understanding your world before we build for it</div>
+              <p class="service-desc">
+                Before any technology, we sit with your team to understand what you do, where
+                friction is, and where AI can create the most value. Then we design and build the
+                right solution — whether that's a custom model, a data pipeline, or an agentic system.
+              </p>
+              <ul class="service-bullets">
+                <li>Workshop: map your operations, data, and pain points</li>
+                <li>Use-case identification: highest-impact, lowest-risk opportunities</li>
+                <li>Bespoke AI solution design and delivery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISCOVERY SESSION -->
+      <div class="discovery-block" id="discovery">
+        <h3>How a Discovery Session Works</h3>
+        <p class="disc-text">
+          We meet your team, map your workflows, audit your data, and identify where AI can
+          act now. No jargon, completely exploratory — just a clear picture of what's possible and a
+          concrete proposal if you choose to proceed.
+        </p>
+        <ul>
+          <li>Workflow mapping: where time is lost, errors occur, or data sits unused</li>
+          <li>Data audit: what you already have that AI can act on immediately</li>
+          <li>Use-case prioritisation: highest-impact, lowest-risk starting points</li>
+          <li>Feasibility &amp; cost estimate: realistic timelines and investment</li>
+        </ul>
+        <div class="discovery-tags">
+          <span>Bespoke</span>
+          <span>Collaborative</span>
+          <span>Exploratory</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-bar" id="cta">
+        <div class="cta-left">
+          <h3>Let's build AI that<br>works for you.</h3>
+        </div>
+        <div class="cta-right">
+          <h4>Book a Discovery Session</h4>
+          <p>info@ejolabs.com &nbsp;·&nbsp; ejolabs.com</p>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
