@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejo Labs &amp; RISA — Strategic AI Partnership Proposal</title>
+  <meta name="description" content="Collaborative AI proposal to drive Rwanda's digitization, public sector automation, and native Kinyarwanda LLM systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ══════════════════════════════════════════════
+       DESIGN TOKENS & SYSTEM
+       ══════════════════════════════════════════════ */
+    :root {
+      --orange:       #E87722;
+      --orange-light: #FDF3EB;
+      --orange-soft:  #F9A85D;
+      --orange-glow:  rgba(232, 119, 34, 0.08);
+      --navy:         #2B3A52;
+      --navy-dark:    #162235;
+      --navy-deep:    #0F172A;
+      --white:        #FFFFFF;
+      --grey-dark:    #334155;
+      --grey:         #64748B;
+      --grey-light:   #E2E8F0;
+      --grey-border:  #E5E7EB;
+      --light-card:   #FCFBF9;
+      --cream:        #FAF6F0;
+      --accent-blue:  #94A3B8;
+
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      --shadow-sm: 0 2px 8px rgba(22, 34, 53, 0.04);
+      --shadow-md: 0 8px 30px rgba(22, 34, 53, 0.06);
+      --shadow-lg: 0 16px 40px rgba(22, 34, 53, 0.08);
+    }
+
+    /* ══════════════════════════════════════════════
+       RESET & BASE (Web Native Layout)
+       ══════════════════════════════════════════════ */
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--grey-dark);
+      background: #F4F6F8;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    /* ══════════════════════════════════════════════
+       WEB WRAPPER — High-End Dashboard Style
+       ══════════════════════════════════════════════ */
+    .app-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    /* ══════════════════════════════════════════════
+       FLUID SECTIONS (Perfect for screen & print)
+       ══════════════════════════════════════════════ */
+    .section-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      padding: 48px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(22, 34, 53, 0.05);
+      position: relative;
+    }
+
+    /* ══════════════════════════════════════════════
+       PAGE 1 — COVER SECTION
+       ══════════════════════════════════════════════ */
+    .cover-hero {
+      text-align: center;
+      padding: 60px 40px;
+      background: 
+        radial-gradient(circle at 100% 0%, rgba(232, 119, 34, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(43, 58, 82, 0.04) 0%, transparent 60%),
+        var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 580px;
+    }
+
+    .cover-logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .cover-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(232, 119, 34, 0.15));
+    }
+
+    .cover-brand {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      color: var(--navy-dark);
+      margin-bottom: 4px;
+    }
+
+    .cover-tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .cover-tagline::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    .cover-headline {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--navy-dark);
+    }
+    .cover-headline .orange { 
+      color: var(--orange);
+      background: linear-gradient(90deg, var(--orange), #F59E0B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cover-sub {
+      font-size: 0.95rem;
+      color: var(--grey);
+      font-weight: 500;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--navy-dark);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      box-shadow: var(--shadow-sm);
+    }
+    .pillar {
+      padding: 24px 16px;
+      text-align: center;
+      position: relative;
+    }
+    .pillar + .pillar::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 25%; bottom: 25%;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--orange-soft);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .pillar-desc {
+      font-size: 0.72rem;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════════════════
+       INNER HEADER SYSTEM
+       ══════════════════════════════════════════════ */
+    .section-header {
+      display: flex;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--grey-light);
+      margin-bottom: 32px;
+    }
+    .section-header img {
+      width: 28px; 
+      height: 28px;
+      object-fit: contain;
+      margin-right: 12px;
+    }
+    .section-header .brand-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      flex: 1;
+    }
+    .section-header .header-meta {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════════════════
+       SECTION LABELS & UTILITIES
+       ══════════════════════════════════════════════ */
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--orange-glow), transparent);
+    }
+
+    .intro-text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--grey-dark);
+      text-align: justify;
+      margin-bottom: 28px;
+    }
+
+    /* ══════════════════════════════════════════════
+       VISUAL STATS & PROGRESS LAYOUT (EjoChat Metrics)
+       ══════════════════════════════════════════════ */
+    .stats-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+    
+    .stats-text {
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .chart-box {
+      background: var(--light-card);
+      border: 1px solid var(--grey-light);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feedback-ratio {
+      display: flex;
+      width: 100%;
+      height: 24px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 16px 0;
+      border: 1px solid var(--grey-light);
+    }
+
+    .ratio-up {
+      background: linear-gradient(90deg, #E87722, #F9A85D);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .ratio-down {
+      background: var(--navy-dark);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94A3B8;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .legend {
+      display: flex;
+      gap: 16px;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot-orange { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+    .dot-navy { width: 10px; height: 10px; border-radius: 50%; background: var(--navy-dark); }
+
+    /* ══════════════════════════════════════════════
+       EJOCHAT FOUNDATION BUSINESS BLOCK
+       ══════════════════════════════════════════════ */
+    .highlight-card {
+      background: var(--orange-light);
+      border-left: 4px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+    }
+    .highlight-card h4 {
+      font-size: 0.88rem;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+    .highlight-card p {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--navy-dark);
+    }
+
+    /* ══════════════════════════════════════════════
+       EJOFORAFRICA GRID DETAILS
+       ══════════════════════════════════════════════ */
+    .rag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .rag-grid-card {
+      background: var(--light-card);
+      border: 1px solid var(--grey-light);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .rag-grid-card h4 {
+      font-size: 0.85rem;
+      color: var(--navy-dark);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rag-grid-card p {
+      font-size: 0.74rem;
+      line-height: 1.45;
+      color: var(--grey-dark);
+    }
+
+    /* ══════════════════════════════════════════════
+       PARTNERSHIP ECOSYSTEM (GRID LAYOUT)
+       ══════════════════════════════════════════════ */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .partner-card {
+      background: var(--light-card);
+      border: 1px solid var(--grey-light);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .partner-name-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .partner-name-bar h4 {
+      font-size: 0.95rem;
+      color: var(--navy-dark);
+    }
+
+    .partner-badge {
+      font-size: 0.58rem;
+      font-weight: 800;
+      background: rgba(232, 119, 34, 0.08);
+      color: var(--orange);
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .partner-desc {
+      font-size: 0.74rem;
+      line-height: 1.5;
+      color: var(--grey-dark);
+    }
+
+    /* ══════════════════════════════════════════════
+       PILOTS & USE CASES (Split-Row Layout)
+       ══════════════════════════════════════════════ */
+    .pilot-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 28px;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px dashed var(--grey-light);
+    }
+    
+    .pilot-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pilot-title-block h4 {
+      font-size: 0.95rem;
+      color: var(--navy-dark);
+      margin-bottom: 4px;
+    }
+
+    .pilot-title-block p {
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    .pilot-desc-block {
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+
+    .pilot-desc-block ul {
+      margin-top: 8px;
+      list-style: none;
+    }
+
+    .pilot-desc-block li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .pilot-desc-block li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+    }
+
+    /* ══════════════════════════════════════════════
+       ALIGNMENT FOOTER / SIGNATURE
+       ══════════════════════════════════════════════ */
+    .risa-alignment-footer {
+      background: var(--navy-dark);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin-top: 32px;
+      color: #CBD5E0;
+    }
+
+    .risa-alignment-footer h4 {
+      color: var(--orange-soft);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .risa-alignment-footer p {
+      font-size: 0.76rem;
+      line-height: 1.6;
+    }
+
+    .page-footer {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+    }
+
+    /* ══════════════════════════════════════════════
+       PRINT / PDF SPECIFIC STYLES
+       ══════════════════════════════════════════════ */
+    @media print {
+      body {
+        background: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .app-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .section-card {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 20mm 20mm 20mm !important; 
+        width: 100% !important;
+        height: 296mm !important; /* Locks to exact A4 print size */
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+        background: var(--white) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
+      }
+
+      .cover-hero {
+        height: 296mm !important;
+        min-height: 296mm !important;
+        padding: 40mm 20mm 30mm !important;
+        justify-content: space-between !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .page-footer {
+        margin-top: auto !important; /* Pushes the footer to the bottom of the page in flex layout */
+        border-top: 2px solid var(--orange) !important;
+        padding-top: 12px !important;
+        font-size: 0.72rem !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 0 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 1 — TITLE & MISSION ALIGNMENT
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card cover-hero" id="cover">
+      <div class="cover-logo-container">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="cover-logo">
+      </div>
+      
+      <div>
+        <div class="cover-brand">EJO LABS</div>
+        <div class="cover-tagline">National AI Capability Initiative</div>
+      </div>
+
+      <div>
+        <h1 class="cover-headline">
+          <span class="navy">Accelerating Rwandan Innovation:</span>
+          <span class="orange">AI &amp; Automation for RISA</span>
+        </h1>
+        <div class="cover-sub">
+          A strategic capabilities framework proposing native Kinyarwanda LLM integration,
+          partner ecosystem support, and public-private digitization.
+        </div>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-title">RISA Alignment</div>
+          <div class="pillar-desc">Supporting RISA's vision to digitize Rwandan society</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Local Autonomy</div>
+          <div class="pillar-desc">Sovereign Kinyarwanda models built locally</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Workload Reduction</div>
+          <div class="pillar-desc">Automating reporting and manual public operations</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 2 — EJOCHAT NATIVE LLM & METRICS
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="ejochat-llm-details">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">National LLM Capability</span>
+      </div>
+
+      <div class="section-label">Our Core Model: EjoChat</div>
+      <p class="intro-text">
+        EjoChat is Rwanda's first live, production-ready Kinyarwanda foundation model.
+        Rather than simple translations of English models, it is custom-built and trained
+        on local language context, idiomatic speech, and regulatory awareness.
+      </p>
+
+      <!-- Section 1: Development Metrics -->
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; margin-bottom: 24px; align-items: center;">
+        <div>
+          <h3 style="font-size: 0.95rem; margin-bottom: 6px; color: var(--navy-dark); font-weight: 800;">Iterative Development &amp; Live Performance</h3>
+          <p style="font-size: 0.74rem; line-height: 1.5; color: var(--grey-dark);">
+            Our model is live and actively used, creating a continuous improvement cycle. 
+            We leverage <strong>Reinforcement Learning (RLHF)</strong> to fine-tune outputs based on real-world use.
+            Daily optimization keeps us on track with standard global LLM developmental parameters.
+          </p>
+        </div>
+        
+        <div class="chart-box" style="padding: 12px 16px; border-radius: 12px; align-items: stretch; text-align: left;">
+          <span style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; display: block;">Live User Feedback Metrics</span>
+          <div class="feedback-ratio" style="height: 18px; margin: 4px 0 6px 0; border-radius: 9px;">
+            <div class="ratio-up" style="width: 84%; font-size: 0.62rem;">84% Thumbs-Up</div>
+            <div class="ratio-down" style="width: 16%; font-size: 0.62rem;">16%</div>
+          </div>
+          <div class="legend" style="font-size: 0.64rem; justify-content: flex-start; gap: 12px;">
+            <div class="legend-item"><span class="dot-orange" style="width: 8px; height: 8px;"></span> Positive Interactions</div>
+            <div class="legend-item"><span class="dot-navy" style="width: 8px; height: 8px;"></span> Daily Optimizations</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Live Interfaces & Dashboards Showcase -->
+      <div style="border-top: 1px dashed var(--grey-light); padding-top: 18px; margin-top: 8px;">
+        <h3 style="font-size: 0.95rem; margin-bottom: 12px; color: var(--navy-dark); font-weight: 800;">Live Interfaces &amp; Monitoring Platforms</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <!-- Welcome Page Showcase -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="background: #F8FAFC; border: 1px solid var(--grey-light); border-radius: 12px; padding: 6px; overflow: hidden; height: 270px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; align-items: center; justify-content: center;">
+              <img src="assets/risa_assets/EjoChat welcome Page.png" alt="EjoChat Welcome Page" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px;">
+            </div>
+            <p style="font-size: 0.72rem; line-height: 1.45; color: var(--grey-dark);">
+              <strong>Bilingual Chat Interface:</strong> The user-facing conversational shell supports natural Kinyarwanda speech and text, auto-adapting for citizen inquiries, B2B support, and localized organization handbooks.
+            </p>
+          </div>
+
+          <!-- Monitoring Dashboard Showcase -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="background: #F8FAFC; border: 1px solid var(--grey-light); border-radius: 12px; padding: 6px; overflow: hidden; height: 270px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; align-items: center; justify-content: center;">
+              <img src="assets/risa_assets/EjoChat Dashoboard.png" alt="EjoChat Monitoring Dashboard" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px;">
+            </div>
+            <p style="font-size: 0.72rem; line-height: 1.45; color: var(--grey-dark);">
+              <strong>Active Monitoring Dashboard:</strong> Tracks model latency, request frequencies, and thumbs-up/down ratios to evaluate model performance and fuel direct reinforcement learning feedback loops.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 3 — EJOFORAFRICA: AGENTIC RAG SYSTEM
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="ejoforafrica-details">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">Agentic RAG Infrastructure</span>
+      </div>
+
+      <div class="section-label">Enterprise RAG Engine: EjoForAfrica</div>
+      <p class="intro-text">
+        <strong>EjoForAfrica</strong> is our powerful, enterprise-grade RAG (Retrieval-Augmented Generation) agentic system. 
+        It is designed to ingest massive databases of curated documents and connect them with real-time external resources 
+        and live data streams to generate smart, grounded insights.
+      </p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; align-items: stretch;">
+        <div style="background: #F8FAFC; border: 1px solid var(--grey-light); border-radius: 16px; padding: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 310px;">
+          <img src="assets/risa_assets/risa_rag_flow.png" alt="EjoForAfrica RAG Architecture Flow" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 10px;">
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 12px; padding: 8px 12px;">
+            <h4 style="font-size: 0.8rem; color: var(--navy-dark); margin-bottom: 2px;">Scientific Documents</h4>
+            <p style="font-size: 0.7rem; line-height: 1.35; color: var(--grey-dark);">Ingests agricultural datasets, NGO guidelines, and regulatory handbooks directly.</p>
+          </div>
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 12px; padding: 8px 12px;">
+            <h4 style="font-size: 0.8rem; color: var(--navy-dark); margin-bottom: 2px;">Real-Time Data Streams</h4>
+            <p style="font-size: 0.7rem; line-height: 1.35; color: var(--grey-dark);">Integrates live localized weather feeds, market price indices, and sensor data.</p>
+          </div>
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 12px; padding: 8px 12px;">
+            <h4 style="font-size: 0.8rem; color: var(--navy-dark); margin-bottom: 2px;">Region-Specific Resources</h4>
+            <p style="font-size: 0.7rem; line-height: 1.35; color: var(--grey-dark);">Accesses local government systems, hotline records, and NGO support services.</p>
+          </div>
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 12px; padding: 8px 12px;">
+            <h4 style="font-size: 0.8rem; color: var(--navy-dark); margin-bottom: 2px;">Multilingual Channels</h4>
+            <p style="font-size: 0.7rem; line-height: 1.35; color: var(--grey-dark);">Communicates spoken/written inputs in Kinyarwanda/multilingual fallbacks via App or SMS.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <h4>Endless Use-Cases: Tailored Agentic Adaptability</h4>
+        <p>
+          EjoForAfrica is built to adapt dynamically. By feeding it custom datasets, it can transform into an advisor for agriculture, 
+          an automated health reporting agent, or a public utility guide. The potential applications are endless, and Ejo Labs is actively 
+          building pipelines to deploy these systems nationwide.
+        </p>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 4 — APIS & PARTNER ECOSYSTEM
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="partners-infrastructure">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">APIs &amp; Infrastructure Ecosystem</span>
+      </div>
+
+      <!-- Part 1: Developer APIs & Packages -->
+      <div class="section-label" style="margin-bottom: 8px;">Developer APIs &amp; Commercial Packages</div>
+      <p class="intro-text" style="margin-bottom: 12px;">
+        Our Kinyarwanda-first language capabilities are now exposed via standard REST APIs, making it simple to plug EjoChat directly into third-party citizen portals, custom web dashboards, or mobile applications.
+      </p>
+
+      <div style="display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 24px; margin-bottom: 20px; align-items: center;">
+        <div style="background: #F8FAFC; border: 1px solid var(--grey-light); border-radius: 12px; padding: 6px; display: flex; flex-direction: column; justify-content: center; height: 145px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+          <span style="font-size: 0.55rem; font-weight: 800; color: var(--grey); padding: 0 4px 2px 4px; text-transform: uppercase; margin-bottom: 2px;">REST API &amp; SDK Playground</span>
+          <img src="assets/risa_assets/EjoChat API.png" alt="EjoChat Developer API" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 8px; padding: 6px 8px;">
+            <h5 style="font-size: 0.68rem; color: var(--orange); margin: 0 0 1px 0; text-transform: uppercase; font-weight: 800;">Basic</h5>
+            <p style="font-size: 0.62rem; line-height: 1.25; color: var(--grey-dark); margin: 0;">Small pilots &amp; internal tools</p>
+          </div>
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 8px; padding: 6px 8px;">
+            <h5 style="font-size: 0.68rem; color: var(--orange); margin: 0 0 1px 0; text-transform: uppercase; font-weight: 800;">Growth</h5>
+            <p style="font-size: 0.62rem; line-height: 1.25; color: var(--grey-dark); margin: 0;">Growing apps with steady usage</p>
+          </div>
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 8px; padding: 6px 8px;">
+            <h5 style="font-size: 0.68rem; color: var(--navy-dark); margin: 0 0 1px 0; text-transform: uppercase; font-weight: 800;">Business</h5>
+            <p style="font-size: 0.62rem; line-height: 1.25; color: var(--grey-dark); margin: 0;">Customer-facing production use</p>
+          </div>
+          <div style="background: var(--light-card); border: 1px solid var(--grey-light); border-radius: 8px; padding: 6px 8px;">
+            <h5 style="font-size: 0.68rem; color: var(--navy-dark); margin: 0 0 1px 0; text-transform: uppercase; font-weight: 800;">Enterprise</h5>
+            <p style="font-size: 0.62rem; line-height: 1.25; color: var(--grey-dark); margin: 0;">Large teams, SLA, or custom terms</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 2: Cloud Infrastructure & Partner Network -->
+      <div style="border-top: 1px dashed var(--grey-light); padding-top: 16px;">
+        <div class="section-label" style="margin-bottom: 6px; font-size: 0.8rem;">Infrastructure &amp; Partner Network</div>
+        <p style="font-size: 0.72rem; line-height: 1.45; color: var(--grey-dark); margin-bottom: 12px;">
+          To power our sovereign models and APIs, we collaborate with leading global infrastructure and advanced orchestration platforms, ensuring fast, secure, and compliant deployments.
+        </p>
+
+        <div class="partner-grid" style="gap: 12px; margin-bottom: 8px;">
+          <!-- AWS -->
+          <div class="partner-card" style="padding: 12px;">
+            <div>
+              <div class="partner-name-bar" style="margin-bottom: 4px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <svg width="24" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                    <path d="M4 10 C 9 14, 15 14, 20 10" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 8 L20 10 L18 12" stroke="#FF9900" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <text x="5" y="8" font-family="'Outfit', sans-serif" font-weight="900" font-size="9" fill="#162235">aws</text>
+                  </svg>
+                  <h4 style="font-size: 0.8rem;">AWS</h4>
+                </div>
+                <span class="partner-badge" style="font-size: 0.5rem; padding: 1px 4px;">Partner</span>
+              </div>
+              <p class="partner-desc" style="font-size: 0.65rem; line-height: 1.35;">
+                We leverage AWS SageMaker and Bedrock for hosting and fine-tuning, securing substantial credits.
+              </p>
+            </div>
+          </div>
+
+          <!-- Google Cloud -->
+          <div class="partner-card" style="padding: 12px;">
+            <div>
+              <div class="partner-name-bar" style="margin-bottom: 4px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <img src="assets/risa_assets/Google_Cloud.png" alt="Google Cloud Logo" style="height: 16px; width: auto; max-width: 20px; object-fit: contain; flex-shrink: 0;">
+                  <h4 style="font-size: 0.8rem;">Google Cloud</h4>
+                </div>
+                <span class="partner-badge" style="font-size: 0.5rem; padding: 1px 4px;">Core Host</span>
+              </div>
+              <p class="partner-desc" style="font-size: 0.65rem; line-height: 1.35;">
+                Provides server redundancy and scalable hosting to ensure low latency across East Africa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Qdrant -->
+          <div class="partner-card" style="padding: 12px;">
+            <div>
+              <div class="partner-name-bar" style="margin-bottom: 4px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <img src="assets/risa_assets/qdrant.png" alt="Qdrant Logo" style="height: 16px; width: auto; max-width: 20px; object-fit: contain; flex-shrink: 0;">
+                  <h4 style="font-size: 0.8rem;">Qdrant DB</h4>
+                </div>
+                <span class="partner-badge" style="font-size: 0.5rem; padding: 1px 4px;">Pipeline</span>
+              </div>
+              <p class="partner-desc" style="font-size: 0.65rem; line-height: 1.35;">
+                Coordinating deployment blueprints to run their vector database locally for secure RAG services.
+              </p>
+            </div>
+          </div>
+
+          <!-- n8n -->
+          <div class="partner-card" style="padding: 12px;">
+            <div>
+              <div class="partner-name-bar" style="margin-bottom: 4px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <img src="assets/risa_assets/n8n.avif" alt="n8n Logo" style="height: 16px; width: auto; max-width: 20px; object-fit: contain; flex-shrink: 0;">
+                  <h4 style="font-size: 0.8rem;">n8n Workflow</h4>
+                </div>
+                <span class="partner-badge" style="font-size: 0.5rem; padding: 1px 4px;">Collab</span>
+              </div>
+              <p class="partner-desc" style="font-size: 0.65rem; line-height: 1.35;">
+                Leveraging their workflow engine to connect models with legacy databases and automate admin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 5 — GRANTS, RESEARCH & LEGITIMACY
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="grants-legitimacy">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">Grants &amp; Research Track</span>
+      </div>
+
+      <div class="section-label">Institutional Legitimacy &amp; Active Applications</div>
+      <p class="intro-text">
+        Ejo Labs maintains deep credibility and institutional backing by actively applying for and being shortlisted
+        in world-class research challenges, social-impact grants, and venture acceleration programs.
+      </p>
+
+      <div class="partner-grid">
+        <!-- Transformative Research Challenge -->
+        <div class="partner-card">
+          <div>
+            <div class="partner-name-bar">
+              <h4 style="font-size: 0.88rem;">Transformative Research Challenge</h4>
+              <span class="partner-badge" style="background: rgba(43,58,82,0.08); color: var(--navy-dark);">Active</span>
+            </div>
+            <p class="partner-desc">
+              Participating in the co-hosted challenge by <strong>Tilburg University's Zero Hunger Lab</strong> and Tilburg School of Humanities and Digital Sciences, targeting the "Leveraging Public Data to Fight Hunger Prize" using agricultural data modeling.
+            </p>
+          </div>
+        </div>
+
+        <!-- UNICEF Innovation Fund -->
+        <div class="partner-card">
+          <div>
+            <div class="partner-name-bar">
+              <h4 style="font-size: 0.88rem;">UNICEF Innovation Fund</h4>
+              <span class="partner-badge" style="background: rgba(43,58,82,0.08); color: var(--navy-dark);">Shortlist Pipeline</span>
+            </div>
+            <p class="partner-desc">
+              Expression of Interest submitted for seed funding and technological validation from UNICEF's venture fund, targeting child welfare, digital accessibility, and local language education solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- D-Prize Interventions -->
+        <div class="partner-card">
+          <div>
+            <div class="partner-name-bar">
+              <h4 style="font-size: 0.88rem;">D-Prize Agriculture</h4>
+              <span class="partner-badge" style="background: rgba(43,58,82,0.08); color: var(--navy-dark);">Active Application</span>
+            </div>
+            <p class="partner-desc">
+              Designing custom distribution pipelines under the "Agriculture: Propose Your Own" track to distribute evidence-based agricultural advisory tools across rural communities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Climate Ventures -->
+        <div class="partner-card">
+          <div>
+            <div class="partner-name-bar">
+              <h4 style="font-size: 0.88rem;">Climate Ventures Funding</h4>
+              <span class="partner-badge" style="background: rgba(43,58,82,0.08); color: var(--navy-dark);">Submission Track</span>
+            </div>
+            <p class="partner-desc">
+              Positioning our AI modeling platforms to secure early-stage seed funding opportunities targeted at scaling climate-resilient technologies and smart agricultural adaptation.
+            </p>
+          </div>
+        </div>
+
+        <!-- AISCA Compute Grant -->
+        <div class="partner-card">
+          <div>
+            <div class="partner-name-bar">
+              <h4 style="font-size: 0.88rem;">AISCA Compute Grant</h4>
+              <span class="partner-badge" style="background: rgba(43,58,82,0.08); color: var(--navy-dark);">Waitlist Applied</span>
+            </div>
+            <p class="partner-desc">
+              Applied to the 2026 cohort of the AI Skills and Compute Africa (AISCA) Programme—launching across Rwanda—to secure premium GPU compute allocations and structured technical scaling assistance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Vision 2050 Local Compute -->
+        <div class="partner-card">
+          <div>
+            <div class="partner-name-bar">
+              <h4 style="font-size: 0.88rem;">Vision 2050 Local Compute</h4>
+              <span class="partner-badge" style="background: rgba(232,119,34,0.08); color: var(--orange);">Active Exploration</span>
+            </div>
+            <p class="partner-desc">
+              Exploring deployment on local private GPU nodes (NVIDIA Tesla V100S-32GB &amp; Quadro RTX 6000-24GB, 750GB RAM, 28TB storage) in partnership with <strong>MPUZA Inc.</strong>, alongside AWS Outposts &amp; local AI edge zones to align with Rwanda's sovereignty goals.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 6 — PILOT CASES & RISA COLLABORATION
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="pilots-collaboration">
+      <div class="section-header">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+        <span class="brand-title">Ejo Labs</span>
+        <span class="header-meta">Pilot Deployments &amp; Vision</span>
+      </div>
+
+      <div class="section-label">Active Work &amp; Pipelines</div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 24px; margin-bottom: 16px; align-items: stretch;">
+        <div style="background: #F8FAFC; border: 1px solid var(--grey-light); border-radius: 16px; padding: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 210px;">
+          <img src="assets/risa_assets/risa_agri_ai.png" alt="InsightAfrica AI Agricultural Dashboard" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 12px;">
+          <div style="border-bottom: 1px dashed var(--grey-light); padding-bottom: 8px;">
+            <h4 style="font-size: 0.9rem; color: var(--navy-dark); margin-bottom: 2px;">InsightAfrica</h4>
+            <p style="font-size: 0.7rem; font-style: italic; color: var(--orange); font-weight: 600; margin-bottom: 2px;">Agricultural Advisory Pilot (Powered by EjoForAfrica)</p>
+            <p style="font-size: 0.72rem; line-height: 1.4; color: var(--grey-dark);">
+              Developing conversational advisory interfaces for smallholder farmers to query soil, weather, crop, and advisory databases in natural Kinyarwanda.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 0.9rem; color: var(--navy-dark); margin-bottom: 2px;">B2B Web Assistants</h4>
+            <p style="font-size: 0.7rem; font-style: italic; color: var(--orange); font-weight: 600; margin-bottom: 2px;">Customer Experience Automation</p>
+            <p style="font-size: 0.72rem; line-height: 1.4; color: var(--grey-dark);">
+              Currently in contact with 5+ Rwandan businesses to deploy domain-specific chatbots, offering fast, 24/7 bilingual customer service.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="risa-alignment-footer">
+        <h4>Strategic Alignment with RISA</h4>
+        <p style="margin-bottom: 8px;">
+          RISA’s mission is to digitize Rwandan society through innovation and technology. 
+          Today, many institutions still rely heavily on manual procedures and repetitive admin work. 
+          Ejo Labs represents a major opportunity to automate these reporting cycles and reduce workloads.
+        </p>
+        <p>
+          By adopting localized AI, we can build custom solutions for critical priorities—from 
+          agricultural support and malnutrition monitoring, to children's growth tracking. Let's collaborate 
+          to leverage native AI, reduce administrative overhead, and keep Rwanda leading the technological frontier.
+        </p>
+      </div>
+
+      <div class="page-footer">
+        info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; Kigali, Rwanda
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
