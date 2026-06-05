@@ -721,6 +721,154 @@
     }
 
     /* ══════════════════════════════════════════════
+       MOBILE & RESPONSIVE STYLING (SCREENS <= 768PX)
+       ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      body {
+        overflow: hidden;
+      }
+
+      .slide {
+        padding: 24px 16px 90px 16px;
+      }
+      
+      .slide-content {
+        padding: 12px 0;
+        align-items: flex-start;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .slide-header {
+        padding-bottom: 8px;
+      }
+
+      .brand-logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      .brand-name {
+        font-size: 0.95rem;
+      }
+
+      .slide-tracker {
+        font-size: 0.7rem;
+      }
+
+      .slide-footer {
+        display: none !important;
+      }
+
+      /* Grid Stacking for Mobile Layouts */
+      .grid-2col, .grid-3col, .partner-grid, .validation-grid, .vision-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      /* Control navigation overrides on mobile */
+      .controls {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        left: auto;
+        transform: none;
+        gap: 10px;
+        background: rgba(11, 19, 43, 0.85);
+        padding: 4px 8px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        z-index: 100;
+        display: flex !important;
+      }
+
+      .nav-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+        background: rgba(22, 34, 53, 0.95);
+      }
+
+      .nav-dots {
+        position: absolute;
+        bottom: 24px;
+        left: 16px;
+        transform: none;
+        gap: 6px;
+        z-index: 100;
+        display: flex !important;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      .dot.active {
+        width: 14px;
+      }
+
+      .keyboard-hint {
+        display: none !important;
+      }
+
+      /* Adjust font sizes and paddings on mobile */
+      .cover-title {
+        font-size: 1.6rem !important;
+        line-height: 1.25;
+      }
+
+      .cover-tagline {
+        font-size: 0.85rem !important;
+        margin-bottom: 20px !important;
+      }
+
+      .cover-logo-lg {
+        height: 44px !important;
+        margin-bottom: 10px !important;
+      }
+
+      h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 12px !important;
+      }
+
+      .text-highlight {
+        font-size: 0.85rem !important;
+        margin-bottom: 10px !important;
+      }
+
+      p {
+        font-size: 0.8rem !important;
+      }
+
+      /* Make sure diagrams scale nicely */
+      .diagram-img {
+        max-height: 160px !important;
+        width: auto !important;
+        margin: 0 auto !important;
+      }
+
+      .screenshot-container img {
+        max-height: 150px !important;
+        width: auto !important;
+      }
+
+      .partner-icon {
+        width: 38px;
+        height: 38px;
+        padding: 6px;
+      }
+
+      .partner-card, .badge-card, .vision-card {
+        padding: 12px 16px !important;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
        PRINT SPECIFIC STYLING (A4 LANDSCAPE)
        ══════════════════════════════════════════════ */
     @media print {
@@ -1260,6 +1408,35 @@
           showSlide(currentSlide - 1);
         }
       });
+
+      // Touch Swipe Navigation for Mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const swipeThreshold = 50;
+
+      const deckContainer = document.querySelector('.deck-container');
+
+      deckContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      deckContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const diffX = touchEndX - touchStartX;
+        if (Math.abs(diffX) > swipeThreshold) {
+          if (diffX < 0) {
+            // Swiped left -> Next slide
+            showSlide(currentSlide + 1);
+          } else {
+            // Swiped right -> Previous slide
+            showSlide(currentSlide - 1);
+          }
+        }
+      }
     });
   </script>
 </body>
