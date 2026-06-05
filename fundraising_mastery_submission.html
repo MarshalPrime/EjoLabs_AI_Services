@@ -587,7 +587,7 @@
         <!-- Startup Name -->
         <div class="field-group">
           <label for="startupName">Startup Name <span class="required-dot">*</span></label>
-          <input type="text" id="startupName" name="startup_name" placeholder="Enter company name" required autocomplete="organization">
+          <input type="text" id="startupName" name="startup_name" value="Ejo Labs" required autocomplete="organization">
         </div>
 
         <!-- Founder Name -->
@@ -606,9 +606,9 @@
         <div class="field-group">
           <label for="stage">Current Funding Stage <span class="required-dot">*</span></label>
           <select id="stage" name="stage" required>
-            <option value="" disabled selected>Select stage</option>
+            <option value="" disabled>Select stage</option>
             <option value="Ideation">Ideation / Bootstrap</option>
-            <option value="Pre-Seed">Pre-Seed</option>
+            <option value="Pre-Seed" selected>Pre-Seed</option>
             <option value="Seed">Seed</option>
             <option value="Series A">Series A</option>
           </select>
@@ -618,8 +618,8 @@
         <div class="field-group full-width">
           <label for="sector">Industry / Sector <span class="required-dot">*</span></label>
           <select id="sector" name="sector" required>
-            <option value="" disabled selected>Select sector</option>
-            <option value="AI/ML">Artificial Intelligence / Machine Learning</option>
+            <option value="" disabled>Select sector</option>
+            <option value="AI/ML" selected>Artificial Intelligence / Machine Learning</option>
             <option value="SaaS">SaaS &amp; Enterprise Software</option>
             <option value="FinTech">FinTech</option>
             <option value="HealthTech">HealthTech / Biotech</option>
@@ -633,7 +633,7 @@
         <!-- One Line Description -->
         <div class="field-group full-width">
           <label for="description">One-Line Pitch <span class="required-dot">*</span></label>
-          <textarea id="description" name="description" placeholder="Briefly describe what problem you are solving..." maxlength="250" required></textarea>
+          <textarea id="description" name="description" placeholder="Briefly describe what problem you are solving..." maxlength="250" required>Ejo Labs builds production-ready AI systems that speak Kinyarwanda and understand Rwanda.</textarea>
           <div class="field-hint">Max 250 characters. Keep it brief and focused.</div>
         </div>
 
