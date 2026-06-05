@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your pitch deck for the Live Pitch Clinic at the Constructor Start Fundraising Mastery Webinar.">
+  <title>Pitch Deck Submission | Constructor Start</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" defer crossorigin="anonymous"></script>
+
+  <style>
+    /* ══════════════════════════════════════════════
+       DESIGN SYSTEM & CSS VARIABLES
+       ══════════════════════════════════════════════ */
+    :root {
+      /* Colors */
+      --navy-deep:    #0B132B;
+      --navy-dark:    #1C2541;
+      --navy-medium:  #3A506B;
+      --teal-light:   #5BC0BE;
+      --orange:       #FF7A00;
+      --orange-hover: #E06B00;
+      --orange-soft:  rgba(255, 122, 0, 0.1);
+      
+      --white:        #FFFFFF;
+      --grey-light:   #F4F6F9;
+      --grey-medium:  #E2E8F0;
+      --grey-dark:    #64748B;
+      --text-dark:    #0F172A;
+      
+      --shadow-sm:    0 2px 4px rgba(11, 19, 43, 0.04);
+      --shadow-md:    0 8px 30px rgba(11, 19, 43, 0.08);
+      --shadow-lg:    0 20px 40px rgba(11, 19, 43, 0.12);
+      --transition:   all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 100% 0%, rgba(255, 122, 0, 0.04) 0%, transparent 50%),
+                  radial-gradient(circle at 0% 100%, rgba(91, 192, 190, 0.05) 0%, transparent 60%),
+                  #FAFAFC;
+      color: var(--text-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Header Container */
+    header {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .brand-tag {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--orange);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--navy-deep);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--grey-dark);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ══════════════════════════════════════════════
+       MAIN CARD & LAYOUT
+       ══════════════════════════════════════════════ */
+    .form-card {
+      background: var(--white);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 680px;
+      padding: 44px 48px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--orange), #FF9E43);
+    }
+
+    /* Form Fields */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .required-dot {
+      color: var(--orange);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      border: 1.5px solid var(--grey-medium);
+      border-radius: 12px;
+      color: var(--text-dark);
+      background-color: var(--white);
+      transition: var(--transition);
+      min-height: 48px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.1);
+    }
+
+    /* Select arrow custom styling */
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B132B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 48px;
+    }
+
+    .field-hint {
+      font-size: 0.72rem;
+      color: var(--grey-dark);
+      margin-top: 6px;
+    }
+
+    /* ══════════════════════════════════════════════
+       DRAG-AND-DROP FILE UPLOAD ZONE
+       ══════════════════════════════════════════════ */
+    .upload-zone {
+      border: 2px dashed var(--grey-medium);
+      border-radius: 16px;
+      padding: 36px 24px;
+      text-align: center;
+      background: #FAFAFC;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    .upload-zone:hover,
+    .upload-zone.dragover {
+      border-color: var(--orange);
+      background: var(--orange-soft);
+    }
+
+    .upload-icon {
+      font-size: 2.2rem;
+      color: var(--grey-dark);
+      margin-bottom: 14px;
+      transition: var(--transition);
+    }
+
+    .upload-zone:hover .upload-icon,
+    .upload-zone.dragover .upload-icon {
+      color: var(--orange);
+      transform: translateY(-4px);
+    }
+
+    .upload-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: 4px;
+    }
+
+    .upload-subtext {
+      font-size: 0.76rem;
+      color: var(--grey-dark);
+    }
+
+    .hidden-file-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* File State Display */
+    .file-display {
+      display: none;
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--grey-medium);
+      border-radius: 12px;
+      padding: 14px 18px;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .file-icon {
+      font-size: 1.8rem;
+      color: #EF4444; /* PDF red */
+    }
+
+    .file-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .file-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .file-size {
+      font-size: 0.72rem;
+      color: var(--grey-dark);
+      margin-top: 1px;
+    }
+
+    .file-progress {
+      width: 100%;
+      height: 4px;
+      background: var(--grey-medium);
+      border-radius: 2px;
+      margin-top: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .file-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--teal-light);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    .remove-file-btn {
+      background: transparent;
+      border: none;
+      color: var(--grey-dark);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 6px;
+      border-radius: 50%;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .remove-file-btn:hover {
+      background: var(--grey-light);
+      color: #EF4444;
+    }
+
+    /* ══════════════════════════════════════════════
+       SUBMIT ACTIONS
+       ══════════════════════════════════════════════ */
+    .action-container {
+      margin-top: 36px;
+    }
+
+    .submit-btn {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--orange);
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      padding: 14px 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(255, 122, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      background: var(--orange-hover);
+      box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      background: var(--grey-medium);
+      color: var(--grey-dark);
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--white);
+      animation: spin 0.8s linear infinite;
+    }
+
+    /* Error Banner */
+    .error-banner {
+      display: none;
+      background: #FEF2F2;
+      border: 1px solid #FEE2E2;
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #EF4444;
+      font-size: 0.82rem;
+      font-weight: 600;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      animation: slideDown 0.3s ease;
+    }
+
+    /* ══════════════════════════════════════════════
+       SUCCESS FLOW OVERLAY
+       ══════════════════════════════════════════════ */
+    .success-overlay {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      z-index: 10;
+      padding: 48px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .success-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: rgba(91, 192, 190, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      animation: scaleUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .success-icon {
+      font-size: 2.5rem;
+      color: var(--teal-light);
+    }
+
+    .success-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+      margin-bottom: 14px;
+    }
+
+    .success-desc {
+      font-size: 0.95rem;
+      color: var(--grey-dark);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .success-badge {
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .reset-btn {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      background: var(--grey-light);
+      border: 1px solid var(--grey-medium);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .reset-btn:hover {
+      background: var(--grey-medium);
+    }
+
+    /* Footer Metadata */
+    .form-footer {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--grey-dark);
+      border-top: 1px solid var(--grey-light);
+      padding-top: 16px;
+      width: 100%;
+    }
+
+    .form-footer a {
+      color: var(--grey-dark);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .form-footer a:hover {
+      color: var(--orange);
+    }
+
+    /* ══════════════════════════════════════════════
+       ANIMATIONS
+       ══════════════════════════════════════════════ */
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 12px;
+      }
+      .form-card {
+        padding: 30px 24px;
+        border-radius: 16px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .full-width {
+        grid-column: span 1;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <span class="brand-tag">Constructor Start Masterclass</span>
+    <h1>Fundraising Mastery</h1>
+    <p class="subtitle">Upload your pitch deck for the Live Pitch Clinic. Our Lead Analyst reviews submitted decks prior to the live session on June 15.</p>
+  </header>
+
+  <!-- Main Card -->
+  <div class="form-card">
+    
+    <!-- Error Notification -->
+    <div class="error-banner" id="errorBanner">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <span id="errorMessage">Invalid file format. Please upload a PDF.</span>
+    </div>
+
+    <!-- Submission Form -->
+    <form id="submissionForm" novalidate>
+      <div class="form-grid">
+        
+        <!-- Startup Name -->
+        <div class="field-group">
+          <label for="startupName">Startup Name <span class="required-dot">*</span></label>
+          <input type="text" id="startupName" name="startup_name" placeholder="Enter company name" required autocomplete="organization">
+        </div>
+
+        <!-- Founder Name -->
+        <div class="field-group">
+          <label for="founderName">Founder Name <span class="required-dot">*</span></label>
+          <input type="text" id="founderName" name="founder_name" value="Protogene" required autocomplete="name">
+        </div>
+
+        <!-- Email Address -->
+        <div class="field-group">
+          <label for="email">Email Address <span class="required-dot">*</span></label>
+          <input type="email" id="email" name="email" value="protogene@ejolabs.com" required autocomplete="email">
+        </div>
+
+        <!-- Stage Dropdown -->
+        <div class="field-group">
+          <label for="stage">Current Funding Stage <span class="required-dot">*</span></label>
+          <select id="stage" name="stage" required>
+            <option value="" disabled selected>Select stage</option>
+            <option value="Ideation">Ideation / Bootstrap</option>
+            <option value="Pre-Seed">Pre-Seed</option>
+            <option value="Seed">Seed</option>
+            <option value="Series A">Series A</option>
+          </select>
+        </div>
+
+        <!-- Sector Dropdown -->
+        <div class="field-group full-width">
+          <label for="sector">Industry / Sector <span class="required-dot">*</span></label>
+          <select id="sector" name="sector" required>
+            <option value="" disabled selected>Select sector</option>
+            <option value="AI/ML">Artificial Intelligence / Machine Learning</option>
+            <option value="SaaS">SaaS &amp; Enterprise Software</option>
+            <option value="FinTech">FinTech</option>
+            <option value="HealthTech">HealthTech / Biotech</option>
+            <option value="AgriTech">AgriTech / FoodTech</option>
+            <option value="CleanTech">CleanTech / Energy</option>
+            <option value="EdTech">EdTech</option>
+            <option value="Other">Other Sector</option>
+          </select>
+        </div>
+
+        <!-- One Line Description -->
+        <div class="field-group full-width">
+          <label for="description">One-Line Pitch <span class="required-dot">*</span></label>
+          <textarea id="description" name="description" placeholder="Briefly describe what problem you are solving..." maxlength="250" required></textarea>
+          <div class="field-hint">Max 250 characters. Keep it brief and focused.</div>
+        </div>
+
+        <!-- Pitch Deck File Upload Zone -->
+        <div class="field-group full-width">
+          <label>Pitch Deck File <span class="required-dot">*</span></label>
+          
+          <div class="upload-zone" id="dropZone">
+            <input type="file" id="fileInput" class="hidden-file-input" accept=".pdf">
+            <i class="fa-solid fa-file-pdf upload-icon"></i>
+            <span class="upload-text">Drag &amp; drop your pitch deck here</span>
+            <span class="upload-subtext">or click to browse local files (PDF format, max 15MB)</span>
+          </div>
+          
+          <!-- Selected File Display Card -->
+          <div class="file-display" id="fileDisplayCard">
+            <i class="fa-solid fa-file-pdf file-icon"></i>
+            <div class="file-info">
+              <span class="file-name" id="fileNameText">PitchDeck_V1.pdf</span>
+              <span class="file-size" id="fileSizeText">2.4 MB</span>
+              <div class="file-progress">
+                <div class="file-progress-bar" id="progressBar"></div>
+              </div>
+            </div>
+            <button type="button" class="remove-file-btn" id="removeFileBtn" title="Remove file">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Submit button -->
+      <div class="action-container">
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span>Submit Pitch Deck</span>
+          <div class="spinner" id="btnSpinner"></div>
+        </button>
+      </div>
+    </form>
+
+    <!-- Success Overlay Page -->
+    <div class="success-overlay" id="successOverlay">
+      <div class="success-icon-wrapper">
+        <i class="fa-solid fa-check success-icon"></i>
+      </div>
+      <div class="success-badge">Registered &amp; Uploaded</div>
+      <h2 class="success-title">Submission Confirmed!</h2>
+      <p class="success-desc">
+        Thank you, <strong id="successFounderName">Protogene</strong>. Your pitch deck for <strong id="successStartupName">Ejo Labs</strong> has been uploaded and queued for the Live Pitch Clinic. We look forward to seeing you at the masterclass on June 15.
+      </p>
+      <button type="button" class="reset-btn" id="resetBtn">Submit Another Deck</button>
+    </div>
+
+    <!-- Card Footer -->
+    <div class="form-footer">
+      <span>Upload deadline: June 10, 2026</span>
+      <span><a href="https://constructor.university" target="_blank" rel="noopener">Constructor University</a></span>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Form elements
+      const form = document.getElementById('submissionForm');
+      const dropZone = document.getElementById('dropZone');
+      const fileInput = document.getElementById('fileInput');
+      const fileDisplayCard = document.getElementById('fileDisplayCard');
+      const fileNameText = document.getElementById('fileNameText');
+      const fileSizeText = document.getElementById('fileSizeText');
+      const progressBar = document.getElementById('progressBar');
+      const removeFileBtn = document.getElementById('removeFileBtn');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnSpinner = document.getElementById('btnSpinner');
+      
+      // Error details
+      const errorBanner = document.getElementById('errorBanner');
+      const errorMessage = document.getElementById('errorMessage');
+
+      // Success overlay elements
+      const successOverlay = document.getElementById('successOverlay');
+      const successFounderName = document.getElementById('successFounderName');
+      const successStartupName = document.getElementById('successStartupName');
+      const resetBtn = document.getElementById('resetBtn');
+
+      let selectedFile = null;
+
+      // ── FILE DROP ZONE EVENT LISTENERS ──────────────────────────────────────
+      
+      // Prevent default drags
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, e => {
+          e.preventDefault();
+          e.stopPropagation();
+        }, false);
+      });
+
+      // Highlight drop zone
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => {
+          dropZone.classList.add('dragover');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => {
+          dropZone.classList.remove('dragover');
+        }, false);
+      });
+
+      // Handle drop
+      dropZone.addEventListener('drop', e => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files && files.length > 0) {
+          handleFileSelection(files[0]);
+        }
+      });
+
+      // Click to select file
+      fileInput.addEventListener('change', e => {
+        if (e.target.files && e.target.files.length > 0) {
+          handleFileSelection(e.target.files[0]);
+        }
+      });
+
+      // Remove file action
+      removeFileBtn.addEventListener('click', () => {
+        clearFile();
+      });
+
+      // ── FILE HANDLING LOGIC ──────────────────────────────────────────────────
+      
+      function handleFileSelection(file) {
+        // Validate PDF type
+        if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+          showError('Invalid file format. Please upload a PDF pitch deck.');
+          clearFile();
+          return;
+        }
+
+        // Validate Size (max 15MB)
+        const maxSizeInBytes = 15 * 1024 * 1024;
+        if (file.size > maxSizeInBytes) {
+          showError('File exceeds size limit. Maximum allowed size is 15MB.');
+          clearFile();
+          return;
+        }
+
+        // Clear existing errors
+        hideError();
+
+        selectedFile = file;
+        fileNameText.textContent = file.name;
+        fileSizeText.textContent = formatBytes(file.size);
+        
+        // Hide upload zone and show card
+        dropZone.style.display = 'none';
+        fileDisplayCard.style.display = 'flex';
+        
+        // Mock file upload animation
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+          progressBar.style.width = '100%';
+        }, 100);
+      }
+
+      function clearFile() {
+        selectedFile = null;
+        fileInput.value = '';
+        fileDisplayCard.style.display = 'none';
+        dropZone.style.display = 'flex';
+        progressBar.style.width = '0%';
+      }
+
+      function formatBytes(bytes, decimals = 1) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+      }
+
+      // ── ERROR BANNER DISPLAY ────────────────────────────────────────────────
+      
+      function showError(msg) {
+        errorMessage.textContent = msg;
+        errorBanner.style.display = 'flex';
+      }
+
+      function hideError() {
+        errorBanner.style.display = 'none';
+      }
+
+      // ── FORM SUBMISSION ─────────────────────────────────────────────────────
+      
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        // 1. Validate all textual fields are filled
+        if (!form.checkValidity()) {
+          // Trigger native UI styling or validate manually
+          const invalidFields = form.querySelectorAll(':invalid');
+          if (invalidFields.length > 0) {
+            invalidFields[0].focus();
+            showError('Please fill out all required fields.');
+            return;
+          }
+        }
+
+        // 2. Validate a file is selected
+        if (!selectedFile) {
+          showError('Please upload your PDF pitch deck before submitting.');
+          dropZone.focus();
+          return;
+        }
+
+        // Hide errors
+        hideError();
+
+        // Disable elements during submission
+        submitBtn.disabled = true;
+        btnSpinner.style.display = 'block';
+
+        // Mock AJAX upload (delay of 1.8s)
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          btnSpinner.style.display = 'none';
+          
+          // Set text on success page
+          successFounderName.textContent = document.getElementById('founderName').value || 'Protogene';
+          successStartupName.textContent = document.getElementById('startupName').value || 'Ejo Labs';
+          
+          // Show overlay success card
+          successOverlay.style.display = 'flex';
+        }, 1800);
+      });
+
+      // Reset Form flow
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        // Keep default names
+        document.getElementById('founderName').value = 'Protogene';
+        document.getElementById('email').value = 'protogene@ejolabs.com';
+        
+        clearFile();
+        successOverlay.style.display = 'none';
+        hideError();
+      });
+
+    });
+  </script>
+</body>
+</html>
