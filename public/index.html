@@ -319,8 +319,55 @@
     .cover-tagline {
       font-size: 1.1rem;
       color: var(--grey-dark);
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       font-weight: 500;
+    }
+
+    .cover-qr-container {
+      margin-top: 24px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cover-qr-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .cover-qr-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #0B132B;
+      padding: 3px;
+    }
+
+    .cover-qr-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .cover-qr-title {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--orange-soft);
+    }
+
+    .cover-qr-desc {
+      font-size: 0.72rem;
+      color: var(--grey-dark);
+      margin-top: 2px;
     }
 
     .cover-metadata {
@@ -952,6 +999,15 @@
             <div class="cover-eyebrow">Pitch Deck</div>
             <h1 class="cover-title">AI Solutions for Low-Resource <span>Languages &amp; Digitization</span></h1>
             <div class="cover-tagline">Sovereign, High-Performance, and Grounded Context for Rwanda &amp; Africa</div>
+            <div class="cover-qr-container">
+              <div class="cover-qr-card">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fejolabs.com%2Fen&color=ffffff&bgcolor=0B132B" alt="QR Code to ejolabs.com/en" class="cover-qr-img">
+                <div class="cover-qr-info">
+                  <span class="cover-qr-title">About Us</span>
+                  <span class="cover-qr-desc">Scan to visit ejolabs.com</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
