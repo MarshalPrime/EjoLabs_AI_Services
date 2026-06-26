@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ejo Labs × RCA – AI Assistant Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:   #00A86B;
+  --green2:  #00C47E;
+  --blue:    #1A56DB;
+  --ink:     #0D1117;
+  --dark:    #1A2235;
+  --grey:    #6B7280;
+  --light:   #F8F9FB;
+  --border:  #E4E7EB;
+  --white:   #FFFFFF;
+  --rw:      #20B2AA;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.header {
+  padding: 28px 44px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.logo-block { display: flex; align-items: center; gap: 10px; }
+.logo-mark {
+  width: 38px; height: 38px;
+  background: linear-gradient(135deg, #4B2FD9, var(--green));
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.logo-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 18px;
+}
+.logo-name span { color: var(--green); }
+.logo-sub { font-size: 11px; color: var(--grey); font-weight: 500; }
+.header-meta { text-align: right; }
+.header-meta .to {
+  font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--grey); font-weight: 600;
+  margin-bottom: 2px;
+}
+.header-meta .org {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 14px; color: var(--ink);
+}
+.header-meta .date {
+  font-size: 11px; color: var(--grey); margin-top: 2px;
+}
+
+/* ── COVER ── */
+.cover {
+  background: linear-gradient(150deg, var(--ink) 0%, #0e2a20 100%);
+  padding: 56px 44px 52px;
+  position: relative; overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(0,196,126,0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,196,126,0.12);
+  border: 1px solid rgba(0,196,126,0.3);
+  color: var(--green2);
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 4px 12px; border-radius: 100px;
+  margin-bottom: 22px;
+}
+.cover h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px; font-weight: 900;
+  color: var(--white); line-height: 1.2;
+  max-width: 540px; margin-bottom: 16px;
+}
+.cover h1 em { font-style: normal; color: var(--green2); }
+.cover-desc {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  max-width: 480px; line-height: 1.7; margin-bottom: 32px;
+}
+.cover-flags {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 500;
+}
+.cover-flags span { font-size: 18px; }
+
+/* ── SECTION WRAPPER ── */
+.section { padding: 44px 44px 36px; }
+.section + .section { border-top: 1px solid var(--border); }
+.section.shaded { background: var(--light); }
+
+.eyebrow {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--green); margin-bottom: 10px;
+}
+.section-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px; font-weight: 800;
+  color: var(--ink); line-height: 1.3;
+  margin-bottom: 12px;
+}
+.section-body {
+  font-size: 14px; color: #374151; line-height: 1.75;
+  max-width: 620px;
+}
+.section-body + .section-body { margin-top: 10px; }
+
+/* ── PROBLEM CARDS ── */
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+.prob-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+.prob-icon { font-size: 22px; margin-bottom: 8px; }
+.prob-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 13px;
+  color: var(--ink); margin-bottom: 5px;
+}
+.prob-desc { font-size: 12px; color: var(--grey); line-height: 1.55; }
+
+/* ── EXAMPLE BOX ── */
+.example-wrap {
+  padding: 0 44px 44px;
+}
+.example-box {
+  background: linear-gradient(135deg, #0a1a12 0%, #0e2a20 100%);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid rgba(0,196,126,0.15);
+}
+.example-label {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--green2); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.example-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 2px;
+  background: var(--green2);
+}
+.example-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 17px;
+  color: var(--white); margin-bottom: 20px; line-height: 1.3;
+}
+.ex-flow {
+  display: flex; flex-direction: column; gap: 0;
+}
+.ex-step {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ex-step:last-child { border-bottom: none; padding-bottom: 0; }
+.ex-num {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: rgba(0,196,126,0.15);
+  border: 1px solid rgba(0,196,126,0.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: var(--green2);
+  margin-top: 1px;
+}
+.ex-content {}
+.ex-content strong {
+  font-size: 13px; font-weight: 700; color: var(--white);
+  display: block; margin-bottom: 3px;
+}
+.ex-content p {
+  font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.55;
+}
+.ex-note {
+  margin-top: 20px;
+  background: rgba(0,196,126,0.08);
+  border: 1px solid rgba(0,196,126,0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6;
+}
+.ex-note b { color: var(--green2); }
+
+/* ── HOW VALUE GROWS ── */
+.value-row {
+  display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap;
+}
+.value-card {
+  flex: 1; min-width: 160px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+}
+.value-card .v-icon { font-size: 22px; margin-bottom: 10px; }
+.value-card h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 13px;
+  color: var(--ink); margin-bottom: 5px;
+}
+.value-card p { font-size: 12px; color: var(--grey); line-height: 1.5; }
+
+/* ── WHAT WE ASK ── */
+.ask-list {
+  margin-top: 18px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.ask-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.ask-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0; margin-top: 6px;
+}
+.ask-item p { font-size: 13px; color: #374151; line-height: 1.55; }
+.ask-item p strong { color: var(--ink); font-weight: 600; }
+
+/* ── CTA ── */
+.cta {
+  background: linear-gradient(135deg, var(--ink) 0%, #0e2a20 100%);
+  padding: 40px 44px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+.cta h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 20px;
+  color: var(--white); line-height: 1.3;
+}
+.cta h2 span { color: var(--green2); }
+.cta-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 6px; }
+.cta-contacts { display: flex; flex-direction: column; gap: 8px; }
+.cta-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8);
+}
+.cta-icon {
+  width: 32px; height: 32px;
+  background: rgba(0,196,126,0.12);
+  border: 1px solid rgba(0,196,126,0.25);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #080d14;
+  padding: 14px 44px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 6px;
+}
+.footer-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 13px; color: var(--white);
+}
+.footer-brand span { color: var(--green2); }
+.footer-line { font-size: 11px; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-block">
+    <div class="logo-mark">🧠</div>
+    <div>
+      <div class="logo-name">Ejo<span>Labs</span></div>
+      <div class="logo-sub">AI for African Communities</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="to">Proposal for</div>
+    <div class="org">Rwandan Community Abroad (RCA)</div>
+    <div class="date">June 2026 · Germany</div>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Partnership Proposal</div>
+  <h1>
+    An AI assistant that carries<br>
+    <em>your community's knowledge</em><br>
+    to every new arrival.
+  </h1>
+  <p class="cover-desc">
+    RCA members spend hours helping individuals navigate German bureaucracy. 
+    We want to help you turn that knowledge into a resource that works at scale — 
+    available to every Rwandan arriving in Germany, anytime.
+  </p>
+  <div class="cover-flags">
+    <span>🇷🇼</span> Rwandan Community &nbsp;·&nbsp; <span>🇩🇪</span> Germany
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<div class="section shaded">
+  <div class="eyebrow">The Challenge</div>
+  <div class="section-headline">One person cannot help a hundred.</div>
+  <p class="section-body">
+    Rwandans arriving in Germany — students, Azubi, young professionals — face a wall of unfamiliar processes. City registration, health insurance, residence permits, bank accounts. The information exists, but it lives in the heads of a few experienced community members who are already stretched thin.
+  </p>
+  <p class="section-body">
+    When one person helps another navigate the Anmeldung, that knowledge disappears after the call. The next person starts from zero. And the person helping cannot scale — one call at a time, one person at a time.
+  </p>
+  <div class="problem-grid">
+    <div class="prob-card">
+      <div class="prob-icon">📞</div>
+      <div class="prob-title">Knowledge stuck in calls</div>
+      <div class="prob-desc">Valuable guidance stays between two people and is never captured or reused.</div>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon">🔁</div>
+      <div class="prob-title">Same questions, every time</div>
+      <div class="prob-desc">Community leaders answer the same questions repeatedly with no way to scale their reach.</div>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon">🕐</div>
+      <div class="prob-title">Help isn't always available</div>
+      <div class="prob-desc">Newcomers need answers at odd hours, on weekends, in moments of stress.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE PROPOSE -->
+<div class="section">
+  <div class="eyebrow">Our Proposal</div>
+  <div class="section-headline">A knowledge base that grows with your community.</div>
+  <p class="section-body">
+    Ejo Labs proposes to build an AI assistant for RCA — embedded in your website and WhatsApp — that captures the lived knowledge of your community members and makes it available to every new arrival, instantly, in the language they're most comfortable in.
+  </p>
+  <p class="section-body">
+    Every time a community member helps someone navigate a process, we document it clearly and add it to the assistant's knowledge base. The assistant gets smarter with every interaction. The community leader helps one person — and that help reaches hundreds more.
+  </p>
+</div>
+
+<!-- CONCRETE EXAMPLE -->
+<div class="example-wrap">
+  <div class="example-box">
+    <div class="example-label">Concrete Example</div>
+    <div class="example-title">How city registration (Anmeldung) goes from one call to a community resource</div>
+    <div class="ex-flow">
+      <div class="ex-step">
+        <div class="ex-num">1</div>
+        <div class="ex-content">
+          <strong>A community leader helps someone register</strong>
+          <p>They walk a new arrival through booking an Anmeldung appointment online, what documents to bring, what to expect at the Bürgeramt, and common mistakes to avoid.</p>
+        </div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">2</div>
+        <div class="ex-content">
+          <strong>Ejo Labs documents and structures that knowledge</strong>
+          <p>We turn the guidance into a clear, step-by-step document — including links, tips, and city-specific differences — and add it to the assistant's knowledge base.</p>
+        </div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">3</div>
+        <div class="ex-content">
+          <strong>The next person asks the assistant</strong>
+          <p>A student arriving in Berlin asks: "How do I register my address?" The assistant answers — in Kinyarwanda, English, or French — with the exact guidance, step by step, 24/7.</p>
+        </div>
+      </div>
+      <div class="ex-step">
+        <div class="ex-num">4</div>
+        <div class="ex-content">
+          <strong>The knowledge base keeps growing</strong>
+          <p>Health insurance, Ausbildung enrollment, opening a bank account, understanding a German contract — each topic added means one fewer call, one less person left struggling alone.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ex-note">
+      <b>The result:</b> The community leader's expertise reaches not just one person — but every Rwandan who arrives after them. Their time is freed for the cases that genuinely need human support.
+    </div>
+  </div>
+</div>
+
+<!-- VALUE OVER TIME -->
+<div class="section shaded">
+  <div class="eyebrow">Why This Gets Better Over Time</div>
+  <div class="section-headline">Every interaction makes the next one easier.</div>
+  <div class="value-row">
+    <div class="value-card">
+      <div class="v-icon">📚</div>
+      <h4>Growing knowledge base</h4>
+      <p>Each documented case adds to a library that serves the whole community, permanently.</p>
+    </div>
+    <div class="value-card">
+      <div class="v-icon">🌍</div>
+      <h4>Works in any language</h4>
+      <p>Kinyarwanda, English, French, German — the assistant responds in whatever the user writes in.</p>
+    </div>
+    <div class="value-card">
+      <div class="v-icon">🔁</div>
+      <h4>Replicable model</h4>
+      <p>Once built for RCA Germany, the same approach can extend to other Rwandan communities abroad.</p>
+    </div>
+    <div class="value-card">
+      <div class="v-icon">🤝</div>
+      <h4>Human escalation</h4>
+      <p>When a case is too complex, the assistant connects the user to the right community member directly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE NEED FROM RCA -->
+<div class="section">
+  <div class="eyebrow">What We Need From RCA</div>
+  <div class="section-headline">A small commitment, to start.</div>
+  <p class="section-body">We can move fast. What we need from RCA to get started:</p>
+  <div class="ask-list">
+    <div class="ask-item">
+      <div class="ask-dot"></div>
+      <p><strong>Access to your knowledge:</strong> A few sessions with community members who already help newcomers navigate these processes — recorded or documented.</p>
+    </div>
+    <div class="ask-item">
+      <div class="ask-dot"></div>
+      <p><strong>Your most common questions:</strong> A list or description of the topics newcomers ask about most — we'll prioritize building those first.</p>
+    </div>
+    <div class="ask-item">
+      <div class="ask-dot"></div>
+      <p><strong>A place to live:</strong> Integration with your existing website and/or WhatsApp — we handle the technical setup entirely.</p>
+    </div>
+    <div class="ask-item">
+      <div class="ask-dot"></div>
+      <p><strong>Feedback as we go:</strong> Community input as we test and improve the assistant over the first few months.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div>
+    <h2>Let's build this<br><span>together.</span></h2>
+    <div class="cta-sub">A short call is all it takes to align and get started.</div>
+  </div>
+  <div class="cta-contacts">
+    <div class="cta-item"><div class="cta-icon">✉️</div> hello@ejolabs.com</div>
+    <div class="cta-item"><div class="cta-icon">🌐</div> ejolabs.com</div>
+    <div class="cta-item"><div class="cta-icon">📍</div> Kigali, Rwanda · Germany</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">Ejo<span>Labs</span></div>
+  <div class="footer-line">Confidential · For RCA Leadership · June 2026</div>
+</div>
+
+</body>
+</html>
