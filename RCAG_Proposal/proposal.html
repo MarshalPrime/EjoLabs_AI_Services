@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic AI Knowledge Assistant — RCAG Germany Proposal | Ejo Labs</title>
+  <meta name="description" content="Agentic AI integration proposal for the Rwandan Community Abroad in Germany (RCAG) to scale bureaucratic and onboarding support.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" defer crossorigin="anonymous"></script>
+
+  <style>
+    /* ══════════════════════════════════════════════
+       DESIGN TOKENS & SYSTEM
+       ══════════════════════════════════════════════ */
+    :root {
+      --orange:       #E87722;
+      --orange-light: #FDF3EB;
+      --orange-soft:  #F9A85D;
+      --orange-glow:  rgba(232, 119, 34, 0.08);
+      --navy:         #2B3A52;
+      --navy-dark:    #162235;
+      --navy-deep:    #0F172A;
+      --white:        #FFFFFF;
+      --teal:         #5BC0BE;
+      --teal-glow:    rgba(91, 192, 190, 0.1);
+      --grey-dark:    #334155;
+      --grey:         #64748B;
+      --grey-light:   #E2E8F0;
+      --grey-border:  #E5E7EB;
+      --light-card:   #FCFBF9;
+      --cream:        #FAF6F0;
+      
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      --shadow-sm: 0 2px 8px rgba(22, 34, 53, 0.04);
+      --shadow-md: 0 8px 30px rgba(22, 34, 53, 0.06);
+      --shadow-lg: 0 16px 40px rgba(22, 34, 53, 0.08);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--grey-dark);
+      background: #F4F6F8;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    h2 span {
+      background: linear-gradient(90deg, var(--orange), var(--orange-soft));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 0.88rem;
+      color: var(--grey-dark);
+      line-height: 1.6;
+    }
+
+    p strong {
+      color: var(--navy-dark);
+    }
+
+    /* ══════════════════════════════════════════════
+       CONTAINER & LAYOUT
+       ══════════════════════════════════════════════ */
+    .app-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    .section-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      padding: 40px 48px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(22, 34, 53, 0.05);
+      position: relative;
+      min-height: 1100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ══════════════════════════════════════════════
+       PAGE 1: COVER HERO & INTRO
+       ══════════════════════════════════════════════ */
+    .cover-hero {
+      text-align: center;
+      padding: 50px 40px;
+      background: 
+        radial-gradient(circle at 100% 0%, rgba(232, 119, 34, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(91, 192, 190, 0.05) 0%, transparent 60%),
+        var(--white);
+      min-height: 1100px;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .cover-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(232, 119, 34, 0.12));
+    }
+
+    .confidential-badge {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 6px 14px;
+      background: rgba(22, 34, 53, 0.05);
+      color: var(--navy-dark);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .cover-brand {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--navy-dark);
+      letter-spacing: 0.2em;
+      margin-bottom: 4px;
+    }
+
+    .cover-tagline {
+      font-size: 0.72rem;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+
+    .cover-headline {
+      font-size: 2.2rem;
+      color: var(--navy-deep);
+      line-height: 1.2;
+      margin: 15px 0 8px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .cover-sub {
+      font-size: 0.95rem;
+      color: var(--grey);
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      line-height: 1.5;
+    }
+
+    .executive-summary {
+      background: var(--orange-light);
+      border-left: 4px solid var(--orange);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .executive-summary h3 {
+      font-size: 1rem;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+    }
+
+    .executive-summary p {
+      font-size: 0.82rem;
+      color: var(--grey-dark);
+      line-height: 1.55;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .pillar {
+      background: rgba(22, 34, 53, 0.02);
+      border: 1px solid rgba(22, 34, 53, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .pillar-desc {
+      font-size: 0.76rem;
+      color: var(--grey);
+      line-height: 1.45;
+    }
+
+    /* ══════════════════════════════════════════════
+       PAGE 2: PROBLEM, SOLUTION & EXAMPLE
+       ══════════════════════════════════════════════ */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--grey-border);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+
+    .section-header img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .section-header .meta {
+      text-align: right;
+    }
+
+    .section-header .doc-title {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .section-header .doc-page {
+      font-size: 0.65rem;
+      color: var(--grey);
+      margin-top: 2px;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .glass-card {
+      background: rgba(22, 34, 53, 0.02);
+      border: 1px solid rgba(22, 34, 53, 0.05);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .glass-card.teal-card {
+      background: rgba(91, 192, 190, 0.03);
+      border-color: rgba(91, 192, 190, 0.12);
+    }
+
+    .glass-card h3 {
+      font-size: 0.95rem;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .glass-card h3 i {
+      color: var(--orange);
+    }
+
+    .glass-card.teal-card h3 i {
+      color: var(--teal);
+    }
+
+    /* Mock Chat Layout */
+    .chat-container {
+      background: #0B132B;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+
+    .chat-bot-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .chat-bot-name {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .chat-bot-status {
+      font-size: 0.55rem;
+      color: #34D399;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .chat-bubble {
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+
+    .chat-bubble.user {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--grey-light);
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+      text-align: right;
+    }
+
+    .chat-bubble.bot {
+      background: rgba(232, 119, 34, 0.1);
+      border: 1px solid rgba(232, 119, 34, 0.15);
+      color: var(--white);
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+
+    .chat-bubble.bot ul {
+      margin-top: 6px;
+      margin-left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .chat-bubble.bot a {
+      color: var(--orange-soft);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .chat-bubble.bot a:hover {
+      text-decoration: underline;
+    }
+
+    /* Capabilities list */
+    .capability-section h3 {
+      font-size: 0.88rem;
+      color: var(--navy-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-list li {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .feature-list li i {
+      color: var(--orange);
+      margin-top: 3px;
+      font-size: 0.85rem;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid var(--orange);
+      padding-top: 10px;
+      font-size: 0.7rem;
+      color: var(--grey);
+      margin-top: auto;
+    }
+
+    .page-footer .confidential-tag {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+    }
+
+    /* ══════════════════════════════════════════════
+       PRINT SPECIFIC STYLING (A4 PORTRAIT)
+       ══════════════════════════════════════════════ */
+    @media print {
+      body {
+        background-color: var(--white) !important;
+        overflow: visible !important;
+        height: auto !important;
+        width: auto !important;
+      }
+
+      .app-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .section-card {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 20mm 20mm 20mm !important; 
+        width: 100% !important;
+        height: 296.5mm !important; /* Locks to exact A4 print size */
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+        background: var(--white) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
+      }
+
+      .cover-hero {
+        height: 296.5mm !important;
+        min-height: 296.5mm !important;
+        padding: 40mm 20mm 30mm !important;
+        justify-content: space-between !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .page-footer {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin-top: auto !important;
+        border-top: 2px solid var(--orange) !important;
+        padding-top: 12px !important;
+        font-size: 0.72rem !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 0 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 1 — COVER & BUSINESS SUMMARY
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card cover-hero" id="cover">
+      <div class="cover-logo-container">
+        <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="cover-logo">
+      </div>
+      <div>
+        <div class="confidential-badge">CONFIDENTIAL &amp; PROPRIETARY</div>
+      </div>
+      
+      <div>
+        <div class="cover-brand">EJO LABS</div>
+        <div class="cover-tagline">AI Onboarding Integration</div>
+      </div>
+
+      <div>
+        <h1 class="cover-headline">
+          Agentic AI Assistant
+        </h1>
+        <div class="cover-sub">
+          Scaling Bureaucratic Onboarding &amp; Community Knowledge for RCAG Germany
+        </div>
+      </div>
+
+      <div class="executive-summary">
+        <h3>Executive Summary / Incamake</h3>
+        <p>
+          Rwandans arriving in Germany (students, vocational training Azubi, and professionals) face high administrative friction with Anmeldung, health insurance, and visa processing. Experienced community leaders possess the knowledge but face overload answering repetitive queries. Ejo Labs proposes deploying an Agentic AI Assistant that captures the knowledge of community advisors, organizes it into a RAG knowledge base, and resolves onboarding inquiries 24/7 in natural Kinyarwanda, English, and German via web or WhatsApp.
+        </p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-title">Knowledge Capture</div>
+          <div class="pillar-desc">Transforms conversations and audio notes of experienced mentors into structured Q&amp;A.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Zero Phone Calls</div>
+          <div class="pillar-desc">Answers repetitive bureaucratic queries instantly, saving mentors' personal hours.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Multilingual</div>
+          <div class="pillar-desc">Fully supports conversational input and voice notes in Kinyarwanda, English, and German.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         PAGE 2 — THE PROBLEM, LIVE DIALOGUE & PLAN
+         ═══════════════════════════════════════════════ -->
+    <div class="section-card" id="solution-and-walkthrough">
+      <div>
+        <div class="section-header">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo">
+          <div class="meta">
+            <div class="doc-title">RCAG Germany AI Assistant Proposal</div>
+            <div class="doc-page">Page 02 / 02</div>
+          </div>
+        </div>
+
+        <h2>Scaling Community <span>Intelligence</span></h2>
+        <p style="margin-bottom: 20px; font-size: 0.85rem;">
+          Bureaucratic friction shouldn't slow down the onboarding of new arrivals. Ejo Labs builds custom vector-grounded AI middleware that connects RCAG's collective expertise directly to WhatsApp.
+        </p>
+
+        <div class="grid-2col">
+          <div>
+            <div class="glass-card" style="margin-bottom: 16px;">
+              <h3><i class="fa-solid fa-triangle-exclamation"></i> The Bureaucratic Friction</h3>
+              <p style="font-size: 0.76rem; line-height: 1.5; color: var(--grey-dark);">
+                Every semester, hundreds of new students and Azubi arrive in Germany. Administrative knowledge (e.g., registration, Ausbildung paperwork, local city laws) is locked in the heads of senior members, creating a communication bottleneck and causing leadership burnout.
+              </p>
+            </div>
+            
+            <div class="glass-card teal-card">
+              <h3><i class="fa-solid fa-gears"></i> The Agentic RAG Solution</h3>
+              <p style="font-size: 0.76rem; line-height: 1.5; color: var(--grey-dark);">
+                Ejo Labs compiles advisor-approved documentation into a vector database (Qdrant). A fine-tuned open-source model references this local knowledge base to deliver instant, legally compliant, and context-aware checklists.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mock Chat: Anmeldung walkthrough -->
+          <div class="chat-container">
+            <div class="chat-header">
+              <div class="chat-bot-avatar">EG</div>
+              <div class="chat-bot-name">EjoGuide — RCAG Assistant</div>
+              <div class="chat-bot-status"><i class="fa-solid fa-circle"></i> Live</div>
+            </div>
+            <div class="chat-bubble user">
+              Nageze mu Budage, Anmeldung nayikora gute? Kandi nahitamo he?
+            </div>
+            <div class="chat-bubble bot">
+              Muraho! <strong>Anmeldung</strong> ni ugwiyandikisha mu mugi utuyemo muri Budage (ugomba kubikora mu minsi 14 uhageze).
+              <br><br>
+              <strong>Checklist y'ibyangombwa:</strong>
+              <ul>
+                <li>1. <strong>Mietvertrag</strong> (Rental contract) yasinyweho.</li>
+                <li>2. <strong>Wohnungsgeberbestätigung</strong> (Landlord confirmation).</li>
+                <li>3. <strong>Passport &amp; Visa</strong> byanyu.</li>
+              </ul>
+              <br>
+              Genda kuri <strong>Bürgeramt</strong> ikwegereye. Sura aka gakoresho kugira ngo uhitemo umunsi: <a href="https://service.berlin.de/terminvereinbarung/" target="_blank">Book Termin</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="capability-section">
+          <h3>Core System Capabilities</h3>
+          <ul class="feature-list">
+            <li>
+              <i class="fa-solid fa-microphone-lines"></i>
+              <span><strong>Audio Voice Input:</strong> Allows new arrivals to ask questions via voice notes in Kinyarwanda, transcribing and processing the local dialect with high accuracy.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-plus"></i>
+              <span><strong>Mentor-Led Knowledge Feeding:</strong> Administrators can update the database simply by sending a text or voice message to a designated admin bot, ensuring the knowledge grows dynamically.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-shield-halved"></i>
+              <span><strong>Secure &amp; Grounded Answers:</strong> Using Retrieval-Augmented Generation (RAG) tied to official German guidelines, preventing any false administrative advice.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>info@ejolabs.com &nbsp;·&nbsp; ejolabs.com &nbsp;·&nbsp; RCAG Germany Collaboration</span>
+        <span class="confidential-tag">CONFIDENTIAL</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
