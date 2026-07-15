@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejo Labs Pitch Deck | Constructor Start</title>
-  <meta name="description" content="AI Solutions for Low-Resource Languages & Digitization. Pitch deck for Ejo Labs.">
-  
+  <title>Ejo Labs — Investor Pitch Deck 2026</title>
+  <meta name="description" content="AI Solutions for Low-Resource Languages. Pitch Deck for Ejo Labs.">
+
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+    rel="stylesheet">
+
   <!-- FontAwesome Icons -->
   <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" defer crossorigin="anonymous"></script>
 
@@ -31,6 +34,8 @@
       --teal-glow:    rgba(91, 192, 190, 0.15);
       --grey-dark:    #94A3B8;
       --grey-light:   #E2E8F0;
+      --green:        #34D399;
+      --red-soft:     #F87171;
       
       --font-display: 'Outfit', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -98,20 +103,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 16px;
     }
 
     .brand-meta {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .brand-logo {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       object-fit: contain;
     }
 
@@ -119,7 +122,6 @@
       font-family: var(--font-display);
       font-weight: 800;
       font-size: 1.15rem;
-      letter-spacing: 0.1em;
       color: var(--white);
     }
 
@@ -129,41 +131,33 @@
 
     .slide-tracker {
       font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--orange-soft);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--grey-dark);
+      letter-spacing: 0.08em;
     }
 
     .slide-footer {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 16px;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: var(--grey-dark);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .slide-footer a {
-      color: var(--grey-dark);
+      color: var(--orange-soft);
       text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .slide-footer a:hover {
-      color: var(--orange);
     }
 
     /* ══════════════════════════════════════════════
-       GRID & CONTENT LAYOUTS
+       LAYOUT GRIDS
        ══════════════════════════════════════════════ */
     .slide-content {
       flex: 1;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
       padding: 40px 0;
       width: 100%;
       overflow: hidden;
@@ -323,6 +317,17 @@
       font-weight: 500;
     }
 
+    .cover-oneliner {
+      font-size: 0.95rem;
+      color: var(--grey-light);
+      font-style: italic;
+      margin-bottom: 28px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
     .cover-qr-container {
       margin-top: 24px;
       margin-bottom: 30px;
@@ -384,7 +389,62 @@
     }
 
     /* ══════════════════════════════════════════════
-       SLIDE 2: PROBLEM / OPPORTUNITY
+       PROBLEM SLIDE: DATA STATS
+       ══════════════════════════════════════════════ */
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .stat-card {
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(232, 119, 34, 0.04);
+      border: 1px solid rgba(232, 119, 34, 0.12);
+      text-align: center;
+    }
+
+    .stat-card .stat-val {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1.1;
+    }
+
+    .stat-card .stat-desc {
+      font-size: 0.68rem;
+      color: var(--grey-dark);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    .stat-card .stat-src {
+      font-size: 0.58rem;
+      color: rgba(148, 163, 184, 0.6);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .quote-block {
+      padding: 16px 20px;
+      border-left: 3px solid var(--orange);
+      background: rgba(232, 119, 34, 0.04);
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 16px;
+    }
+
+    .quote-block p {
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--grey-light);
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════════════════
+       JOURNEY MAP (Problem Slide)
        ══════════════════════════════════════════════ */
     .journey-map {
       display: flex;
@@ -450,7 +510,7 @@
     }
 
     /* ══════════════════════════════════════════════
-       SLIDE 3: EJOCHAT
+       EJOCHAT METRICS & SCREENSHOTS
        ══════════════════════════════════════════════ */
     .metric-grid {
       display: grid;
@@ -504,80 +564,665 @@
       width: 100%;
       height: auto;
       display: block;
-      max-height: 155px;
-      object-fit: cover;
-      object-position: top;
     }
 
     .screenshot-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(11, 19, 43, 0.9) 70%);
-      padding: 8px 12px;
+      padding: 8px 14px;
       font-size: 0.68rem;
-      color: var(--grey-light);
-      font-weight: 600;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+      color: var(--grey-dark);
+      background: rgba(11, 19, 43, 0.85);
     }
 
     /* ══════════════════════════════════════════════
-       SLIDE 4: EJOFORAFRICA
+       WORKFLOW CARDS (Solution Slide)
        ══════════════════════════════════════════════ */
-    .flow-diagram-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+    .workflow-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
     }
 
-    .diagram-img {
-      max-width: 100%;
-      max-height: 340px;
-      object-fit: contain;
+    .workflow-card {
+      padding: 18px 14px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: var(--shadow-lg);
+      background: rgba(22, 34, 53, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      position: relative;
+    }
+
+    .workflow-card::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--orange);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .workflow-card:last-child::after {
+      content: none;
+    }
+
+    .workflow-card i {
+      font-size: 1.4rem;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .workflow-card .wf-title {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .workflow-card .wf-desc {
+      font-size: 0.68rem;
+      color: var(--grey-dark);
+      line-height: 1.3;
     }
 
     /* ══════════════════════════════════════════════
-       SLIDE 5: INFRASTRUCTURE & PARTNERS
+       EVIDENCE LADDER (Traction Slide)
+       ══════════════════════════════════════════════ */
+    .evidence-ladder {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .evidence-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .evidence-step.filled {
+      border-color: rgba(52, 211, 153, 0.3);
+      background: rgba(52, 211, 153, 0.04);
+    }
+
+    .evidence-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .evidence-step.filled .evidence-icon {
+      background: var(--green);
+      color: var(--navy-deep);
+    }
+
+    .evidence-step:not(.filled) .evidence-icon {
+      background: var(--navy-medium);
+      color: var(--grey-dark);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .evidence-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .evidence-text .ev-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .evidence-text .ev-detail {
+      font-size: 0.7rem;
+      color: var(--grey-dark);
+    }
+
+    /* ══════════════════════════════════════════════
+       MARKET SIZING (TAM/SAM/SOM)
+       ══════════════════════════════════════════════ */
+    .tam-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .tam-card {
+      text-align: center;
+      padding: 18px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .tam-card.tam { background: rgba(232, 119, 34, 0.06); border-color: rgba(232, 119, 34, 0.15); }
+    .tam-card.sam { background: rgba(91, 192, 190, 0.06); border-color: rgba(91, 192, 190, 0.15); }
+    .tam-card.som { background: rgba(52, 211, 153, 0.06); border-color: rgba(52, 211, 153, 0.15); }
+
+    .tam-card .tam-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .tam-card.tam .tam-label { color: var(--orange); }
+    .tam-card.sam .tam-label { color: var(--teal); }
+    .tam-card.som .tam-label { color: var(--green); }
+
+    .tam-card .tam-val {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .tam-card .tam-desc {
+      font-size: 0.68rem;
+      color: var(--grey-dark);
+      margin-top: 4px;
+    }
+
+    .timing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .timing-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .timing-item i {
+      color: var(--teal);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .timing-item span {
+      font-size: 0.78rem;
+      color: var(--grey-light);
+    }
+
+    /* ══════════════════════════════════════════════
+       BUSINESS MODEL
+       ══════════════════════════════════════════════ */
+    .biz-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .biz-card {
+      padding: 18px 16px;
+      border-radius: 14px;
+      background: rgba(22, 34, 53, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .biz-card .biz-icon {
+      font-size: 1.3rem;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .biz-card .biz-title {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .biz-card .biz-price {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .biz-card .biz-desc {
+      font-size: 0.7rem;
+      color: var(--grey-dark);
+      line-height: 1.4;
+    }
+
+    .arr-bridge {
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: rgba(91, 192, 190, 0.04);
+      border: 1px solid rgba(91, 192, 190, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .arr-bridge .arr-item {
+      text-align: center;
+    }
+
+    .arr-bridge .arr-val {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .arr-bridge .arr-label {
+      font-size: 0.65rem;
+      color: var(--grey-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .arr-bridge .arr-arrow {
+      font-size: 1.2rem;
+      color: var(--orange);
+    }
+
+    /* ══════════════════════════════════════════════
+       COMPETITION TABLE (DEXICO-style)
+       ══════════════════════════════════════════════ */
+    .comp-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.78rem;
+      margin-top: 16px;
+    }
+
+    .comp-table th {
+      font-family: var(--font-display);
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      color: var(--grey-dark);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .comp-table th.winner {
+      color: var(--orange);
+      background: rgba(232, 119, 34, 0.06);
+      border-radius: 12px 12px 0 0;
+    }
+
+    .comp-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      color: var(--grey-light);
+    }
+
+    .comp-table td.winner {
+      background: rgba(232, 119, 34, 0.04);
+    }
+
+    .comp-table .check { color: var(--green); font-weight: 700; }
+    .comp-table .cross { color: var(--red-soft); }
+    .comp-table .partial { color: var(--orange-soft); }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table .criteria-cell {
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    /* ══════════════════════════════════════════════
+       TEAM CARDS
+       ══════════════════════════════════════════════ */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .team-card:last-child:nth-child(3n+1) {
+      grid-column: 2;
+    }
+
+    .team-card {
+      padding: 16px 12px;
+      border-radius: 14px;
+      background: rgba(22, 34, 53, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .team-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--orange-soft));
+      display: block;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .team-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .team-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--white);
+    }
+
+    .team-role {
+      font-size: 0.68rem;
+      color: var(--orange-soft);
+      font-weight: 600;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .team-bg {
+      font-size: 0.66rem;
+      color: var(--grey-light);
+      line-height: 1.3;
+    }
+
+    .team-edu {
+      font-size: 0.62rem;
+      color: var(--grey-dark);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    .fmf-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .fmf-badge.insight { background: rgba(232, 119, 34, 0.15); color: var(--orange); }
+    .fmf-badge.execution { background: rgba(91, 192, 190, 0.15); color: var(--teal); }
+    .fmf-badge.market { background: rgba(52, 211, 153, 0.15); color: var(--green); }
+
+    .mentor-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mentor-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.72rem;
+      color: var(--grey-light);
+    }
+
+    .mentor-chip strong {
+      color: var(--white);
+    }
+
+    /* ══════════════════════════════════════════════
+       ROADMAP
+       ══════════════════════════════════════════════ */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .roadmap-card {
+      padding: 20px 16px;
+      border-radius: 14px;
+      background: rgba(22, 34, 53, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .roadmap-card .rm-phase {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .roadmap-card .rm-period {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .roadmap-card ul {
+      list-style: none;
+    }
+
+    .roadmap-card ul li {
+      font-size: 0.72rem;
+      color: var(--grey-dark);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-card ul li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-size: 0.5rem;
+      top: 3px;
+    }
+
+    /* ══════════════════════════════════════════════
+       ASK SLIDE
+       ══════════════════════════════════════════════ */
+    .ask-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .ask-item {
+      padding: 16px 12px;
+      border-radius: 12px;
+      background: rgba(22, 34, 53, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+
+    .ask-item .ask-q {
+      font-size: 0.65rem;
+      color: var(--grey-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .ask-item .ask-a {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--orange);
+      line-height: 1.2;
+    }
+
+    .ask-item .ask-detail {
+      font-size: 0.65rem;
+      color: var(--grey-dark);
+      margin-top: 4px;
+    }
+
+    .allocation-bar {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 28px;
+      margin: 16px 0 8px 0;
+    }
+
+    .alloc-seg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--white);
+      font-family: var(--font-display);
+    }
+
+    .allocation-legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.68rem;
+      color: var(--grey-dark);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ══════════════════════════════════════════════
+       CLOSING SLIDE
+       ══════════════════════════════════════════════ */
+    .closing-card {
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .closing-title {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .closing-subtitle {
+      font-size: 1.05rem;
+      color: var(--grey-light);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--grey-light);
+    }
+
+    .contact-item i {
+      color: var(--orange);
+    }
+
+    .contact-item a {
+      color: var(--grey-light);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--orange-soft);
+    }
+
+    /* ══════════════════════════════════════════════
+       PARTNERS GRID
        ══════════════════════════════════════════════ */
     .partner-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .partner-card {
       display: flex;
-      align-items: flex-start;
       gap: 16px;
+      align-items: center;
+      padding: 16px 20px;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
       transition: var(--transition);
     }
 
     .partner-card:hover {
-      border-color: rgba(91, 192, 190, 0.25);
-      background: rgba(255, 255, 255, 0.04);
-      transform: translateY(-2px);
+      border-color: rgba(232, 119, 34, 0.2);
     }
 
     .partner-icon {
       width: 48px;
       height: 48px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 8px;
+      border-radius: 12px;
+      background: rgba(22, 34, 53, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px;
       flex-shrink: 0;
     }
 
@@ -595,70 +1240,53 @@
     .partner-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--white);
-    }
-
-    .partner-desc {
-      font-size: 0.76rem;
-      color: var(--grey-dark);
-      margin-top: 4px;
-      line-height: 1.4;
-    }
-
-    /* ══════════════════════════════════════════════
-       SLIDE 6: VALIDATION & GRANTS
-       ══════════════════════════════════════════════ */
-    .validation-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .badge-card {
-      padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.02);
-      border-left: 3px solid var(--orange);
-      border-radius: 0 12px 12px 0;
-    }
-
-    .badge-card.badge-green {
-      border-left-color: var(--teal);
-    }
-
-    .badge-card-title {
-      font-family: var(--font-display);
-      font-weight: 700;
       font-size: 0.88rem;
       color: var(--white);
     }
 
-    .badge-card-sub {
+    .partner-desc {
       font-size: 0.72rem;
       color: var(--grey-dark);
-      margin-top: 2px;
       line-height: 1.4;
     }
 
-    /* ══════════════════════════════════════════════
-       SLIDE 7: VISION & ASK
-       ══════════════════════════════════════════════ */
-    .ask-box {
-      border-top: 1.5px dashed rgba(232, 119, 34, 0.3);
-      padding-top: 24px;
-      margin-top: 24px;
+    /* Validation / Badge Cards */
+    .validation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
     }
 
-    .ask-box-title {
+    .badge-card {
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(232, 119, 34, 0.04);
+      border: 1px solid rgba(232, 119, 34, 0.12);
+    }
+
+    .badge-card.badge-green {
+      background: rgba(91, 192, 190, 0.04);
+      border-color: rgba(91, 192, 190, 0.12);
+    }
+
+    .badge-card-title {
+      display: block;
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1rem;
-      color: var(--orange-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--white);
+      margin-bottom: 4px;
     }
 
+    .badge-card-sub {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--grey-dark);
+      line-height: 1.4;
+    }
+
+    /* Vision Grid */
     .vision-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -680,6 +1308,21 @@
       color: var(--orange);
       font-size: 1.2rem;
       margin-top: 2px;
+    }
+
+    /* Flow diagrams */
+    .flow-diagram-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .diagram-img {
+      max-width: 100%;
+      max-height: 280px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
     }
 
     /* ══════════════════════════════════════════════
@@ -808,9 +1451,19 @@
       }
 
       /* Grid Stacking for Mobile Layouts */
-      .grid-2col, .grid-3col, .partner-grid, .validation-grid, .vision-grid {
+      .grid-2col, .grid-3col, .partner-grid, .validation-grid, .vision-grid, 
+      .team-grid, .biz-grid, .roadmap-grid, .tam-row, .stat-row, .workflow-row {
         grid-template-columns: 1fr !important;
-        gap: 16px !important;
+        gap: 12px !important;
+      }
+
+      .ask-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+
+      .workflow-card::after {
+        content: none;
       }
 
       /* Control navigation overrides on mobile */
@@ -913,6 +1566,18 @@
       .partner-card, .badge-card, .vision-card {
         padding: 12px 16px !important;
       }
+
+      .comp-table {
+        font-size: 0.65rem;
+      }
+
+      .comp-table th, .comp-table td {
+        padding: 6px 8px;
+      }
+
+      .closing-title {
+        font-size: 1.8rem !important;
+      }
     }
 
     /* ══════════════════════════════════════════════
@@ -934,9 +1599,7 @@
       }
 
       .deck-container {
-        background: radial-gradient(circle at 100% 0%, var(--orange-glow) 0%, transparent 40%),
-                    radial-gradient(circle at 0% 100%, var(--teal-glow) 0%, transparent 50%),
-                    var(--navy-deep) !important;
+        background: none !important;
         height: auto !important;
         width: auto !important;
       }
@@ -953,6 +1616,11 @@
         max-height: 210mm !important;
         padding: 15mm 20mm !important;
         box-sizing: border-box !important;
+        background: radial-gradient(circle at 100% 0%, var(--orange-glow) 0%, transparent 40%),
+                    radial-gradient(circle at 0% 100%, var(--teal-glow) 0%, transparent 50%),
+                    var(--navy-deep) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
       .slide-content {
@@ -965,13 +1633,89 @@
         display: none !important;
       }
 
-      /* Image styling fixes for print export */
-      .diagram-img {
-        max-height: 100mm !important;
+      /* Hide non-team images and expand layouts to full-width in PDF print export */
+      #slide-3 .grid-2col > div:nth-child(2),
+      #slide-4 .screenshot-deck,
+      #slide-4 .screenshot-container,
+      #slide-6 .flow-diagram-container {
+        display: none !important;
       }
 
-      .screenshot-container img {
-        max-height: 45mm !important;
+      #slide-3 .grid-2col,
+      #slide-4 .grid-2col,
+      #slide-6 .grid-2col {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+      }
+
+      /* Reset scroll/overflow behavior for print to prevent scrollbars or cutoffs */
+      .slide-content {
+        overflow: visible !important;
+        overflow-y: visible !important;
+        height: auto !important;
+      }
+      .slide {
+        overflow: visible !important;
+      }
+
+      /* Force horizontal grid layouts in PDF print export to prevent vertical stacking */
+      #slide-2 .grid-2col,
+      #slide-5 .grid-2col,
+      #slide-7 .grid-2col,
+      #slide-11 .grid-2col,
+      #slide-12 .grid-2col {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 30px !important;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px 15px !important;
+      }
+
+      .biz-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 14px !important;
+      }
+
+      .roadmap-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+      }
+
+      /* Keep the 4-column Fine-Tuning to B2B Fine-Tune transition workflow on Slide 4 */
+      .workflow-row {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        display: grid !important;
+      }
+
+      .workflow-card::after {
+        content: "→" !important;
+        right: -8px !important;
+        display: block !important;
+        color: var(--orange) !important;
+      }
+
+      .stat-row {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+      }
+
+      .ask-grid {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      .tam-row {
+        grid-template-columns: 1fr 1fr 1fr 1.2fr !important;
+        gap: 12px !important;
+        display: grid !important;
       }
     }
   </style>
@@ -983,22 +1727,24 @@
     <!-- ═══════════════════════════════════════════════
          SLIDE 1 — COVER & TITLE
          ═══════════════════════════════════════════════ -->
+
     <div class="slide active" id="slide-1">
       <div class="slide-header">
         <div class="brand-meta">
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 01 / 08</span>
+        <span class="slide-tracker">Slide 01 / 14</span>
       </div>
 
       <div class="slide-content">
         <div class="flex-center">
           <div class="cover-card">
             <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="cover-logo-lg">
-            <div class="cover-eyebrow">Pitch Deck</div>
-            <h1 class="cover-title">AI Solutions for Low-Resource <span>Languages &amp; Digitization</span></h1>
+            <div class="cover-eyebrow">Pitch Deck · 2026</div>
+            <h1 class="cover-title">AI Solutions for <span>Low-Resource Languages</span></h1>
             <div class="cover-tagline">Sovereign, High-Performance, and Grounded Context for Rwanda &amp; Africa</div>
+            <div class="cover-oneliner">"We are building AI for low-resource languages where big tech companies are not looking — starting with Kinyarwanda"</div>
             <div class="cover-qr-container">
               <div class="cover-qr-card">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fejolabs.com%2Fen&color=ffffff&bgcolor=0B132B" alt="QR Code to ejolabs.com/en" class="cover-qr-img">
@@ -1013,29 +1759,40 @@
       </div>
 
       <div class="slide-footer">
-        <span>Prepared for Constructor Start Masterclass &amp; Live Pitch Clinic</span>
+        <span>Ejo Labs · Confidential Investor Presentation</span>
         <span><a href="mailto:info@ejolabs.com">info@ejolabs.com</a>  ·  <a href="https://ejolabs.com" target="_blank">ejolabs.com</a></span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 2 — INTRODUCING EJO LABS (ABOUT US)
+         SLIDE 2 — WHO WE ARE
          ═══════════════════════════════════════════════ -->
+
     <div class="slide" id="slide-2">
       <div class="slide-header">
         <div class="brand-meta">
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 02 / 08</span>
+        <span class="slide-tracker">Slide 02 / 14</span>
       </div>
 
       <div class="slide-content">
         <div class="grid-2col">
           <div>
-            <h2>Introducing <span>Ejo Labs</span></h2>
+            <h2>Ejo Labs Builds the First <span>Production AI for Kinyarwanda</span></h2>
             <div class="text-highlight">
-              Ejo Labs builds production-ready AI systems that speak Kinyarwanda and understand Rwanda. We combine large language models, computer vision, and agentic workflows with deep local context to deliver sovereign solutions.
+              We build Kinyarwanda-native conversational AI and secure agentic workflows with deep local context to deliver sovereign AI solutions for Rwanda.
+            </div>
+            <div class="metric-grid">
+              <div class="metric-box">
+                <div class="metric-value">20M+</div>
+                <div class="metric-label">Kinyarwanda Speakers</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">1K+</div>
+                <div class="metric-label">Daily EjoChat Users</div>
+              </div>
             </div>
             <ul class="premium-list">
               <li><strong>Local Expertise:</strong> Deep understanding of Rwanda's language, culture, and business environment.</li>
@@ -1046,7 +1803,7 @@
           <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 24px; height: 100%;">
             <div class="glass-card" style="width: 100%; border-left: 4px solid var(--orange);">
               <h3 style="font-size: 1.1rem; margin-bottom: 8px; font-weight: 700;">Our Vision</h3>
-              <p style="font-size: 0.8rem; color: var(--grey-light);">To close the technological lag in low-resource languages by building sovereign AI that stays behind but leads the wave of global innovation.</p>
+              <p style="font-size: 0.8rem; color: var(--grey-light);">To close the technological gap in low-resource languages by building sovereign AI that empowers the next billion users in Africa.</p>
             </div>
             <div class="glass-card" style="width: 100%; border-left: 4px solid var(--teal);">
               <h3 style="font-size: 1.1rem; margin-bottom: 8px; font-weight: 700;">Who We Serve</h3>
@@ -1058,12 +1815,12 @@
 
       <div class="slide-footer">
         <span>Ejo Labs — Who We Are &amp; Our Mission</span>
-        <span>A capabilities overview for Constructor Start</span>
+        <span>Confidential Investor Presentation</span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 3 — THE OPPORTUNITY & GAP
+         SLIDE 3 — THE PROBLEM
          ═══════════════════════════════════════════════ -->
     <div class="slide" id="slide-3">
       <div class="slide-header">
@@ -1071,154 +1828,210 @@
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 03 / 08</span>
+        <span class="slide-tracker">Slide 03 / 14</span>
       </div>
 
       <div class="slide-content">
         <div class="grid-2col">
           <div>
-            <h2>The Local Opportunity <span>&amp; Technical Gap</span></h2>
-            <div class="text-highlight">
-              Big tech ignores low-resource languages like Kinyarwanda. Local public and private organizations lag behind because standard AI systems lack local context and language capability.
+            <h2>20M+ Kinyarwanda Speakers Are <span>Excluded from Modern AI</span></h2>
+            <div class="quote-block">
+              <p>"I asked the AI a question in Kinyarwanda. It responded in French — a foreign language, not of home."</p>
+            </div>
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-val">20M+</div>
+                <div class="stat-desc">Kinyarwanda speakers across Rwanda, DRC, Uganda, Tanzania &amp; diaspora</div>
+                <div class="stat-src">Wikipedia / Language Lizard, 2024</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-val">98%</div>
+                <div class="stat-desc">of African languages have zero support in any major LLM</div>
+                <div class="stat-src">arxiv:2506.02280, June 2025</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-val">10–20%</div>
+                <div class="stat-desc">sentence recognition for Hausa (94M speakers) in ChatGPT</div>
+                <div class="stat-src">Nature, July 2025</div>
+              </div>
             </div>
             <ul class="premium-list">
-              <li><strong>The Kinyarwanda Deficit:</strong> Standard LLMs fail at local idioms, dialects, and contextual nuances.</li>
-              <li><strong>Manual Bottleneck:</strong> Thousands of hours are spent on repetitive reporting and manual workflows in local administrations.</li>
-              <li><strong>Data Sovereignty:</strong> Hosting sensitive public records on external global clouds breaches local regulations.</li>
+              <li><strong>Beachhead Customer:</strong> Rwandan B2B enterprises — fintechs, schools, and government agencies — who need AI in Kinyarwanda today.</li>
+              <li><strong>Structural Gap:</strong> Big tech ignores low-resource languages. Local organizations lack the AI tools their operations demand.</li>
             </ul>
           </div>
-          <div class="journey-map">
-            <div class="journey-step">
-              <div class="step-num">1</div>
-              <div class="step-info">
-                <span class="step-title">Large Language Models (LLM)</span>
-                <span class="step-desc">The global starting line: English-centric foundation.</span>
-              </div>
-            </div>
-            <div class="journey-step">
-              <div class="step-num">2</div>
-              <div class="step-info">
-                <span class="step-title">Retrieval-Augmented Generation (RAG)</span>
-                <span class="step-desc">Adding knowledge bases to prevent hallucinations.</span>
-              </div>
-            </div>
-            <div class="journey-step active-step">
-              <div class="step-num">3</div>
-              <div class="step-info">
-                <span class="step-title">Agentic &amp; Multi-Agent Systems</span>
-                <span class="step-desc">Autonomous reasoning, planning, and execution.</span>
-              </div>
-            </div>
-            <div class="journey-step">
-              <div class="step-num">4</div>
-              <div class="step-info">
-                <span class="step-title">Physical AI &amp; Sovereignty</span>
-                <span class="step-desc">Deploying on-premise local compute for vision and speech.</span>
-              </div>
-            </div>
+          <div>
+            <img src="assets/problem_comparison.jpg" alt="AI failing at Kinyarwanda" class="diagram-img" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); max-width: 100%; max-height: 320px; object-fit: contain; display: block; margin: 0 auto;">
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
-        <span>Ejo Labs: Leading the African AI Journey</span>
-        <span>Confidential Pitch Deck</span>
+        <span>The Language AI Gap — A $2.5B+ Market Blind Spot</span>
+        <span>Confidential Investor Presentation</span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 4 — EJOCHAT
+         SLIDE 4 — SOLUTION: EJOCHAT
          ═══════════════════════════════════════════════ -->
+
     <div class="slide" id="slide-4">
       <div class="slide-header">
         <div class="brand-meta">
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 04 / 08</span>
+        <span class="slide-tracker">Slide 04 / 14</span>
       </div>
 
       <div class="slide-content">
         <div class="grid-2col">
           <div>
-            <h2>EjoChat: Rwanda's Native <span>Kinyarwanda Foundation Model</span></h2>
-            <p class="text-highlight">
-              EjoChat is not a translation layer; it is custom-built and trained on local Kinyarwanda language context, idiomatic speech, and regulatory awareness.
+            <h2 style="margin-bottom: 10px;">EjoChat: Foundation Core, <span>Proprietary Data Flywheel</span></h2>
+            <p class="text-highlight" style="margin-bottom: 12px; font-size: 0.88rem;">
+              We leverage state-of-the-art foundation models optimized via fine-tuning with local context. By starting with existing open models and fine-tuning them, we avoid expensive training from scratch and focus entirely on community value and proprietary data collection.
             </p>
-            <div class="metric-grid">
-              <div class="metric-box">
-                <div class="metric-value">84%</div>
-                <div class="metric-label">Positive Feedback Ratio</div>
+            <div class="workflow-row" style="margin: 10px 0; gap: 10px;">
+              <div class="workflow-card" style="padding: 10px 6px;">
+                <i class="fa-solid fa-microchip" style="font-size: 1.1rem; margin-bottom: 4px;"></i>
+                <div class="wf-title" style="font-size: 0.75rem;">Fine-Tuning</div>
+                <div class="wf-desc" style="font-size: 0.62rem;">Adapting existing models to local context</div>
               </div>
-              <div class="metric-box">
-                <div class="metric-value">5+</div>
-                <div class="metric-label">B2B Chat System Pilots</div>
+              <div class="workflow-card" style="padding: 10px 6px;">
+                <i class="fa-solid fa-heart" style="font-size: 1.1rem; margin-bottom: 4px;"></i>
+                <div class="wf-title" style="font-size: 0.75rem;">Free Access</div>
+                <div class="wf-desc" style="font-size: 0.62rem;">Empowering local community talents</div>
+              </div>
+              <div class="workflow-card" style="padding: 10px 6px;">
+                <i class="fa-solid fa-database" style="font-size: 1.1rem; margin-bottom: 4px;"></i>
+                <div class="wf-title" style="font-size: 0.75rem;">Data Flywheel</div>
+                <div class="wf-desc" style="font-size: 0.62rem;">Collecting unique interaction data</div>
+              </div>
+              <div class="workflow-card" style="padding: 10px 6px;">
+                <i class="fa-solid fa-shield-halved" style="font-size: 1.1rem; margin-bottom: 4px;"></i>
+                <div class="wf-title" style="font-size: 0.75rem;">B2B Fine-Tune</div>
+                <div class="wf-desc" style="font-size: 0.62rem;">Custom secure enterprise models</div>
               </div>
             </div>
             <ul class="premium-list">
-              <li><strong>Continuous Optimization:</strong> Live performance allows RLHF (Reinforcement Learning) loop based on actual citizen interaction.</li>
-              <li><strong>Enterprise Ready:</strong> Deployable as a secure internal core model to assist staff or handle citizen queries 24/7.</li>
+              <li>
+                <strong>Empowering Local Talents:</strong> Offered free to the community, helping local talents solve critical real-time projects in Education, Health, and Agriculture.
+                <div class="screenshot-container" style="margin-top: 10px; max-width: 100%; max-height: 230px; display: flex; flex-direction: column;">
+                  <img src="assets/risa_assets/EjoChat Dashoboard.png" alt="EjoChat Dashboard" style="max-height: 190px; width: 100%; object-fit: contain; display: block;">
+                  <div class="screenshot-caption" style="padding: 5px 12px; font-size: 0.65rem;">EjoChat Analytics &amp; Latency Dashboard</div>
+                </div>
+              </li>
             </ul>
           </div>
-          <div class="screenshot-deck">
-            <div class="screenshot-container">
-              <img src="assets/risa_assets/EjoChat welcome Page.png" alt="EjoChat Welcome Page">
-              <div class="screenshot-caption">EjoChat Welcoming Interface</div>
-            </div>
-            <div class="screenshot-container">
-              <img src="assets/risa_assets/EjoChat Dashoboard.png" alt="EjoChat Dashboard">
-              <div class="screenshot-caption">EjoChat Analytics &amp; Latency Dashboard</div>
+          <div class="screenshot-deck" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+            <div class="screenshot-container" style="max-height: 290px; width: 100%; display: flex; flex-direction: column;">
+              <img src="assets/risa_assets/EjoChat welcome Page.png" alt="EjoChat Welcome Page" style="max-height: 250px; width: 100%; object-fit: contain; display: block;">
+              <div class="screenshot-caption" style="padding: 6px 12px; font-size: 0.65rem;">EjoChat Welcoming Interface</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
-        <span>Our Core Model: EjoChat</span>
+        <span>Our Core Product: EjoChat</span>
         <span>Live System Status: Active</span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 5 — EJOFORAFRICA
+         SLIDE 5 — TRACTION (EVIDENCE LADDER)
          ═══════════════════════════════════════════════ -->
+
     <div class="slide" id="slide-5">
       <div class="slide-header">
         <div class="brand-meta">
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 05 / 08</span>
+        <span class="slide-tracker">Slide 05 / 14</span>
       </div>
 
       <div class="slide-content">
         <div class="grid-2col">
           <div>
-            <h2>EjoForAfrica: <span>Agentic RAG for Agriculture &amp; Beyond</span></h2>
+            <h2>Early Traction: <span>Specific Proof at Every Stage</span></h2>
             <p class="text-highlight">
-              EjoForAfrica is a powerful agentic system that ingests curated regional documents and real-time streams to make AI useful on the ground.
+              Our evidence spans technical validation, deployment, and commercial signals — not vague "interest" language.
             </p>
-            <ul class="premium-list">
-              <li><strong>Diverse Ingestion:</strong> Syncs scientific papers, NGO farming guides, and real-time weather streams.</li>
-              <li><strong>Locally Grounded:</strong> Integrates regional support hotlines and custom organizational data.</li>
-              <li><strong>Accessible Channels:</strong> Written and spoken communication in Kinyarwanda and English via App or offline SMS.</li>
-              <li><strong>Endless Usecases:</strong> Easily configurable to agricultural advice, child nutrition tracking, or administrative automation.</li>
-            </ul>
+            <div class="evidence-ladder">
+              <div class="evidence-step filled">
+                <div class="evidence-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="evidence-text">
+                  <span class="ev-title">Built</span>
+                  <span class="ev-detail">EjoChat live in production — native first Kinyarwanda AI assistant</span>
+                </div>
+              </div>
+              <div class="evidence-step filled">
+                <div class="evidence-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="evidence-text">
+                  <span class="ev-title">Tested</span>
+                  <span class="ev-detail">84% positive feedback ratio from real users across Rwanda</span>
+                </div>
+              </div>
+              <div class="evidence-step filled">
+                <div class="evidence-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="evidence-text">
+                  <span class="ev-title">Deployed</span>
+                  <span class="ev-detail">1,000+ daily users · 230+ registered accounts · growing every month</span>
+                </div>
+              </div>
+              <div class="evidence-step filled">
+                <div class="evidence-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="evidence-text">
+                  <span class="ev-title">EjoChat API</span>
+                  <span class="ev-detail">Launched API free for developers/local talent, with premium Business &amp; Enterprise packages</span>
+                </div>
+              </div>
+              <div class="evidence-step">
+                <div class="evidence-icon"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="evidence-text">
+                  <span class="ev-title">AI for Rwanda's National Priorities</span>
+                  <span class="ev-detail">Locally built Agentic RAG systems to solve critical challenges in agriculture, health, transport, tourism, and education</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="flow-diagram-container">
-            <img src="assets/risa_assets/risa_rag_flow.png" alt="RAG flow architecture diagram" class="diagram-img">
+          <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center;">
+            <div class="metric-grid">
+              <div class="metric-box">
+                <div class="metric-value">84%</div>
+                <div class="metric-label">Positive Feedback</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">Free</div>
+                <div class="metric-label">Developer API Tier</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">1K+</div>
+                <div class="metric-label">Daily Users</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">230+</div>
+                <div class="metric-label">Registered Users</div>
+              </div>
+            </div>
+            <div class="glass-card" style="border-left: 4px solid var(--green);">
+              <h3 style="font-size: 0.9rem; margin-bottom: 6px; font-weight: 700;"><i class="fa-brands fa-aws" style="color: #FF9900; margin-right: 8px;"></i>Infrastructure Secured</h3>
+              <p style="font-size: 0.76rem; color: var(--grey-light);">AWS Partner Network credits secured. Google Cloud multi-cloud backup. Qdrant vector DB for agentic RAG.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
-        <span>Product Highlight: EjoForAfrica Framework</span>
-        <span>Designed for high-impact rural and urban deployment</span>
+        <span>Evidence Ladder: Built → Tested → Deployed → EjoChat API → National Priorities</span>
+        <span>Confidential Investor Presentation</span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 6 — PARTNERS & INFRASTRUCTURE
+         SLIDE 6 — CORE INTERVENTIONS: REAL-IMPACT SOLUTIONS
          ═══════════════════════════════════════════════ -->
     <div class="slide" id="slide-6">
       <div class="slide-header">
@@ -1226,56 +2039,57 @@
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 06 / 08</span>
+        <span class="slide-tracker">Slide 06 / 14</span>
       </div>
 
       <div class="slide-content">
-        <div class="grid-2col">
-          <div>
-            <h2>Technical Infrastructure <span>&amp; Partner Ecosystem</span></h2>
-            <p class="text-highlight">
-              We leverage leading global cloud infrastructure and vector search technologies to deliver enterprise-grade performance and security.
-            </p>
-            <div class="screenshot-container" style="margin-top: 15px;">
-              <img src="assets/risa_assets/EjoChat API.png" alt="EjoChat API documentation screen" style="max-height: 180px;">
-              <div class="screenshot-caption">EjoChat API Packages &amp; Portal</div>
-            </div>
-          </div>
-          <div class="partner-grid">
-            <div class="partner-card">
-              <div class="partner-icon">
-                <i class="fa-brands fa-aws" style="color: #FF9900; font-size: 1.8rem;"></i>
+        <div>
+          <h2>Core Interventions: <span>Solutions Driving Real Impact</span></h2>
+          <p class="text-highlight">We focus our operations directly where the immediate market need and local community value reside — bringing AI to everyone.</p>
+          
+          <div class="biz-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px;">
+            <!-- Column 1: Agriculture -->
+            <div class="biz-card" style="padding: 0; display: flex; flex-direction: column; justify-content: space-between; min-height: 350px; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: rgba(22, 34, 53, 0.4); box-shadow: var(--shadow-md);">
+              <div style="position: relative; width: 100%; height: 225px; overflow: hidden;">
+                <img src="assets/agriculture.png" alt="Smart Agriculture" style="width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block;">
+                <div style="position: absolute; top: 12px; left: 12px; background: var(--orange); color: #fff; font-weight: 800; font-size: 0.6rem; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 3;">Agriculture</div>
               </div>
-              <div class="partner-details">
-                <span class="partner-title">AWS Partner Network</span>
-                <span class="partner-desc">Utilizing SageMaker &amp; Bedrock. Infrastructure credits secured. AWS Marketplace listing upcoming.</span>
+              <div style="padding: 12px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; text-align: left;">
+                <div>
+                  <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: var(--white);">Smart Agriculture</h3>
+                  <p style="font-size: 0.7rem; color: var(--grey-light); line-height: 1.4; margin: 0;">Delivering crop-centric agrotech advice, pest diagnostics, and local weather alerts directly to smallholder cooperatives via basic phones in native Kinyarwanda.</p>
+                </div>
+                <div style="font-size: 0.65rem; color: #34D399; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 10px; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-mobile-screen"></i> SMS &amp; USSD Delivery</div>
               </div>
             </div>
-            <div class="partner-card">
-              <div class="partner-icon">
-                <img src="assets/risa_assets/Google_Cloud.png" alt="Google Cloud">
+
+            <!-- Column 2: Healthcare -->
+            <div class="biz-card" style="padding: 0; display: flex; flex-direction: column; justify-content: space-between; min-height: 350px; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: rgba(22, 34, 53, 0.4); box-shadow: var(--shadow-md);">
+              <div style="position: relative; width: 100%; height: 225px; overflow: hidden;">
+                <img src="assets/health.png" alt="Maternal &amp; Child Health" style="width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block;">
+                <div style="position: absolute; top: 12px; left: 12px; background: var(--orange); color: #fff; font-weight: 800; font-size: 0.6rem; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 3;">Health</div>
               </div>
-              <div class="partner-details">
-                <span class="partner-title">Google Cloud</span>
-                <span class="partner-desc">Primary redundant backup and multi-cloud host to ensure 99.9% uptime for conversational pipelines.</span>
-              </div>
-            </div>
-            <div class="partner-card">
-              <div class="partner-icon">
-                <img src="assets/risa_assets/qdrant.png" alt="Qdrant">
-              </div>
-              <div class="partner-details">
-                <span class="partner-title">Qdrant Vector DB</span>
-                <span class="partner-desc">Active discussions for local deployment of high-performance vector search in agentic RAG structures.</span>
+              <div style="padding: 12px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; text-align: left;">
+                <div>
+                  <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: var(--white);">Maternal &amp; Child Health</h3>
+                  <p style="font-size: 0.7rem; color: var(--grey-light); line-height: 1.4; margin: 0;">Automated AI-powered nutritional alerts and health advisories helping community workers track and manage child development metrics at the village level, with integrated first-aid guidance for everyone.</p>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 10px; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-mobile-screen"></i> SMS &amp; USSD Delivery</div>
               </div>
             </div>
-            <div class="partner-card">
-              <div class="partner-icon">
-                <img src="assets/risa_assets/n8n.avif" alt="n8n">
+
+            <!-- Column 3: WhatsApp Bot -->
+            <div class="biz-card" style="padding: 0; display: flex; flex-direction: column; justify-content: space-between; min-height: 350px; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: rgba(22, 34, 53, 0.4); box-shadow: var(--shadow-md);">
+              <div style="position: relative; width: 100%; height: 225px; overflow: hidden;">
+                <img src="assets/whatsapp_chatbot_user.png" alt="WhatsApp Bot" style="width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block;">
+                <div style="position: absolute; top: 12px; left: 12px; background: var(--orange); color: #fff; font-weight: 800; font-size: 0.6rem; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 3;">WhatsApp Bot</div>
               </div>
-              <div class="partner-details">
-                <span class="partner-title">n8n Automation</span>
-                <span class="partner-desc">Workflow automation engine to integrate Ejo Labs AI triggers with local enterprise systems.</span>
+              <div style="padding: 12px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; text-align: left;">
+                <div>
+                  <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: var(--white);">WhatsApp Enterprise Bot</h3>
+                  <p style="font-size: 0.7rem; color: var(--grey-light); line-height: 1.4; margin: 0;">Secure, hallucination-free WhatsApp business integration enabling clients to query product catalogs, get instant support, and book automated test drives.</p>
+                </div>
+                <div style="font-size: 0.65rem; color: var(--orange); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 10px; display: flex; align-items: center; gap: 6px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp API Delivery</div>
               </div>
             </div>
           </div>
@@ -1283,13 +2097,13 @@
       </div>
 
       <div class="slide-footer">
-        <span>API &amp; Commercial Packages: Basic, Growth, Business, and Enterprise</span>
-        <span>Secure &amp; Scalable Architecture</span>
+        <span>Focusing where the immediate market need and community value reside</span>
+        <span>Confidential Investor Presentation</span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 7 — LEGITIMACY & GRANTS
+         SLIDE 7 — SKILLING & AWARENESS: EMPOWERING THE COMMUNITY
          ═══════════════════════════════════════════════ -->
     <div class="slide" id="slide-7">
       <div class="slide-header">
@@ -1297,49 +2111,53 @@
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 07 / 08</span>
+        <span class="slide-tracker">Slide 07 / 14</span>
       </div>
 
       <div class="slide-content">
-        <div class="grid-2col">
+        <div class="grid-2col" style="align-items: center; gap: 30px;">
           <div>
-            <h2>Legitimacy, Active <span>Applications &amp; GPU Compute</span></h2>
-            <p class="text-highlight">
-              Ejo Labs is scaling rapidly by participating in prestigious global challenges and securing next-gen GPU compute opportunities.
+            <h2>Skilling &amp; Awareness: <span>Empowering Communities</span></h2>
+            <p class="text-highlight" style="margin-bottom: 15px; font-size: 0.88rem;">AI adoption is an educational challenge, not just a technical one.</p>
+            <p style="font-size: 0.76rem; color: var(--grey-light); line-height: 1.5; margin-bottom: 12px;">
+              Surveys in Rwanda show that while many citizens have heard about Artificial Intelligence, very few know how to use it practically to solve daily challenges. We are bridging this gap through hands-on education and community outreach.
             </p>
-            <div class="validation-grid">
-              <div class="badge-card">
-                <span class="badge-card-title">Transformative Research Challenge 2026</span>
-                <span class="badge-card-sub">Leveraging Public Data to Fight Hunger Prize. Co-hosted by Tilburg Zero Hunger Lab.</span>
-              </div>
-              <div class="badge-card badge-green">
-                <span class="badge-card-title">UNICEF Innovation Fund</span>
-                <span class="badge-card-sub">Expression of Interest submitted to secure seed funding for child nutrition and welfare tech.</span>
-              </div>
-              <div class="badge-card badge-green">
-                <span class="badge-card-title">AISCA Compute Waitlist</span>
-                <span class="badge-card-sub">GPU grant program waitlist (Kenya, South Africa, Nigeria, Rwanda) launch in 2026.</span>
-              </div>
-              <div class="badge-card">
-                <span class="badge-card-title">Sovereign Local Compute</span>
-                <span class="badge-card-sub">Exploring NVIDIA GPU node partnership with Mpuza Inc. (V100S/RTX6000 nodes, 750GB RAM).</span>
-              </div>
-            </div>
+            <p style="font-size: 0.76rem; color: var(--grey-light); line-height: 1.5; margin-bottom: 16px;">
+              Our youth-to-community flywheel builds a generation of young AI advocates first. Through the free EjoChat API, developer workshops, and hackathons, we empower local youth who in turn introduce these practical tools to their families and elders.
+            </p>
+            
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
+              <li style="font-size: 0.74rem; display: flex; align-items: center; gap: 10px; color: var(--white);">
+                <i class="fa-solid fa-graduation-cap" style="color: var(--orange); width: 14px;"></i>
+                <span><strong>Summer Talent Program</strong> — 5-week remote software &amp; AI engineering bootcamp.</span>
+              </li>
+              <li style="font-size: 0.74rem; display: flex; align-items: center; gap: 10px; color: var(--white);">
+                <i class="fa-solid fa-code" style="color: var(--teal); width: 14px;"></i>
+                <span><strong>Free Developer API</strong> — Giving local talents sandbox access to build custom solutions.</span>
+              </li>
+              <li style="font-size: 0.74rem; display: flex; align-items: center; gap: 10px; color: var(--white);">
+                <i class="fa-solid fa-trophy" style="color: #34D399; width: 14px;"></i>
+                <span><strong>Hackathon Event</strong> — Program ends with a competition awarding cash prizes to top innovators.</span>
+              </li>
+            </ul>
           </div>
-          <div class="flow-diagram-container">
-            <img src="assets/risa_assets/risa_agri_ai.png" alt="Agricultural AI analysis visual" class="diagram-img" style="border: 1px solid rgba(255, 255, 255, 0.05);">
+          
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 100%; max-width: 320px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); padding: 8px; background: rgba(22, 34, 53, 0.4); box-shadow: var(--shadow-lg);">
+              <img src="assets/summer_talent_program.png" alt="Summer Talent Program 2026 Flyer" style="width: 100%; height: auto; border-radius: 10px; display: block; object-fit: cover;">
+            </div>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
-        <span>Partnership Explorations: AWS Outpost, GPU Edge nodes, and local AI clusters</span>
-        <span>Targeting high-impact social and commercial grants</span>
+        <span>Practical education drives trust, adoption, and real-world value</span>
+        <span>Confidential Investor Presentation</span>
       </div>
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         SLIDE 8 — VISION 2050 & ASK
+         SLIDE 6 — MARKET & WHY NOW
          ═══════════════════════════════════════════════ -->
     <div class="slide" id="slide-8">
       <div class="slide-header">
@@ -1347,41 +2165,492 @@
           <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
           <span class="brand-name">Ejo<span>Labs</span></span>
         </div>
-        <span class="slide-tracker">Slide 08 / 08</span>
+        <span class="slide-tracker">Slide 08 / 14</span>
       </div>
 
       <div class="slide-content">
         <div class="grid-2col">
           <div>
-            <h2>Vision 2050: <span>Rwanda Leading the AI Wave</span></h2>
-            <p class="text-highlight">
-              Ejo Labs seeks to align directly with Rwanda's Vision 2050. By transitioning from manual workflows to autonomous AI agents, we reduce operational drag and safeguard local data sovereignty.
-            </p>
-            <div class="vision-grid">
-              <div class="vision-card">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <p style="font-size: 0.76rem; color: var(--grey-light);"><strong>Workflow Automation:</strong> Reducing reporting workloads and administrative hours across local administrations.</p>
+            <h2>The Language AI Market Is Opening — <span>Rwanda Is the Starting Point</span></h2>
+            <div class="tam-row" style="grid-template-columns: 1fr 1fr 1fr 1.2fr;">
+              <div class="tam-card tam">
+                <div class="tam-label">TAM</div>
+                <div class="tam-val">$4.5B+</div>
+                <div class="tam-desc">AI tools in Africa (2025)</div>
               </div>
-              <div class="vision-card">
+              <div class="tam-card sam">
+                <div class="tam-label">SAM</div>
+                <div class="tam-val">$180M</div>
+                <div class="tam-desc">East Africa regional digital services</div>
+              </div>
+              <div class="tam-card som">
+                <div class="tam-label">SOM</div>
+                <div class="tam-val">$12M</div>
+                <div class="tam-desc">Rwanda EdTech &amp; SME AI tools segment</div>
+              </div>
+              <div class="tam-card som" style="background: rgba(232, 119, 34, 0.08); border-color: rgba(232, 119, 34, 0.25);">
+                <div class="tam-label" style="color: var(--orange-soft);">Competition</div>
+                <div class="tam-val" style="color: var(--orange); font-weight: 900;">ZERO</div>
+                <div class="tam-desc" style="font-size: 0.62rem; line-height: 1.3;">No native LLM support for Kinyarwanda.</div>
+              </div>
+            </div>
+            <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--white); font-weight: 700;">Why Now — What Changed</h3>
+            <div class="timing-grid">
+              <div class="timing-item">
+                <i class="fa-solid fa-landmark"></i>
+                <span><strong style="color: var(--white);">Rwanda hit 62% internet penetration</strong> in 2025 and is investing $200M (World Bank) in digital acceleration — Kinyarwanda tools are critical to serve the next 38%.</span>
+              </div>
+              <div class="timing-item">
+                <i class="fa-solid fa-microchip"></i>
+                <span><strong style="color: var(--white);">AI inference costs dropped 90%</strong> in 2 years — making low-resource languages economically viable for the first time.</span>
+              </div>
+              <div class="timing-item">
                 <i class="fa-solid fa-shield-halved"></i>
-                <p style="font-size: 0.76rem; color: var(--grey-light);"><strong>Data Sovereignty:</strong> In-country model weights and local GPU deployments matching strict compliance laws.</p>
+                <span><strong style="color: var(--white);">National AI Policy &amp; Data Sovereignty</strong> mandate local hosting and processing — favoring on-premise setups over US LLM APIs.</span>
               </div>
             </div>
           </div>
-          <div class="glass-card ask-box" style="border-top: 2px solid var(--orange); margin-top: 0;">
-            <div class="ask-box-title">Accelerator Ask</div>
-            <ul class="premium-list">
-              <li style="color: var(--grey-light); font-size: 0.8rem; margin-bottom: 8px;"><strong>Constructor Start Accelerator:</strong> Seeking acceptance into the upcoming cohort to accelerate EU market access.</li>
-              <li style="color: var(--grey-light); font-size: 0.8rem; margin-bottom: 8px;"><strong>Strategic Mentorship:</strong> Refining B2B sales cycles for the European and East African markets.</li>
-              <li style="color: var(--grey-light); font-size: 0.8rem; margin-bottom: 0;"><strong>Seed Funding:</strong> Securing capital to expand local GPU clusters and support initial B2B pilots.</li>
-            </ul>
+          <div style="background: rgba(22, 34, 53, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow-lg); justify-content: center;">
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px;"><i class="fa-solid fa-chart-line" style="color: var(--orange); margin-right: 8px;"></i>5-Year Growth Trajectory</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Phase 1 -->
+              <div style="border-left: 2px solid var(--orange); padding-left: 12px;">
+                <div style="font-size: 0.72rem; font-weight: 800; color: var(--orange); text-transform: uppercase; letter-spacing: 0.05em;">Years 1 – 2 · Core Focus</div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--white); margin: 2px 0;">Agriculture, Healthcare &amp; WhatsApp API</div>
+                <p style="font-size: 0.65rem; color: var(--grey-dark); line-height: 1.35;">Deploying core SMS agrotech, malnutrition alerts, and B2B WhatsApp bots in Rwanda to secure cash flows and build the data flywheel.</p>
+              </div>
+              
+              <!-- Phase 2 -->
+              <div style="border-left: 2px solid var(--teal); padding-left: 12px;">
+                <div style="font-size: 0.72rem; font-weight: 800; color: var(--teal); text-transform: uppercase; letter-spacing: 0.05em;">Years 2 – 3 · Sector Scaling</div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--white); margin: 2px 0;">Education, Tourism &amp; Transport</div>
+                <p style="font-size: 0.65rem; color: var(--grey-dark); line-height: 1.35;">Expanding to new sectors aligned with Rwanda's National Priorities (Visit Rwanda Concierge, Intelligent Transit, and School platforms).</p>
+              </div>
+              
+              <!-- Phase 3 -->
+              <div style="border-left: 2px solid #34D399; padding-left: 12px;">
+                <div style="font-size: 0.72rem; font-weight: 800; color: #34D399; text-transform: uppercase; letter-spacing: 0.05em;">Years 4 – 5 · Regional Replication</div>
+                <div style="font-size: 0.76rem; font-weight: 700; color: var(--white); margin: 2px 0;">East African Cross-Border Expansion</div>
+                <p style="font-size: 0.65rem; color: var(--grey-dark); line-height: 1.35;">Replicating our fine-tuned solutions to neighbouring markets (DRC, Burundi, Kenya, Tanzania) using existing local partnership channels.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
-        <span>Ejo Labs — Accelerating Rwanda's AI Sovereignty</span>
-        <span>Founder: Protogene Hahirwabayo  ·  info@ejolabs.com</span>
+        <span>Market Timing: Policy + Cost + Zero Competition = Now</span>
+        <span>Confidential Investor Presentation</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SLIDE 9 — BUSINESS MODEL
+         ═══════════════════════════════════════════════ -->
+    <div class="slide" id="slide-9">
+      <div class="slide-header">
+        <div class="brand-meta">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
+          <span class="brand-name">Ejo<span>Labs</span></span>
+        </div>
+        <span class="slide-tracker">Slide 09 / 14</span>
+      </div>
+
+      <div class="slide-content">
+        <div>
+          <h2>Three Revenue Streams — <span>Path to $300K ARR in 18 Months</span></h2>
+          <div class="biz-grid">
+            <div class="biz-card">
+              <div class="biz-icon"><i class="fa-solid fa-code"></i></div>
+              <div class="biz-title">API for Companies</div>
+              <div class="biz-price">$200 – $25,000/mo</div>
+              <div class="biz-desc">Fintechs, apps, telcos, SMS platforms, and developers integrate EjoChat via API. Recurring monthly subscription.</div>
+            </div>
+            <div class="biz-card">
+              <div class="biz-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="biz-title">Enterprise Contracts</div>
+              <div class="biz-price">$25,000 – $1M/year</div>
+              <div class="biz-desc">Governments, banks, schools, hospitals, and regional institutions. Long-term contracts with custom deployment.</div>
+            </div>
+            <div class="biz-card">
+              <div class="biz-icon"><i class="fa-solid fa-handshake"></i></div>
+              <div class="biz-title">Build Together</div>
+              <div class="biz-price">$25,000 – $500K/project</div>
+              <div class="biz-desc">NGOs, UN agencies, donor programs, and data partners. Co-development projects with shared Kinyarwanda data.</div>
+            </div>
+          </div>
+          <h3 style="font-size: 0.9rem; margin-bottom: 10px; color: var(--white); font-weight: 700;">ARR Scale Bridge</h3>
+          <div class="arr-bridge">
+            <div class="arr-item">
+              <div class="arr-val">50</div>
+              <div class="arr-label">API Clients</div>
+            </div>
+            <div class="arr-arrow">×</div>
+            <div class="arr-item">
+              <div class="arr-val">$500</div>
+              <div class="arr-label">Avg. Monthly</div>
+            </div>
+            <div class="arr-arrow">=</div>
+            <div class="arr-item">
+              <div class="arr-val">$300K</div>
+              <div class="arr-label">ARR Target</div>
+            </div>
+            <div style="margin-left: auto;">
+              <div class="arr-item">
+                <div class="arr-val" style="color: var(--green);">+ Enterprise</div>
+                <div class="arr-label">Upside from 2–3 large contracts</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Who pays? How often? For what value?</span>
+        <span>Confidential Investor Presentation</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SLIDE 10 — COMPETITION
+         ═══════════════════════════════════════════════ -->
+    <div class="slide" id="slide-10">
+      <div class="slide-header">
+        <div class="brand-meta">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
+          <span class="brand-name">Ejo<span>Labs</span></span>
+        </div>
+        <span class="slide-tracker">Slide 10 / 14</span>
+      </div>
+
+      <div class="slide-content">
+        <div>
+          <h2>Current Alternatives Fail Kinyarwanda — <span>We Fill the Gap</span></h2>
+          <p class="text-highlight">Customers today choose between broken AI, expensive human translation, or nothing at all. EjoChat is the first real solution.</p>
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th class="winner">EjoChat (Ejo Labs)</th>
+                <th>ChatGPT / OpenAI</th>
+                <th>Google Translate</th>
+                <th>Human Translation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="criteria-cell">Native Kinyarwanda Understanding</td>
+                <td class="winner"><span class="check">✓ Native context &amp; RAG tuning</span></td>
+                <td><span class="cross">✗ Fails or replies in French/English</span></td>
+                <td><span class="partial">◐ Partial, many errors</span></td>
+                <td><span class="check">✓ Human quality</span></td>
+              </tr>
+              <tr>
+                <td class="criteria-cell">Cultural &amp; Contextual Accuracy</td>
+                <td class="winner"><span class="check">✓ Rwandan team, local data</span></td>
+                <td><span class="cross">✗ No local context</span></td>
+                <td><span class="cross">✗ Literal only</span></td>
+                <td><span class="check">✓ Context-aware</span></td>
+              </tr>
+              <tr>
+                <td class="criteria-cell">In-Country / Sovereign Hosting</td>
+                <td class="winner"><span class="check">✓ Local deployment ready</span></td>
+                <td><span class="cross">✗ US-hosted only</span></td>
+                <td><span class="cross">✗ US-hosted only</span></td>
+                <td><span class="check">✓ On-site</span></td>
+              </tr>
+              <tr>
+                <td class="criteria-cell">Scalability &amp; Speed</td>
+                <td class="winner"><span class="check">✓ API, instant</span></td>
+                <td><span class="check">✓ API, instant</span></td>
+                <td><span class="check">✓ Instant</span></td>
+                <td><span class="cross">✗ Days per document</span></td>
+              </tr>
+              <tr>
+                <td class="criteria-cell">Cost per Query</td>
+                <td class="winner"><span class="check">✓ $0.001–$0.01</span></td>
+                <td><span class="partial">◐ $0.01–$0.10</span></td>
+                <td><span class="check">✓ Free</span></td>
+                <td><span class="cross">✗ $10–$50/page</span></td>
+              </tr>
+              <tr>
+                <td class="criteria-cell">B2B Enterprise Integration</td>
+                <td class="winner"><span class="check">✓ Custom API &amp; on-prem</span></td>
+                <td><span class="partial">◐ Generic API</span></td>
+                <td><span class="cross">✗ No B2B offering</span></td>
+                <td><span class="cross">✗ Not scalable</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Competitive Wedge: Native quality + Sovereign hosting + API scalability</span>
+        <span>Confidential Investor Presentation</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SLIDE 11 — TEAM
+         ═══════════════════════════════════════════════ -->
+    <div class="slide" id="slide-11">
+      <div class="slide-header">
+        <div class="brand-meta">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
+          <span class="brand-name">Ejo<span>Labs</span></span>
+        </div>
+        <span class="slide-tracker">Slide 11 / 14</span>
+      </div>
+
+      <div class="slide-content">
+        <div>
+          <h2>A Rwandan Team <span>Built to Solve This Problem</span></h2>
+          <p class="text-highlight">Every team member reduces execution risk — we have problem insight, technical capability, and market access.</p>
+          <div class="team-grid" style="grid-template-columns: repeat(3, 1fr); gap: 12px 15px;">
+            <div class="team-card">
+              <img src="Team/protogene-hahirwabayo.jpg" alt="Protogene Hahirwabayo" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Protogene Hahirwabayo</span>
+                <span class="team-role">Founder &amp; CEO</span>
+                <span class="team-bg">Ex-Data Engineer at Roche &amp; BMW</span>
+                <span class="team-edu">Master's in Data Engineering</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="Team/Bosco_Kalinijabo.jpg" alt="Bosco Kalinijabo" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Bosco Kalinijabo</span>
+                <span class="team-role">Founder &amp; CTO</span>
+                <span class="team-bg">Senior AI Engineer</span>
+                <span class="team-edu">Master's in Software Engineering</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="Team/joseph-fersh-nkurunziza.jpeg" alt="Joseph Fersh Nkurunziza" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Joseph Fersh Nkurunziza</span>
+                <span class="team-role">Co-founder &amp; CBO</span>
+                <span class="team-bg">Business Specialist</span>
+                <span class="team-edu">Master of Business Administration</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="Team/nicole-munezero.jpg" alt="Nicole Munezero" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Nicole Munezero</span>
+                <span class="team-role">Co-founder &amp; Head of Operations</span>
+                <span class="team-bg">Software Engineer</span>
+                <span class="team-edu">Bachelor's in Computer engineering</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="Team/melyse-shema.jpg" alt="Melyse Shema" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Melyse Shema</span>
+                <span class="team-role">Head of Partnerships</span>
+                <span class="team-bg">Data Science &amp; Partnerships</span>
+                <span class="team-edu">MSc in Data Science for Business and Society</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="Team/hugues-gashugi.jpeg" alt="Hugues Gashugi" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Hugues Gashugi</span>
+                <span class="team-role">Head of Growth</span>
+                <span class="team-bg">Users and Community Specialist</span>
+                <span class="team-edu">Bachelor's degree, Economics</span>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="Team/Fabian_Stamp.jpeg" alt="Dr. Fabian Stamp" class="team-avatar" style="object-fit: cover;">
+              <div class="team-info">
+                <span class="team-name">Dr. Fabian Stamp</span>
+                <span class="team-role">CSO</span>
+                <span class="team-bg">Senior Data Scientist at Roche</span>
+                <span class="team-edu">PhD Medical Research</span>
+              </div>
+            </div>
+          </div>
+          <div class="mentor-row">
+            <div class="mentor-chip"><i class="fa-solid fa-user-tie" style="color: var(--teal);"></i> <strong>Advisors</strong> — Industry &amp; Academic Network</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Founder-Market Fit: Rwandan team with global tech experience</span>
+        <span>Confidential Investor Presentation</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SLIDE 10 — ROADMAP
+         ═══════════════════════════════════════════════ -->
+    <div class="slide" id="slide-12">
+      <div class="slide-header">
+        <div class="brand-meta">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
+          <span class="brand-name">Ejo<span>Labs</span></span>
+        </div>
+        <span class="slide-tracker">Slide 12 / 14</span>
+      </div>
+
+      <div class="slide-content">
+        <div>
+          <h2>Clear Milestones — <span>From MVP to East African Expansion</span></h2>
+          <div class="roadmap-grid" style="margin-top: 30px;">
+            <div class="roadmap-card" style="border-top: 3px solid var(--orange);">
+              <div class="rm-phase">Phase 1 — Now</div>
+              <div class="rm-period">Mid 2026</div>
+              <ul>
+                <li>500+ active users on EjoChat</li>
+                <li>Sign first paying B2B customer</li>
+                <li>Launch EjoChat API publicly</li>
+                <li>Close pre-seed funding round</li>
+              </ul>
+            </div>
+            <div class="roadmap-card" style="border-top: 3px solid var(--teal);">
+              <div class="rm-phase">Phase 2 — Scale</div>
+              <div class="rm-period">Late 2026 – Early 2027</div>
+              <ul>
+                <li>1,000+ active users</li>
+                <li>3 enterprise customers signed</li>
+                <li>Add health &amp; education tools</li>
+                <li>Raise seed funding</li>
+              </ul>
+            </div>
+            <div class="roadmap-card" style="border-top: 3px solid var(--green);">
+              <div class="rm-phase">Phase 3 — Expand</div>
+              <div class="rm-period">2027 – 2028</div>
+              <ul>
+                <li>5M+ users across Rwanda</li>
+                <li>Expand to Swahili, Kirundi, Lingala</li>
+                <li>Government partnerships</li>
+                <li>Series A ($5M+)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Roadmap aligned with Rwanda Vision 2050</span>
+        <span>Confidential Investor Presentation</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SLIDE 13 — THE ASK
+         ═══════════════════════════════════════════════ -->
+    <div class="slide" id="slide-13">
+      <div class="slide-header">
+        <div class="brand-meta">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-meta">
+          <span class="brand-name">Ejo<span>Labs</span></span>
+        </div>
+        <span class="slide-tracker">Slide 13 / 14</span>
+      </div>
+
+      <div class="slide-content">
+        <div>
+          <h2>Raising $250K Pre-Seed <span>to Reach $300K ARR</span></h2>
+          <p class="text-highlight">The ask is not a number — it is a contract between founders and investors on what will be achieved.</p>
+          <div class="ask-grid">
+            <div class="ask-item">
+              <div class="ask-q">How Much?</div>
+              <div class="ask-a">$250K</div>
+              <div class="ask-detail">Pre-Seed Round</div>
+            </div>
+            <div class="ask-item">
+              <div class="ask-q">Instrument?</div>
+              <div class="ask-a">SAFE</div>
+              <div class="ask-detail">Convertible Note</div>
+            </div>
+            <div class="ask-item">
+              <div class="ask-q">Runway?</div>
+              <div class="ask-a">18 mo</div>
+              <div class="ask-detail">Through Q4 2027</div>
+            </div>
+            <div class="ask-item">
+              <div class="ask-q">Milestone?</div>
+              <div class="ask-a">$300K</div>
+              <div class="ask-detail">ARR Target</div>
+            </div>
+            <div class="ask-item">
+              <div class="ask-q">Customers?</div>
+              <div class="ask-a">50+</div>
+              <div class="ask-detail">B2B API Clients</div>
+            </div>
+          </div>
+          <h3 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--white); font-weight: 700;">Capital Allocation</h3>
+          <div class="allocation-bar">
+            <div class="alloc-seg" style="width: 40%; background: var(--orange);">GTM 40%</div>
+            <div class="alloc-seg" style="width: 25%; background: var(--teal);">Team 25%</div>
+            <div class="alloc-seg" style="width: 20%; background: #34D399;">Infra 20%</div>
+            <div class="alloc-seg" style="width: 15%; background: #A78BFA;">Legal/IP 15%</div>
+          </div>
+          <div class="allocation-legend">
+            <div class="legend-item"><div class="legend-dot" style="background: var(--orange);"></div> Go-To-Market &amp; Sales — B2B pipeline, partnerships, demos</div>
+            <div class="legend-item"><div class="legend-dot" style="background: var(--teal);"></div> Team — Key hires in engineering and sales</div>
+            <div class="legend-item"><div class="legend-dot" style="background: #34D399;"></div> Infrastructure — GPU compute, cloud costs</div>
+            <div class="legend-item"><div class="legend-dot" style="background: #A78BFA;"></div> Legal &amp; IP — Data rights, compliance, incorporation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>A strong ask answers: How much? What instrument? How long? Where? What milestone?</span>
+        <span>Confidential Investor Presentation</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SLIDE 14 — CLOSING / JOIN US
+         ═══════════════════════════════════════════════ -->
+    <div class="slide" id="slide-14">
+      <div class="slide-header">
+        <div class="brand-meta">
+          <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="brand-logo">
+          <span class="brand-name">Ejo<span>Labs</span></span>
+        </div>
+        <span class="slide-tracker">Slide 14 / 14</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="flex-center">
+          <div class="closing-card">
+            <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="cover-logo-lg">
+            <h1 class="closing-title">Building the Future of <span style="background: linear-gradient(90deg, var(--orange), var(--orange-soft)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AI for Rwanda</span></h1>
+            <p class="closing-subtitle">We are building AI for languages like Kinyarwanda — where big tech companies are not looking. Join us in making AI accessible for the next billion users.</p>
+            <div class="contact-row">
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:info@ejolabs.com">info@ejolabs.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-globe"></i>
+                <a href="https://ejolabs.com" target="_blank">ejolabs.com</a>
+              </div>
+
+            </div>
+            <div class="cover-qr-container">
+              <div class="cover-qr-card">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fejolabs.com%2Fen&color=ffffff&bgcolor=0B132B" alt="QR Code to ejolabs.com/en" class="cover-qr-img">
+                <div class="cover-qr-info">
+                  <span class="cover-qr-title">Learn More</span>
+                  <span class="cover-qr-desc">Scan to visit ejolabs.com/en</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Ejo Labs — Building the future of AI for Rwanda</span>
+        <span>Confidential Investor Presentation · 2026</span>
       </div>
     </div>
 
@@ -1405,6 +2674,12 @@
       <div class="dot" data-slide="5"></div>
       <div class="dot" data-slide="6"></div>
       <div class="dot" data-slide="7"></div>
+      <div class="dot" data-slide="8"></div>
+      <div class="dot" data-slide="9"></div>
+      <div class="dot" data-slide="10"></div>
+      <div class="dot" data-slide="11"></div>
+      <div class="dot" data-slide="12"></div>
+      <div class="dot" data-slide="13"></div>
     </div>
 
     <!-- Keyboard Hint -->
