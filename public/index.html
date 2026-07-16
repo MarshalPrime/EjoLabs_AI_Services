@@ -1718,6 +1718,38 @@
         gap: 12px !important;
         display: grid !important;
       }
+
+      /* Centralize Slide 11 & 12 content in PDF print export */
+      #slide-11 .slide-content > div,
+      #slide-12 .slide-content > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+      
+      #slide-11 .team-card,
+      #slide-12 .roadmap-card {
+        text-align: left !important;
+      }
+
+      #slide-11 .team-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px 15px !important;
+        width: 100% !important;
+      }
+
+      #slide-11 .mentor-row {
+        justify-content: center !important;
+        width: 100% !important;
+      }
+
+      #slide-12 .roadmap-grid {
+        width: 100% !important;
+      }
     }
   </style>
 </head>
