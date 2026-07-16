@@ -1580,6 +1580,10 @@
       }
     }
 
+    .print-only {
+      display: none !important;
+    }
+
     /* ══════════════════════════════════════════════
        PRINT SPECIFIC STYLING (A4 LANDSCAPE)
        ══════════════════════════════════════════════ */
@@ -1633,16 +1637,21 @@
         display: none !important;
       }
 
+      .screen-only {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+
       /* Hide non-team images and expand layouts to full-width in PDF print export */
       #slide-3 .grid-2col > div:nth-child(2),
-      #slide-4 .screenshot-deck,
-      #slide-4 .screenshot-container,
+      #slide-4 .screenshot-container:not(.print-only),
       #slide-6 .flow-diagram-container {
         display: none !important;
       }
 
       #slide-3 .grid-2col,
-      #slide-4 .grid-2col,
       #slide-6 .grid-2col {
         grid-template-columns: 1fr !important;
         gap: 0 !important;
@@ -1660,6 +1669,7 @@
 
       /* Force horizontal grid layouts in PDF print export to prevent vertical stacking */
       #slide-2 .grid-2col,
+      #slide-4 .grid-2col,
       #slide-5 .grid-2col,
       #slide-7 .grid-2col,
       #slide-8 .grid-2col,
@@ -1714,7 +1724,7 @@
       }
 
       .tam-row {
-        grid-template-columns: 1fr 1fr 1fr 1.2fr !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 12px !important;
         display: grid !important;
       }
@@ -1819,12 +1829,12 @@
             </div>
             <div class="metric-grid">
               <div class="metric-box">
-                <div class="metric-value">20M+</div>
-                <div class="metric-label">Kinyarwanda Speakers</div>
+                <div class="metric-value">1K+</div>
+                <div class="metric-label">Daily Active Users</div>
               </div>
               <div class="metric-box">
-                <div class="metric-value">1K+</div>
-                <div class="metric-label">Daily EjoChat Users</div>
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Registered Users</div>
               </div>
             </div>
             <ul class="premium-list">
@@ -1958,9 +1968,13 @@
             </ul>
           </div>
           <div class="screenshot-deck" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-            <div class="screenshot-container" style="max-height: 290px; width: 100%; display: flex; flex-direction: column;">
+            <div class="screenshot-container screen-only" style="max-height: 290px; width: 100%; display: flex; flex-direction: column;">
               <img src="assets/risa_assets/EjoChat welcome Page.png" alt="EjoChat Welcome Page" style="max-height: 250px; width: 100%; object-fit: contain; display: block;">
               <div class="screenshot-caption" style="padding: 6px 12px; font-size: 0.65rem;">EjoChat Welcoming Interface</div>
+            </div>
+            <div class="screenshot-container print-only" style="max-height: 290px; width: 100%; display: flex; flex-direction: column;">
+              <img src="assets/risa_assets/EjoChat Dashoboard.png" alt="EjoChat Analytics &amp; Latency Dashboard" style="max-height: 250px; width: 100%; object-fit: contain; display: block;">
+              <div class="screenshot-caption" style="padding: 6px 12px; font-size: 0.65rem;">EjoChat Analytics &amp; Latency Dashboard</div>
             </div>
           </div>
         </div>
@@ -2209,26 +2223,21 @@
         <div class="grid-2col">
           <div>
             <h2>The Language AI Market Is Opening — <span>Rwanda Is the Starting Point</span></h2>
-            <div class="tam-row" style="grid-template-columns: 1fr 1fr 1fr 1.2fr;">
+            <div class="tam-row" style="grid-template-columns: repeat(3, 1fr);">
               <div class="tam-card tam">
-                <div class="tam-label">TAM</div>
+                <div class="tam-label">Total Addressable Market (TAM)</div>
                 <div class="tam-val">$4.5B+</div>
                 <div class="tam-desc">AI tools in Africa (2025)</div>
               </div>
               <div class="tam-card sam">
-                <div class="tam-label">SAM</div>
+                <div class="tam-label">Serviceable Addressable Market (SAM)</div>
                 <div class="tam-val">$180M</div>
                 <div class="tam-desc">East Africa regional digital services</div>
               </div>
               <div class="tam-card som">
-                <div class="tam-label">SOM</div>
+                <div class="tam-label">Serviceable Obtainable Market (SOM)</div>
                 <div class="tam-val">$12M</div>
                 <div class="tam-desc">Rwanda EdTech &amp; SME AI tools segment</div>
-              </div>
-              <div class="tam-card som" style="background: rgba(232, 119, 34, 0.08); border-color: rgba(232, 119, 34, 0.25);">
-                <div class="tam-label" style="color: var(--orange-soft);">Competition</div>
-                <div class="tam-val" style="color: var(--orange); font-weight: 900;">ZERO</div>
-                <div class="tam-desc" style="font-size: 0.62rem; line-height: 1.3;">No native LLM support for Kinyarwanda.</div>
               </div>
             </div>
             <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--white); font-weight: 700;">Why Now — What Changed</h3>
@@ -2486,7 +2495,7 @@
               <img src="Team/melyse-shema.jpg" alt="Melyse Shema" class="team-avatar" style="object-fit: cover;">
               <div class="team-info">
                 <span class="team-name">Melyse Shema</span>
-                <span class="team-role">Head of Partnerships</span>
+                <span class="team-role">Head of Communications &amp; Public Relations</span>
                 <span class="team-bg">Data Science &amp; Partnerships</span>
                 <span class="team-edu">MSc in Data Science for Business and Society</span>
               </div>
