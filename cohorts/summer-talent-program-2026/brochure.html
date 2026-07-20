@@ -699,11 +699,19 @@
     .session-top-meta {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       font-size: 0.8rem;
       color: var(--text-muted);
       border-bottom: 1px solid var(--border-grey);
       padding-bottom: 0.6rem;
+      gap: 0.5rem;
+    }
+
+    .session-badge-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
     }
 
     .session-num {
@@ -716,13 +724,6 @@
       font-size: 0.75rem;
     }
 
-    .session-date {
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
     .session-time {
       display: inline-flex;
       align-items: center;
@@ -733,7 +734,14 @@
       font-size: 0.75rem;
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
-      margin-left: auto;
+    }
+
+    .session-date {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.15rem;
     }
 
     .session-title-block h3 {
@@ -1664,14 +1672,16 @@
             <div class="session-cards-grid" style="grid-template-columns: 1fr;">
               <div class="session-card" style="border-left: 4px solid var(--primary-orange);">
                 <div class="session-top-meta">
-                  <span class="session-num" style="background: var(--primary-orange); color: #FFFFFF;">Onboarding</span>
+                  <div class="session-badge-col">
+                    <span class="session-num" style="background: var(--primary-orange); color: #FFFFFF;">Onboarding</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Friday, 25 July 2026 (Joint)
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -1705,14 +1715,16 @@
           <div class="session-cards-grid">
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 1</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 1</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Tuesday, 28 July 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -1743,14 +1755,16 @@
 
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 2</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 2</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Friday, 31 July 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -1793,14 +1807,16 @@
           <div class="session-cards-grid">
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 3</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 3</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Tuesday, 4 August 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -1831,14 +1847,16 @@
 
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 4</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 4</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Friday, 7 August 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -1881,14 +1899,16 @@
           <div class="session-cards-grid">
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 5</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 5</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Tuesday, 11 August 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -1919,14 +1939,16 @@
 
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 6</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 6</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Friday, 14 August 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -1969,14 +1991,16 @@
           <div class="session-cards-grid">
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 7</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 7</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Tuesday, 18 August 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -2007,14 +2031,16 @@
 
             <div class="session-card">
               <div class="session-top-meta">
-                <span class="session-num">Session 8</span>
+                <div class="session-badge-col">
+                  <span class="session-num">Session 8</span>
+                  <span class="session-time">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    10:00 - 12:00 CAT
+                  </span>
+                </div>
                 <span class="session-date">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   Friday, 21 August 2026
-                </span>
-                <span class="session-time">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  10:00 - 12:00 CAT
                 </span>
               </div>
               <div class="session-title-block">
@@ -2060,14 +2086,16 @@
             <div class="session-cards-grid" style="grid-template-columns: 1fr;">
               <div class="session-card" style="border-left: 4px solid var(--primary-orange);">
                 <div class="session-top-meta">
-                  <span class="session-num" style="background: var(--primary-orange); color: #FFFFFF;">Onboarding</span>
+                  <div class="session-badge-col">
+                    <span class="session-num" style="background: var(--primary-orange); color: #FFFFFF;">Onboarding</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Friday, 25 July 2026 (Joint)
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2101,14 +2129,16 @@
             <div class="session-cards-grid">
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 1</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 1</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Monday, 27 July 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2139,14 +2169,16 @@
 
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 2</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 2</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Thursday, 30 July 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2189,14 +2221,16 @@
             <div class="session-cards-grid">
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 3</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 3</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Monday, 3 August 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2227,14 +2261,16 @@
 
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 4 (Joint)</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 4 (Joint)</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Tuesday, 4 August 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2277,14 +2313,16 @@
             <div class="session-cards-grid">
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 5</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 5</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Monday, 10 August 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2315,14 +2353,16 @@
 
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 6 (Joint)</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 6 (Joint)</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Friday, 14 August 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2365,14 +2405,16 @@
             <div class="session-cards-grid">
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 7</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 7</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Monday, 17 August 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
@@ -2403,14 +2445,16 @@
 
               <div class="session-card">
                 <div class="session-top-meta">
-                  <span class="session-num">Session 8</span>
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 8</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
                   <span class="session-date">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     Friday, 21 August 2026
-                  </span>
-                  <span class="session-time">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    10:00 - 12:00 CAT
                   </span>
                 </div>
                 <div class="session-title-block">
