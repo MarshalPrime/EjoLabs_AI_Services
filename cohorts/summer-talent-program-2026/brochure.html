@@ -129,6 +129,16 @@
       border-bottom: 2px solid var(--primary-orange);
     }
 
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary-dark);
+      cursor: pointer;
+      padding: 0.3rem;
+      border-radius: 6px;
+    }
+
     .hero-logo {
       height: 75px;
       width: auto;
@@ -1068,6 +1078,27 @@
 
     /* ── MEDIA QUERIES (RESPONSIVE SCREEN VIEW) ────────────────────────────── */
     @media (max-width: 900px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      .quick-links {
+        display: none;
+      }
+      .quick-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        padding: 1.2rem 1.5rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        border-bottom: 3px solid var(--primary-orange);
+        gap: 1rem;
+        align-items: flex-start;
+        z-index: 100;
+      }
       .summary-grid, .competence-container, .closing-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1325,17 +1356,24 @@
 
   <!-- ── NAVIGATION HEADER ── -->
   <header class="nav-header">
-    <div class="wrapper nav-container">
+    <div class="wrapper nav-container" style="position: relative;">
       <a href="#" class="brand-logo">
         <img src="assets/logos/ejolabs_logo.png" alt="Ejo Labs Logo" class="nav-logo" />
       </a>
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
       <nav class="quick-links">
-        <a href="#summary">Overview</a>
-        <a href="#curriculum">Syllabus</a>
-        <a href="#closing">Closing Day</a>
-        <a href="#lecturers">Team & Speakers</a>
-        <a href="#partners">Partners</a>
-        <a href="/skilling" target="_top" style="color: var(--primary-orange); font-weight: 700;">← Back to Skilling</a>
+        <a href="#summary" onclick="closeMobileNav()">Overview</a>
+        <a href="#curriculum" onclick="closeMobileNav()">Syllabus</a>
+        <a href="#closing" onclick="closeMobileNav()">Closing Day</a>
+        <a href="#lecturers" onclick="closeMobileNav()">Team & Speakers</a>
+        <a href="#partners" onclick="closeMobileNav()">Partners</a>
+        <a href="/skilling" target="_top" onclick="closeMobileNav()" style="color: var(--primary-orange); font-weight: 700;">← Back to Skilling</a>
       </nav>
     </div>
   </header>
@@ -2641,6 +2679,15 @@
   </section>
 
   <script>
+    function toggleMobileNav() {
+      const nav = document.querySelector('.quick-links');
+      if (nav) nav.classList.toggle('mobile-open');
+    }
+    function closeMobileNav() {
+      const nav = document.querySelector('.quick-links');
+      if (nav) nav.classList.remove('mobile-open');
+    }
+
     function switchTrack(track) {
       // Remove active class from all buttons
       document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
