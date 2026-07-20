@@ -1,0 +1,130 @@
+{
+  "program": {
+    "title": "Ejo Labs Summer Training Program 2026",
+    "subtitle": "Building the Next Generation of African AI Engineers",
+    "cohort": "summer-talent-program-2026",
+    "year": 2026,
+    "dates": {
+      "orientation": "Friday, 25 July 2026",
+      "start": "Monday, 27 July 2026",
+      "end": "Friday, 21 August 2026",
+      "demo_day": "Friday, 28 August 2026"
+    },
+    "venue": {
+      "name": "Kigali Innovation Hub (GIZ DTC Event Space)",
+      "address": "41 KN Str 17, Kacyiru Sector, Gasabo District, Kigali, Rwanda"
+    },
+    "philosophy": "We believe in AI for Everyone, empowering youth to lead the next wave of technology enthusiasts across Africa. By demystifying artificial intelligence and equipping young minds with practical engineering skills, we cultivate community innovators who not only master modern technology, but actively teach, inspire, and uplift their local communities to build a digitally empowered future."
+  },
+  "tracks": [
+    {
+      "id": "university",
+      "name": "University Cohort Track",
+      "target_audience": "University students & young developers",
+      "sessions_count": 8
+    },
+    {
+      "id": "highschool",
+      "name": "High School Cohort Track",
+      "target_audience": "High school students & young tech enthusiasts",
+      "sessions_count": 8
+    }
+  ],
+  "team": [
+    {
+      "name": "Protogene Hahirwabayo",
+      "role": "Founder & CEO, Ejo Labs",
+      "image": "assets/team/Protogene_Hahirwabayo.jpg"
+    },
+    {
+      "name": "Bosco Kalinijabo",
+      "role": "Founder & CTO, Ejo Labs",
+      "image": "assets/team/Bosco_Kalinijabo.jpg"
+    },
+    {
+      "name": "Joseph Fersh Nkurunziza",
+      "role": "Co-founder & CBO, Ejo Labs",
+      "image": "assets/team/joseph-fersh-nkurunziza.jpeg"
+    },
+    {
+      "name": "Nicole Munezero",
+      "role": "Co-founder & Head of Operations, Ejo Labs",
+      "image": "assets/team/nicole-munezero.jpg"
+    },
+    {
+      "name": "Hugues Gashugi",
+      "role": "Head of Growth, Ejo Labs",
+      "image": "assets/team/hugues-gashugi.jpeg"
+    },
+    {
+      "name": "Melyse Shema",
+      "role": "Head of Digital Transformation & Adoption, Ejo Labs",
+      "image": "assets/team/melyse-shema.jpg"
+    }
+  ],
+  "guest_speakers": [
+    {
+      "name": "Dr. Geistanger Andrea",
+      "role": "Data, AI & Analytics Leader",
+      "image": "assets/guests/Dr_Geistanger_Andrea.jpeg"
+    },
+    {
+      "name": "Prof. Dr. Manuel Oriol",
+      "role": "Leader in Tech & Software Engineering Professor",
+      "image": "assets/guests/Manuel_Oriol.jpeg"
+    },
+    {
+      "name": "Dr. Stamp Fabian",
+      "role": "Senior Data Scientist",
+      "image": "assets/guests/Dr_Stamp_Fabian.jpeg"
+    },
+    {
+      "name": "Henry Okonkwo",
+      "role": "Senior Software Engineer & AI Product Engineer",
+      "image": "assets/guests/Henry_Okonkwo.jpeg"
+    },
+    {
+      "name": "Neha Fathima",
+      "role": "Software Engineer @ idealo internet GmbH",
+      "image": null
+    },
+    {
+      "name": "Muslim Baymerov",
+      "role": "Software Engineer",
+      "image": "assets/guests/Muslim_Baymerov.jpeg"
+    },
+    {
+      "name": "Aubin Joanes IGIRANEZA",
+      "role": "Aerospace Engineer & Data Scientist",
+      "image": "assets/guests/Aubin_Joanes_Igiraneza.jpeg"
+    },
+    {
+      "name": "Richard IRAKOZE",
+      "role": "Founder & CEO, KinyatechAI Limited",
+      "image": "assets/guests/Richard_Irakoze.png"
+    },
+    {
+      "name": "Valentin Niyonshuti",
+      "role": "Data Scientist & Software Engineer",
+      "image": "assets/guests/Valentin_Niyonshuti.jpeg"
+    }
+  ],
+  "partners": [
+    {
+      "category": "Official Venue Partner",
+      "name": "GIZ Digital Transformation Center (DTC)",
+      "logos": [
+        "assets/logos/logo_giz.png",
+        "assets/logos/logo_dtc.png",
+        "assets/logos/logo_german_cooperation.png"
+      ]
+    },
+    {
+      "category": "Infrastructure Partner",
+      "name": "AWS for Infrastructure",
+      "logos": [
+        "assets/logos/logo_aws.svg"
+      ]
+    }
+  ]
+}

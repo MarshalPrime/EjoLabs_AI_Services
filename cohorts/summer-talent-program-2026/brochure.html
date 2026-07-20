@@ -1,0 +1,2662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejo Labs Summer Training Program – 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* ── CORE DESIGN SYSTEM ────────────────────────────────────────────────── */
+    :root {
+      --primary-dark: #1A2535;   /* Ejo Labs Dark Navy */
+      --primary-orange: #E87722; /* Ejo Labs Brand Orange */
+      --orange-soft: #F9A85D;    /* Soft Amber/Orange */
+      --orange-light: #FFF5EC;   /* Warm light tint background */
+      --bg-warm: #FEF9F4;        /* Warm Neutral background */
+      --text-dark: #2D3748;      /* Deep Slate text */
+      --text-light: #FFFFFF;     /* White text */
+      --text-muted: #6B7280;     /* Grey text */
+      --border-grey: #E5E7EB;    /* Light border grey */
+      --card-bg: #FFFFFF;        /* Card white background */
+      --radius: 12px;
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-headings: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-warm);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 5rem;
+    }
+
+    /* ── SCROLLBAR ─────────────────────────────────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-warm);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-orange);
+      border-radius: 4px;
+    }
+
+    /* ── TYPOGRAPHY ────────────────────────────────────────────────────────── */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.25;
+    }
+
+    /* ── LAYOUT CONTAINERS ─────────────────────────────────────────────────── */
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header.nav-header {
+      background-color: #FFFFFF;
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-bottom: 2px solid var(--primary-orange);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 42px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      height: 36px;
+      width: auto;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .quick-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+      opacity: 0.8;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+    }
+
+    .quick-links a:hover {
+      opacity: 1;
+      color: var(--primary-orange);
+      border-bottom: 2px solid var(--primary-orange);
+    }
+
+    .hero-logo {
+      height: 75px;
+      width: auto;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.15);
+      transition: var(--transition-smooth);
+    }
+
+    .hero-logo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    /* ── COVER HERO SECTION ────────────────────────────────────────────────── */
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-dark), #0A111A);
+      color: var(--text-light);
+      padding: 6rem 0 4.5rem 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 5px solid var(--primary-orange);
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(232, 119, 34, 0.15) 0%, transparent 70%);
+      top: -150px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .badge-fellowship {
+      display: inline-block;
+      background-color: var(--primary-orange);
+      color: var(--text-light);
+      font-family: var(--font-headings);
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(232, 119, 34, 0.4);
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, var(--primary-orange), var(--orange-soft));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      color: #94A3B8;
+      font-style: italic;
+    }
+
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .hero-meta-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+    }
+
+    .hero-meta-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(232, 119, 34, 0.3);
+    }
+
+    .hero-meta-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary-orange);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-meta-val {
+      font-family: var(--font-headings);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    /* ── GENERAL PAGE SECTIONS ─────────────────────────────────────────────── */
+    .section-padding {
+      padding: 4.5rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.6rem;
+      border-bottom: 3px solid var(--border-grey);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary-orange);
+      bottom: -3px;
+      left: 0;
+    }
+
+    /* ── EXECUTIVE SUMMARY LAYOUT ──────────────────────────────────────────── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .summary-main-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border-left: 5px solid var(--primary-orange);
+    }
+
+    .summary-title-alt {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-main-card p {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 1.2rem;
+    }
+
+    .summary-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .callout-box {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      padding: 1.8rem;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px rgba(26, 37, 53, 0.1);
+    }
+
+    .callout-title {
+      font-family: var(--font-headings);
+      font-size: 1.2rem;
+      color: var(--primary-orange);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .callout-box p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .pillar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .pillar-card:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      border-color: var(--primary-orange);
+    }
+
+    .pillar-icon {
+      margin-bottom: 0.8rem;
+      color: var(--primary-orange);
+    }
+
+    .pillar-title {
+      font-family: var(--font-headings);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--primary-dark);
+    }
+
+    .pillar-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── PROGRAM FOUNDATIONS & MENTORSHIP ───────────────────────────────────── */
+    .foundations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .foundation-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+      border: 1px solid var(--border-grey);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .foundation-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-bottom: 2px solid var(--border-grey);
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .foundation-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .foundation-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--text-dark);
+    }
+
+    .foundation-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary-orange);
+      font-weight: bold;
+    }
+
+    .foundation-list.conduct li::before {
+      content: '•';
+      color: var(--primary-orange);
+      font-size: 1.2rem;
+      left: 3px;
+      top: -2px;
+    }
+
+    /* ── INDUSTRY ALIGNMENT & ASSESSMENT ───────────────────────────────────── */
+    .competence-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .competence-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .competence-item {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .competence-num {
+      width: 32px;
+      height: 32px;
+      background-color: var(--orange-light);
+      border: 1.5px solid var(--primary-orange);
+      color: var(--primary-orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .competence-text h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .competence-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .assessment-table-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-grey);
+      overflow: hidden;
+    }
+
+    .assessment-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .assessment-table th {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      padding: 1.2rem 1.5rem;
+      font-family: var(--font-headings);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .assessment-table td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--border-grey);
+      font-size: 0.92rem;
+    }
+
+    .assessment-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .assessment-weight {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary-orange);
+      white-space: nowrap;
+    }
+
+    /* ── CURRICULUM ROADMAP DIAGRAM (VISUAL OUTLINE) ───────────────────────── */
+    .roadmap-wrapper {
+      background-color: var(--primary-dark);
+      padding: 2rem;
+      border-radius: var(--radius);
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .roadmap-title {
+      font-family: var(--font-headings);
+      font-size: 1.25rem;
+      color: var(--text-light);
+      font-weight: 600;
+      align-self: flex-start;
+      border-left: 4px solid var(--primary-orange);
+      padding-left: 0.8rem;
+    }
+
+    .roadmap-steps {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      position: relative;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .roadmap-steps::before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-orange), var(--orange-soft));
+      top: 25px;
+      left: 10%;
+      right: 10%;
+      z-index: 1;
+    }
+
+    .roadmap-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .roadmap-step-dot {
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-dark);
+      border: 3px solid var(--primary-orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-weight: 700;
+      font-family: var(--font-headings);
+      margin-bottom: 0.8rem;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .roadmap-step:hover .roadmap-step-dot {
+      background-color: var(--primary-orange);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(232, 119, 34, 0.4);
+    }
+
+    .roadmap-step-title {
+      font-family: var(--font-headings);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .roadmap-step-desc {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    /* ── TIMELINE WEEK-BY-WEEK ACCORDION ───────────────────────────────────── */
+    .timeline-container {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .week-header {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius) var(--radius) 0 0;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--primary-orange);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .week-header-subtitle {
+      font-size: 0.9rem;
+      font-weight: 400;
+      opacity: 0.8;
+      font-family: var(--font-body);
+    }
+
+    .session-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-grey);
+      border-radius: 0 0 var(--radius) var(--radius);
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      border-top: none;
+    }
+
+    .session-card {
+      background-color: #FAFAFB;
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .session-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: var(--primary-orange);
+    }
+
+    .session-card:hover {
+      background-color: #FFFFFF;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      border-color: rgba(232, 119, 34, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .session-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-grey);
+      padding-bottom: 0.6rem;
+    }
+
+    .session-num {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-family: var(--font-headings);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .session-date {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .session-title-block h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .session-lecturer {
+      font-size: 0.85rem;
+      color: var(--primary-orange);
+      font-weight: 600;
+    }
+
+    .session-content-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .session-content-block h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-top: 0.2rem;
+    }
+
+    .session-content-block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .session-content-block ul li {
+      position: relative;
+      padding-left: 1.1rem;
+      line-height: 1.4;
+      color: var(--text-dark);
+    }
+
+    .session-content-block ul li::before {
+      content: '•';
+      position: absolute;
+      left: 3px;
+      top: -2px;
+      color: var(--primary-orange);
+      font-size: 1.1rem;
+    }
+
+    .lab-box {
+      background-color: var(--orange-light);
+      border: 1px dashed var(--primary-orange);
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.88rem;
+    }
+
+    .lab-box p strong {
+      color: var(--primary-orange);
+      font-family: var(--font-headings);
+    }
+
+    .deliverables-box {
+      border: 1px solid var(--border-grey);
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.88rem;
+    }
+
+    .deliverables-box p strong {
+      color: var(--primary-dark);
+      font-family: var(--font-headings);
+    }
+
+    /* ── CAPSTONE PROJECT REQUIREMENTS ──────────────────────────────────────── */
+    .capstone-container {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      border-radius: var(--radius);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(26, 37, 53, 0.15);
+      border-bottom: 5px solid var(--primary-orange);
+    }
+
+    .capstone-container h2 {
+      color: var(--text-light);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.8rem;
+    }
+
+    .capstone-container p {
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .capstone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .capstone-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: var(--transition-smooth);
+    }
+
+    .capstone-card:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: var(--primary-orange);
+    }
+
+    .capstone-card h3 {
+      font-size: 1.15rem;
+      color: var(--primary-orange);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-family: var(--font-headings);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .capstone-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .capstone-card ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.88rem;
+      opacity: 0.85;
+      line-height: 1.4;
+    }
+
+    .capstone-card ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--orange-soft);
+      font-size: 0.85rem;
+    }
+
+    /* ── CLOSING DAY & CAREER TRACKS ────────────────────────────────────────── */
+    .closing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .closing-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-grey);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .closing-card h3 {
+      font-size: 1.3rem;
+      border-bottom: 2px solid var(--border-grey);
+      padding-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .closing-time-badge {
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      background-color: var(--orange-light);
+      color: var(--primary-orange);
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .closing-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .closing-card ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .closing-card ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary-orange);
+      font-size: 1.1rem;
+      top: -1px;
+    }
+
+    /* ── CONTACT & FOOTER ──────────────────────────────────────────────────── */
+    .footer-cta {
+      background: linear-gradient(135deg, var(--primary-dark), #0C1522);
+      color: var(--text-light);
+      padding: 4rem 0;
+      text-align: center;
+      border-top: 3px solid var(--primary-orange);
+      margin-top: 4rem;
+    }
+
+    .footer-cta h2 {
+      color: var(--text-light);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-cta p {
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.1rem;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-item a {
+      color: var(--primary-orange);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+
+    .contact-item a:hover {
+      color: var(--orange-soft);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      font-size: 0.85rem;
+      opacity: 0.5;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+    }
+
+    /* ── INVITED LECTURERS SECTION ── */
+    .lecturers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .lecturer-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transition: var(--transition-smooth);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lecturer-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-orange), var(--orange-soft));
+    }
+
+    .lecturer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+      border-color: var(--primary-orange);
+    }
+
+    .lecturer-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem auto;
+      background: linear-gradient(135deg, var(--primary-dark), #2D3748);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 12px rgba(26, 37, 53, 0.15);
+      border: 3px solid #FFFFFF;
+    }
+
+    .lecturer-name {
+      font-family: var(--font-headings);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .lecturer-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+    }
+
+    .lecturer-bio {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── MEDIA QUERIES (RESPONSIVE SCREEN VIEW) ────────────────────────────── */
+    @media (max-width: 900px) {
+      .summary-grid, .competence-container, .closing-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .session-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 1.2rem;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .roadmap-steps::before {
+        display: none;
+      }
+      .roadmap-step {
+        flex: 1 1 40%;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .roadmap-step-dot {
+        margin-bottom: 0.4rem;
+      }
+    }
+
+    /* ── PRINT-SPECIFIC CSS RULES ────────────────────────────────────────── */
+    @media print {
+      /* Reset core backgrounds and sizing for paper print */
+      :root {
+        --bg-warm: #FFFFFF;
+      }
+      
+      body {
+        background-color: #FFFFFF;
+        color: #000000;
+        font-size: 10pt;
+        line-height: 1.4;
+      }
+
+      /* Hide screen-only layouts (navigation header, interactive CTAs, etc.) */
+      header.nav-header, .footer-cta {
+        display: none !important;
+      }
+
+      /* Layout wrapping rules */
+      .wrapper {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .section-padding {
+        padding: 2.5rem 0;
+      }
+
+      /* Page boundary control to prevent orphaned headers or broken boxes */
+      h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        break-after: avoid;
+        color: #1A2535 !important;
+      }
+
+      .summary-main-card, 
+      .callout-box, 
+      .foundation-card, 
+      .session-card, 
+      .capstone-card, 
+      .closing-card {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #D1D5DB !important;
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+      }
+
+      .summary-main-card {
+        border-left: 4px solid #E87722 !important;
+      }
+
+      .session-card::before {
+        background-color: #E87722 !important;
+      }
+
+      /* Force background printing on colored grids/bars */
+      .hero-section {
+        background: #1A2535 !important;
+        color: #FFFFFF !important;
+        padding: 4rem 1.5rem;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-after: always; /* Force Cover Page on its own sheet */
+      }
+
+      .hero-title, .badge-fellowship, .hero-meta-val {
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .hero-title span {
+        -webkit-text-fill-color: initial !important;
+        color: #E87722 !important;
+      }
+
+      .hero-meta-card {
+        background: rgba(255,255,255,0.08) !important;
+        border: 1px solid rgba(255,255,255,0.15) !important;
+      }
+
+      .badge-fellowship {
+        background-color: #E87722 !important;
+      }
+
+      /* Assessment Table styling for print */
+      .assessment-table th {
+        background-color: #1A2535 !important;
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .assessment-weight {
+        color: #E87722 !important;
+      }
+
+      /* Roadmap styling for print */
+      .roadmap-wrapper {
+        background-color: #1A2535 !important;
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .roadmap-step-dot {
+        border-color: #E87722 !important;
+        color: #FFFFFF !important;
+      }
+
+      /* Timeline header formatting */
+      .week-header {
+        background-color: #1A2535 !important;
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      .session-cards-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+        background: #FFFFFF !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* Capstone print-specific styling */
+      .capstone-container {
+        background-color: #1A2535 !important;
+        color: #FFFFFF !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-after: always;
+      }
+
+      .capstone-card {
+        background-color: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(255,255,255,0.15) !important;
+      }
+
+      /* Grids adjustments to print nicely */
+      .summary-grid, .competence-container, .closing-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      /* General page margins */
+      @page {
+        margin: 1.5cm;
+      }
+
+      /* Clear page-break tags */
+      .page-break {
+        page-break-after: always;
+        break-after: always;
+      }
+    }
+
+    /* Syllabus Track Selector Tabs */
+    .track-selector {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: -1rem auto 3rem auto;
+      max-width: 500px;
+      background: rgba(26, 37, 53, 0.05);
+      padding: 6px;
+      border-radius: 50px;
+      border: 1px solid rgba(26, 37, 53, 0.1);
+    }
+    
+    .track-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .track-btn svg {
+      transition: transform 0.3s ease;
+    }
+    
+    .track-btn:hover svg {
+      transform: scale(1.1);
+    }
+
+    .track-btn.active {
+      background: var(--primary-dark);
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(26, 37, 53, 0.25);
+    }
+    
+    .syllabus-track-content {
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .syllabus-track-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION HEADER ── -->
+  <header class="nav-header">
+    <div class="wrapper nav-container">
+      <a href="#" class="brand-logo">
+        <img src="assets/logos/ejolabs_logo.png" alt="Ejo Labs Logo" class="nav-logo" />
+      </a>
+      <nav class="quick-links">
+        <a href="#summary">Overview</a>
+        <a href="#curriculum">Syllabus</a>
+        <a href="#closing">Closing Day</a>
+        <a href="#lecturers">Team & Speakers</a>
+        <a href="#partners">Partners</a>
+        <a href="/skilling" target="_top" style="color: var(--primary-orange); font-weight: 700;">← Back to Skilling</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── PAGE 1: COVER HERO SECTION ── -->
+  <section class="hero-section">
+    <div class="wrapper hero-container">
+      <img src="assets/logos/ejolabs_logo.png" alt="Ejo Labs Logo" class="hero-logo" />
+      <div class="badge-fellowship">Flagship Program</div>
+      <h1 class="hero-title">Summer Training <span>Program 2026</span></h1>
+      <p class="hero-subtitle">Building the Next Generation of African AI Engineers</p>
+      
+      <div class="hero-meta-grid">
+        <div class="hero-meta-card">
+          <div class="hero-meta-label">Orientation (Joint)</div>
+          <div class="hero-meta-val" style="font-size: 0.9rem; line-height: 1.4; font-weight: 500;">
+            Friday, 25 July 2026<br/>
+            <span style="font-size: 0.8rem; opacity: 0.75; font-weight: 400; color: var(--orange-soft);">Both cohorts onboarding together</span>
+          </div>
+        </div>
+        <div class="hero-meta-card">
+          <div class="hero-meta-label">Program Weeks</div>
+          <div class="hero-meta-val" style="font-size: 0.9rem; line-height: 1.4; font-weight: 500;">
+            <span style="color: var(--primary-orange);">University:</span> 28 July – 21 August<br/>
+            <span style="color: var(--orange-soft);">High School:</span> 27 July – 21 August
+          </div>
+        </div>
+        <div class="hero-meta-card">
+          <div class="hero-meta-label">Closing Ceremony (Joint)</div>
+          <div class="hero-meta-val" style="font-size: 0.9rem; line-height: 1.4; font-weight: 500;">
+            Friday, 28 August 2026<br/>
+            <span style="font-size: 0.8rem; opacity: 0.75; font-weight: 400;">13:00 - 17:00 • GIZ DTC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAGE 2: EXECUTIVE SUMMARY ── -->
+  <section id="summary" class="section-padding">
+    <div class="wrapper">
+      <h2 class="section-title">Executive Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-main-card">
+          <h3 class="summary-title-alt">Why This Program Exists</h3>
+          <p>
+            Artificial Intelligence is reshaping global industries, creating an urgent demand for software engineers who can move beyond basic API tutorials and build robust, production-grade applications. The <strong>Ejo Labs Summer Training Program 2026</strong> was established to address this critical skills gap in Africa.
+          </p>
+          <p>
+            By combining traditional software engineering discipline with advanced agentic workflows and local data sovereignty, this intensive program equips participants to design, build, test, and deploy scalable AI products that solve real-world African challenges.
+          </p>
+          
+          <h3 class="summary-title-alt" style="margin-top: 2rem;">Teaching Philosophy</h3>
+          <p>
+            We believe in <strong>AI for Everyone</strong>, empowering youth to lead the next wave of technology enthusiasts across Africa. By demystifying artificial intelligence and equipping young minds with practical engineering skills, we cultivate community innovators who not only master modern technology, but actively teach, inspire, and uplift their local communities to build a digitally empowered future.
+          </p>
+        </div>
+        
+        <div class="summary-sidebar">
+          <div class="callout-box">
+            <h3 class="callout-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              Fast Facts
+            </h3>
+            <p style="margin-bottom: 0.8rem;"><strong>Level:</strong> Beginner-friendly entry with an advanced vertical progression path. No prior AI/ML experience required.</p>
+            <p style="margin-bottom: 0.8rem;"><strong>Structure:</strong> 8 sessions over 4 weeks, culminating in a live Cloud deployment.</p>
+            <p><strong>Capstone:</strong> Build a unified, scalable local document RAG system powered by the EjoChat API and Qdrant.</p>
+          </div>
+          
+          <div>
+            <h4 class="summary-title-alt" style="font-size: 1.05rem; margin-bottom: 0.5rem;">Core Program Pillars</h4>
+            <div class="pillars-grid">
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div class="pillar-title">Solid Software</div>
+                <div class="pillar-desc">Git workflow, APIs, relational databases.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </div>
+                <div class="pillar-title">Production AI</div>
+                <div class="pillar-desc">Prompt templates, RAG, tool calling, memory.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="pillar-title">Security & Eval</div>
+                <div class="pillar-desc">Injection guards, observability, QA.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="pillar-title">DevOps Cloud</div>
+                <div class="pillar-desc">Docker, GCP, CI/CD, cost controls.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page break for print -->
+  <div class="page-break"></div>
+
+  <!-- ── PAGE 4: INDUSTRY ALIGNMENT & ASSESSMENT ── -->
+  <section class="section-padding">
+    <div class="wrapper">
+      <div class="competence-container">
+        <div>
+          <h2 class="section-title">Industry Alignment</h2>
+          <div class="competence-list">
+            <div class="competence-item">
+              <div class="competence-num">1</div>
+              <div class="competence-text">
+                <h4>Software Engineering Foundations</h4>
+                <p>Establishing proper Git repository design, asynchronous python development, environment isolation, and API architecture.</p>
+              </div>
+            </div>
+            <div class="competence-item">
+              <div class="competence-num">2</div>
+              <div class="competence-text">
+                <h4>AI Application Development</h4>
+                <p>Mastering prompt templating, handling structured JSON output schemas, integrating vector similarity search, and semantic RAG grounding.</p>
+              </div>
+            </div>
+            <div class="competence-item">
+              <div class="competence-num">3</div>
+              <div class="competence-text">
+                <h4>Production Reliability</h4>
+                <p>Instrumenting applications with telemetry tracing, establishing hallucination criteria, tracking latency, and testing stochastic behaviors.</p>
+              </div>
+            </div>
+            <div class="competence-item">
+              <div class="competence-num">4</div>
+              <div class="competence-text">
+                <h4>DevOps & Serverless Cloud</h4>
+                <p>Containerizing software using Docker, orchestrating postgres/qdrant nodes locally with Compose, and deploying directly to Google Cloud Run with automated pipelines.</p>
+              </div>
+            </div>
+            <div class="competence-item">
+              <div class="competence-num">5</div>
+              <div class="competence-text">
+                <h4>Responsible AI & Compliance</h4>
+                <p>Defending APIs against prompt injection, shielding access logs, and aligning architectures with <strong>Rwanda's Data Protection and Privacy Law</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">Assessment & Grading</h2>
+          <div class="assessment-table-card">
+            <table class="assessment-table">
+              <thead>
+                <tr>
+                  <th>Grading Criteria</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Attendance & Engagement</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Punctual attendance in lectures and active technical discussion participation.</div>
+                  </td>
+                  <td class="assessment-weight">20 %</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Weekly Practical Labs</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Individual logic implementation and clean execution of standard session assignments.</div>
+                  </td>
+                  <td class="assessment-weight">20 %</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Peer & Team Collaboration</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Equitable division of capstone workload, Git contribution tracking, and teammate reviews.</div>
+                  </td>
+                  <td class="assessment-weight">20 %</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Capstone Project Deliverables</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Clean structural organization, stable cloud hosting, feature complexity, and detailed code documentation.</div>
+                  </td>
+                  <td class="assessment-weight">30 %</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Demo Day Presentation</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Quality of the technical pitch slides, execution of the live demo, and judges Q&A answers.</div>
+                  </td>
+                  <td class="assessment-weight">10 %</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page break for print -->
+  <div class="page-break"></div>
+
+  <!-- ── CURRICULUM ROADMAP DIAGRAM (VISUAL OUTLINE) ── -->
+  <div class="wrapper" style="margin-top: 2rem;">
+    <div class="roadmap-wrapper">
+      <div class="roadmap-title">Program Progression Pathway</div>
+      <div class="roadmap-steps">
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">W1</div>
+          <div class="roadmap-step-title">Engineering Foundations</div>
+          <div class="roadmap-step-desc">Git, Python, FastAPI & Relational DBs</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">W2</div>
+          <div class="roadmap-step-title">Product & Prompts</div>
+          <div class="roadmap-step-desc">AI UX Design, Prompting & LLM APIs</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">W3</div>
+          <div class="roadmap-step-title">Integration & RAG</div>
+          <div class="roadmap-step-desc">Embeddings, Qdrant & Solution Design</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-step-dot">W4</div>
+          <div class="roadmap-step-title">Agents & Career</div>
+          <div class="roadmap-step-desc">AI Agents, Portfolios & Demo Day</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAGES 5-9: DETAILED WEEKLY SYLLABUS ── -->
+  <section id="curriculum" class="section-padding">
+    <div class="wrapper">
+      <h2 class="section-title">Weekly Syllabus breakdown</h2>
+
+      <!-- Track Selector Switch -->
+      <div class="track-selector">
+        <button class="track-btn active" onclick="switchTrack('university')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle;"><path d="M22 10v6M2 10v6M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg>
+          University Track
+        </button>
+        <button class="track-btn" onclick="switchTrack('highschool')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16.5"/></svg>
+          High School Track
+        </button>
+      </div>
+
+      <div id="university-syllabus" class="syllabus-track-content active">
+        <div class="timeline-container">
+        
+          <!-- ORIENTATION DAY -->
+          <div class="week-block">
+            <div class="week-header" style="background: linear-gradient(90deg, var(--primary-dark), #2D3748);">
+              <span>Orientation Day — Welcome & Program Briefing</span>
+              <span class="week-header-subtitle">Onboarding, community introductions, and tools setup</span>
+            </div>
+            <div class="session-cards-grid" style="grid-template-columns: 1fr;">
+              <div class="session-card" style="border-left: 4px solid var(--primary-orange);">
+                <div class="session-top-meta">
+                  <span class="session-num" style="background: var(--primary-orange); color: #FFFFFF;">Onboarding</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Friday, 25 July 2026 (Joint)
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Welcome & Onboarding Introduction</h3>
+                  <span class="session-lecturer">Led by: Ejo Labs Team</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>What to Expect:</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    A welcoming, high-energy, and joint introduction to the Ejo Labs Summer Training Program 2026. We aim to leave a lasting impression by showcasing real-world AI applications and ensuring everyone gets to know our vision, team, and EjoChat products from day one.
+                  </p>
+                  <h4>Agenda & Focus Areas:</h4>
+                  <ul>
+                    <li><strong>Meet Ejo Labs Team:</strong> Introductions to your instructors, program leads, mentors, and fellow student cohorts.</li>
+                    <li><strong>Program Inspiration & Goals:</strong> An overview of the Summer Training Program, the weekly syllabus, and capstone expectations.</li>
+                    <li><strong>Live AI Use Cases:</strong> Real-world demonstrations of advanced prompting, the EjoChat API, and showcasing EjoChat mobile app.</li>
+                    <li><strong>Interactive Icebreakers:</strong> Playing games using Kahoot (a format we will use all along the program) to connect with peers.</li>
+                    <li><strong>Environment Check & Prep:</strong> High-level walkthrough of what to expect, tools setup verification, and open Q&A.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- WEEK 1 -->
+        <div class="week-block">
+          <div class="week-header">
+            <span>Week 1 — Software Engineering Foundations</span>
+            <span class="week-header-subtitle">Building baseline application code</span>
+          </div>
+          <div class="session-cards-grid">
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 1</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Tuesday, 28 July 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>Introduction to AI Engineering & Environment Setup</h3>
+                <span class="session-lecturer">Lead Lecturer: Bosco Kalinijabo</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Differentiate AI Engineering roles from traditional development and ML research.</li>
+                  <li>Configure clean virtual Python runtimes and environment configurations.</li>
+                  <li>Execute atomic Git operations and collaborative team branch workflows.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Core AI concepts: What AI can and cannot do, how ChatGPT works conceptually, and Responsible AI.</li>
+                  <li>Intro to AI coding assistants (Cursor, Claude Code, Gemini CLI, Copilot) and environment setup (VS Code, Python runtime, virtual environments).</li>
+                  <li>Professional Git workflow: commit standards, branch naming, pull requests, and code reviews.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Initialize the team GitHub repository, configure environment settings, and push the initial project structure.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A shared GitHub repository containing active virtual environment configurations and a merged Pull Request verifying Python runtime execution.</p>
+              </div>
+            </div>
+
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 2</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Friday, 31 July 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>Backend Development Fundamentals</h3>
+                <span class="session-lecturer">Lecturers: Bosco Kalinijabo & Neha Fathima</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Explain REST API operations and standard HTTP request-response patterns.</li>
+                  <li>Build functional backend endpoints in Python using FastAPI.</li>
+                  <li>Design database tables and perform basic queries using PostgreSQL and SQLModel ORM.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>FastAPI routing: headers, payloads, query parameters, type checking, and auto-documentation.</li>
+                  <li>Relational database design, SQL schemas, environment variables (.env files), and credentials safety.</li>
+                  <li>Backend testing strategies and API verification using Postman.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Build core API routes for item creation and retrieval, and link the application to a local PostgreSQL instance.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A running FastAPI backend server connected to a database, verified with active Postman testing requests.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page break for print -->
+        <div class="page-break"></div>
+
+        <!-- WEEK 2 -->
+        <div class="week-block">
+          <div class="week-header">
+            <span>Week 2 — AI Product Thinking & Prompt Engineering</span>
+            <span class="week-header-subtitle">Designing UX and crafting model prompts</span>
+          </div>
+          <div class="session-cards-grid">
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 3</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Tuesday, 4 August 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>AI Product Design (Joint with HS Track)</h3>
+                <span class="session-lecturer">Lecturers: Bosco Kalinijabo & Prof. Dr. Manuel Oriol</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Determine when to solve problems with generative AI versus traditional software algorithms.</li>
+                  <li>Design UI/UX experiences that communicate model latency and handle output uncertainty.</li>
+                  <li>Calculate running token costs (COGS) and understand AI business models.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Spotting high-value AI use cases, defining value propositions, and levels of automation.</li>
+                  <li>AI UX patterns: streaming responses, edit controls, failure fallbacks, and retry mechanisms.</li>
+                  <li>Ethical AI design: privacy, security, user consent, governance, and regulations.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Map user personas, sketch UX/UI layouts, and build operating cost matrices for the capstone idea.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A Product Specification sheet outlining target personas, UI wireframes, and fallback handlers.</p>
+              </div>
+            </div>
+
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 4</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Friday, 7 August 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>Prompt Engineering & LLM Fundamentals</h3>
+                <span class="session-lecturer">Lead Lecturer: Bosco Kalinijabo</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Write clear, structured system and user prompts utilizing role-prompting and few-shot examples.</li>
+                  <li>Understand token mechanics, context windows, temperature ranges, and how hallucinations occur.</li>
+                  <li>Debug and version control prompts effectively within coding workflows.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Core prompt architecture: instructions, background context, few-shot examples, and format constraints.</li>
+                  <li>Prompting AI coding assistants effectively to optimize development speed.</li>
+                  <li>Model evaluation parameters: balancing cost, speed, and quality for various enterprise tasks.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Design, test, and version control prompt templates for text categorization, extraction, and validation.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A version-controlled prompt directory (`prompts.yaml`) containing validated prompt templates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page break for print -->
+        <div class="page-break"></div>
+
+        <!-- WEEK 3 -->
+        <div class="week-block">
+          <div class="week-header">
+            <span>Week 3 — AI Integration & Solution Design</span>
+            <span class="week-header-subtitle">Implementing RAG pipelines and operational audits</span>
+          </div>
+          <div class="session-cards-grid">
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 5</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Tuesday, 11 August 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>AI Integration & Retrieval-Augmented Generation (RAG)</h3>
+                <span class="session-lecturer">Lecturers: Ejo Labs Team & Henry Okonkwo</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Integrate Large Language Models into backend code with structured JSON output enforcement.</li>
+                  <li>Implement document parsing, semantic text chunking, and overlap limits.</li>
+                  <li>Connect and query the Qdrant vector database for grounded context retrieval.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Calling model APIs from Python, handling response streaming, and structured Pydantic parsing.</li>
+                  <li>Vector search fundamentals: embeddings generation, text chunking strategies, and metadata indexing.</li>
+                  <li>Local Kinyarwanda context grounding using the EjoChat API.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Ingest documents, convert them into vector embeddings, and build a local database retrieval pipeline.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A FastAPI route that queries Qdrant to retrieve matching source context and returns a RAG-grounded response.</p>
+              </div>
+            </div>
+
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 6</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Friday, 14 August 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>AI Opportunity Discovery & Solution Design (Joint with HS Track)</h3>
+                <span class="session-lecturer">Lecturers: Protogene Hahirwabayo & Dr. Geistanger Andrea</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Audit operational processes to identify manual workflows that can be automated with semantic parsing.</li>
+                  <li>Formulate comprehensive problem definitions and design thinking outlines.</li>
+                  <li>Conduct SWOT analyses (Strengths, Weaknesses, Opportunities, Threats) on proposed AI solutions.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Operational auditing: finding low-hanging AI fruit and high-value workflows.</li>
+                  <li>Design thinking methodologies, mapping user personas, and scoping technical requirements.</li>
+                  <li>Pitching architectures: explaining vector stores and LLM pipelines to non-technical stakeholders.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Conduct opportunity discovery and draft a solution design proposal for an enterprise client.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A completed SWOT analysis template, problem definition statement, and a solution architecture outline.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page break for print -->
+        <div class="page-break"></div>
+
+        <!-- WEEK 4 -->
+        <div class="week-block">
+          <div class="week-header">
+            <span>Week 4 — AI Agents & Career Readiness</span>
+            <span class="week-header-subtitle">Deploying agents and preparing for the market</span>
+          </div>
+          <div class="session-cards-grid">
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 7</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Tuesday, 18 August 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>Introduction to AI Agents</h3>
+                <span class="session-lecturer">Lecturers: Bosco Kalinijabo & Protogene Hahirwabayo</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Explain the architecture of an AI agent, including reasoning loops (ReAct) and memory states.</li>
+                  <li>Enable agents to select and execute custom python function tools dynamically.</li>
+                  <li>Implement human-in-the-loop oversight mechanisms for high-impact actions.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Agent loops vs. chain execution, writing tool descriptions, and designing agent system prompts.</li>
+                  <li>Function tool-calling: parameter schema generation and input parsing.</li>
+                  <li>Managing short-term session memory and thread states in interactive environments.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Expose custom calculation and query tools to a model-based agent loop and test its task-solving capability.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A running backend agent endpoint that dynamically resolves user requests by calling custom tools.</p>
+              </div>
+            </div>
+
+            <div class="session-card">
+              <div class="session-top-meta">
+                <span class="session-num">Session 8</span>
+                <span class="session-date">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Friday, 21 August 2026
+                </span>
+              </div>
+              <div class="session-title-block">
+                <h3>Career Development & Professional Skills</h3>
+                <span class="session-lecturer">Lecturers: Dr. Stamp Fabian, Hugues Gashugi & Ejo Labs Team (Joint)</span>
+              </div>
+              <div class="session-content-block">
+                <h4>Learning Objectives:</h4>
+                <ul>
+                  <li>Transition from student to professional developer with a focused growth mindset.</li>
+                  <li>Structure and build an outstanding GitHub portfolio showcasing real-world projects.</li>
+                  <li>Write a strong, ATS-friendly technical CV and optimize LinkedIn profiles for recruitment.</li>
+                </ul>
+                <h4>Topics Covered:</h4>
+                <ul>
+                  <li>Best practices for code visibility: README layout, license selection, and documentation standards.</li>
+                  <li>Contributing to open-source software and navigating tech interviews (whiteboarding, system design).</li>
+                  <li>Pitching technical projects: how to present live demos and architecture diagrams on Hackathon Day.</li>
+                </ul>
+              </div>
+              <div class="lab-box">
+                <p><strong>Practical Lab:</strong> Perform peer CV reviews, audit GitHub portfolio READMEs, and run practice pitch presentations.</p>
+              </div>
+              <div class="deliverables-box">
+                <p><strong>Session Deliverables:</strong> A finalized professional resume, polished GitHub profile README, and a draft pitch deck for Demo Day.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- ends university-syllabus timeline-container -->
+      </div> <!-- ends university-syllabus -->
+
+      <div id="highschool-syllabus" class="syllabus-track-content">
+        <div class="timeline-container">
+          
+          <!-- ORIENTATION DAY -->
+          <div class="week-block">
+            <div class="week-header" style="background: linear-gradient(90deg, var(--primary-dark), #2D3748);">
+              <span>Orientation Day — Discover. Build. Create.</span>
+              <span class="week-header-subtitle">Welcome, icebreakers, and onboarding</span>
+            </div>
+            <div class="session-cards-grid" style="grid-template-columns: 1fr;">
+              <div class="session-card" style="border-left: 4px solid var(--primary-orange);">
+                <div class="session-top-meta">
+                  <span class="session-num" style="background: var(--primary-orange); color: #FFFFFF;">Onboarding</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Friday, 25 July 2026 (Joint)
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Welcome & Onboarding Introduction</h3>
+                  <span class="session-lecturer">Led by: Ejo Labs Team</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>What to Expect:</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    A welcoming, high-energy, and joint introduction to the Ejo Labs Summer Training Program 2026. We aim to leave a lasting impression by showcasing real-world AI applications and ensuring everyone gets to know our vision, team, and EjoChat products from day one.
+                  </p>
+                  <h4>Agenda & Focus Areas:</h4>
+                  <ul>
+                    <li><strong>Meet Ejo Labs Team:</strong> Introductions to your instructors, program leads, mentors, and fellow student cohorts.</li>
+                    <li><strong>Program Inspiration & Goals:</strong> An overview of the Summer Training Program, the weekly syllabus, and capstone expectations.</li>
+                    <li><strong>Live AI Use Cases:</strong> Real-world demonstrations of advanced prompting, the EjoChat API, and showcasing EjoChat mobile app.</li>
+                    <li><strong>Interactive Icebreakers:</strong> Playing games using Kahoot (a format we will use all along the program) to connect with peers.</li>
+                    <li><strong>Environment Check & Prep:</strong> High-level walkthrough of what to expect, tools setup verification, and open Q&A.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- WEEK 1 -->
+          <div class="week-block">
+            <div class="week-header">
+              <span>Week 1 — Discovering Programming</span>
+              <span class="week-header-subtitle">Learning how computers think</span>
+            </div>
+            <div class="session-cards-grid">
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 1</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Monday, 27 July 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Welcome to Technology, AI & Prompt Engineering</h3>
+                  <span class="session-lecturer">Lecturers: Melyse Shema & Protogene Hahirwabayo</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Understand programming, computational thinking, and how AI affects daily life.</li>
+                    <li>Explain differences between traditional code and AI models, writing effective prompts.</li>
+                    <li>Discuss responsible AI, safety, privacy boundaries, and ethical constraints.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Tech Careers & AI Foundations: What software/AI engineers do, model mechanics, and AI concepts.</li>
+                    <li>Computational Thinking & Prompt Engineering: Problem decomposition, role definition, and context injection.</li>
+                    <li>Responsible AI: Privacy boundaries, hallucination issues, and ethical constraints.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Logically solve real-world problems and experiment with prompt templates to transform data using AI model interfaces.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A combined logic flowchart and prompt-guide template sheet containing tested system prompts.</p>
+                </div>
+              </div>
+
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 2</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Thursday, 30 July 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Introduction to Programming</h3>
+                  <span class="session-lecturer">Lecturers: Protogene Hahirwabayo & Trekko (Valentin)</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Install Python, open the VS Code editor, and run a simple first script.</li>
+                    <li>Use variables, manipulate text strings, and compute basic math operations.</li>
+                    <li>Capture inputs from users and print outputs back to the screen.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Development setup: Getting Python up and running, and using VS Code.</li>
+                    <li>Python syntax: Variables, data types (numbers, text), and mathematical operators.</li>
+                    <li>Interactive scripts: Standard inputs and outputs (user inputs, printing outputs).</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Run interactive programming exercises (Kahoot games) and build a simple command-line calculator.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A running Python script that prompts the user for numbers and prints a computed result.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page break for print -->
+          <div class="page-break"></div>
+
+          <!-- WEEK 2 -->
+          <div class="week-block">
+            <div class="week-header">
+              <span>Week 2 — Learning to Build</span>
+              <span class="week-header-subtitle">Writing core logic and designing products</span>
+            </div>
+            <div class="session-cards-grid">
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 3</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Monday, 3 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Programming Fundamentals & AI Coding Assistants</h3>
+                  <span class="session-lecturer">Lecturers: Muslim Baymerov & Protogene Hahirwabayo</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Implement control logic using conditions (if/else) and loops (for/while).</li>
+                    <li>Organise code using custom functions, lists, and key-value dictionaries.</li>
+                    <li>Query AI coding assistants responsibly to debug errors and review syntax.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Control flow & data structures: Conditions, loops, functions, lists, and dictionaries.</li>
+                    <li>Software engineering practices: Breaking down programs, reading error messages, and basic debugging.</li>
+                    <li>AI assistants: Asking good questions, understanding generated code, and learning rather than copying.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Build interactive logic games and draft structured prompts to debug program errors.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A function-based Python script implementing nested loops and conditional checks, hosted on GitHub.</p>
+                </div>
+              </div>
+
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 4 (Joint)</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Tuesday, 4 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>AI Product Design</h3>
+                  <span class="session-lecturer">Lecturers: Bosco Kalinijabo & Prof. Dr. Manuel Oriol</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Determine when to solve problems with generative AI versus traditional software algorithms.</li>
+                    <li>Design UI/UX experiences that communicate model latency and handle output uncertainty.</li>
+                    <li>Calculate running token costs (COGS) and understand AI business models.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Spotting high-value AI use cases, defining value propositions, and levels of automation.</li>
+                    <li>AI UX patterns: streaming responses, edit controls, failure fallbacks, and retry mechanisms.</li>
+                    <li>Ethical AI design: privacy, security, user consent, governance, and regulations.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Map user personas, sketch UX/UI layouts, and build operating cost matrices for the capstone idea.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A Product Specification sheet outlining target personas, UI wireframes, and fallback handlers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page break for print -->
+          <div class="page-break"></div>
+
+          <!-- WEEK 3 -->
+          <div class="week-block">
+            <div class="week-header">
+              <span>Week 3 — Introduction to AI</span>
+              <span class="week-header-subtitle">Connecting applications to intelligent models</span>
+            </div>
+            <div class="session-cards-grid">
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 5</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Monday, 10 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Build Your First AI Application</h3>
+                  <span class="session-lecturer">Lecturers: Protogene Hahirwabayo & Richard IRAKOZE</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Connect a Python application to a cloud model API to execute prompt tasks.</li>
+                    <li>Construct a basic command-line conversational chatbot loop.</li>
+                    <li>Audit existing AI applications to study production-ready interfaces.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>API integration: Sending payload prompts, receiving responses, and error handling.</li>
+                    <li>Chat interfaces: Managing chat histories and showing conversational logs.</li>
+                    <li>Case study: Analysis of local AI agents and custom-built systems (Safiya AI).</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Connect a local Python script to a model endpoint and build a homework helper chatbot.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A running terminal-based Python chatbot that calls an API to answer user queries.</p>
+                </div>
+              </div>
+
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 6 (Joint)</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Friday, 14 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>AI Opportunity Discovery & Solution Design</h3>
+                  <span class="session-lecturer">Lecturers: Protogene Hahirwabayo & Dr. Geistanger Andrea</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Audit operational processes to identify manual workflows that can be automated with semantic parsing.</li>
+                    <li>Formulate comprehensive problem definitions and design thinking outlines.</li>
+                    <li>Conduct SWOT analyses (Strengths, Weaknesses, Opportunities, Threats) on proposed AI solutions.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Operational auditing: finding low-hanging AI fruit and high-value workflows.</li>
+                    <li>Design thinking methodologies, mapping user personas, and scoping technical requirements.</li>
+                    <li>Pitching architectures: explaining vector stores and LLM pipelines to non-technical stakeholders.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Conduct opportunity discovery and draft a solution design proposal for an enterprise client.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A completed SWOT analysis template, problem definition statement, and a solution architecture outline.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page break for print -->
+          <div class="page-break"></div>
+
+          <!-- WEEK 4 -->
+          <div class="week-block">
+            <div class="week-header">
+              <span>Week 4 — Mentorship & Guidance</span>
+              <span class="week-header-subtitle">Polishing code and preparing to pitch</span>
+            </div>
+            <div class="session-cards-grid">
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 7</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Monday, 17 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Inspiration & Career Mentorship</h3>
+                  <span class="session-lecturer">Lecturers: Protogene Hahirwabayo & Aubin Joanes IGIRANEZA</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Receive detailed milestones and technical feedback from software mentors.</li>
+                    <li>Understand the learning pathways and habits required for AI engineering.</li>
+                    <li>Explore future educational options and the Ejo Labs Intermediate program.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Personal journeys: Mentors share their career paths and experiences in tech.</li>
+                    <li>Technical reviews: Live code audits, project checks, and debugging advice.</li>
+                    <li>Educational roadmap: Preparing for the next steps in software engineering.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Present capstone drafts to mentors and implement final troubleshooting changes.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> An audited and validated codebase ready for deployment review.</p>
+                </div>
+              </div>
+
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <span class="session-num">Session 8</span>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Friday, 21 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Career Development & Professional Skills</h3>
+                  <span class="session-lecturer">Lecturers: Dr. Stamp Fabian, Hugues Gashugi & Ejo Labs Team (Joint)</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Transition from student to professional developer with a focused growth mindset.</li>
+                    <li>Structure and build an outstanding GitHub portfolio showcasing real-world projects.</li>
+                    <li>Write a strong, ATS-friendly CV and optimize LinkedIn profiles for recruitment.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Best practices for code visibility: README layout, license selection, and documentation standards.</li>
+                    <li>Contributing to open-source software and navigating tech interviews.</li>
+                    <li>Pitching technical projects: how to present live demos on Hackathon Day.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Run peer project presentations and practice pitches ahead of Demo Day.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A finalized GitHub project repository with an executive README and a draft presentation slide structure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLOSING DAY & DEMO DAY ── -->
+  <section id="closing" class="section-padding" style="background-color: #FFFFFF;">
+    <div class="wrapper">
+      <h2 class="section-title">Closing Day & Demo Day</h2>
+      <p style="margin-bottom: 0.8rem; font-size: 1.05rem;">
+        <strong>Date:</strong> Friday, 28 August 2026 | <strong>Time:</strong> 13:00 - 17:00 | <strong>Venue:</strong> Kigali Innovation Hub (GIZ DTC Event Space)
+      </p>
+      <p style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-muted);">
+        <strong>Address:</strong> 41 KN Str 17, Kacyiru Sector, Gasabo District, Kigali | <strong style="color: var(--primary-orange);">Admission:</strong> Tickets will be published soon.
+      </p>
+
+      <div class="closing-card" style="max-width: 800px; margin: 0 auto;">
+        <span class="closing-time-badge">13:00 - 17:00</span>
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Final Project Demo Day & Awards
+        </h3>
+        <ul>
+          <li><strong>Venue Partnership:</strong> Hosted physically at the Kigali Innovation Hub (GIZ DTC Event Space) — 41 KN Str 17, Kacyiru Sector, Gasabo District, Kigali.</li>
+          <li><strong>Technical Capstone Pitches:</strong> Live project demonstrations and system architecture pitches evaluated by a panel of industry judges.</li>
+          <li><strong>Awards & Hackathon Ceremony:</strong> Announcing the winners of the capstone hackathon, presenting certificates of participation, and awarding Program credentials.</li>
+          <li><strong>Closing Remarks & Networking:</strong> Honoring partners, thanking sponsors, and opening the floor for networking and recruitment mixers (schedule kept flexible for final adjustments).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page break for print -->
+  <div class="page-break"></div>
+
+  <!-- ── EJO LABS TEAM & GUEST SPEAKERS ── -->
+  <section id="lecturers" class="section-padding" style="background-color: var(--bg-warm);">
+    <div class="wrapper">
+      <h2 class="section-title">Ejo Labs Team & Guest Speakers</h2>
+      <p style="text-align: center; max-width: 650px; margin: -1rem auto 2.5rem auto; color: var(--text-muted); font-size: 0.95rem;">
+        To provide a global-standard education, Ejo Labs team members are joined by distinguished industry leaders, researchers, and engineers from around the world to co-lecture and share their real-world expertise.
+      </p>
+
+      <div class="lecturers-grid">
+        <!-- Protogene Hahirwabayo -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/Protogene_Hahirwabayo.jpg" alt="Protogene Hahirwabayo" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Protogene Hahirwabayo</div>
+          <div class="lecturer-title">Founder & CEO, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Founder & CEO, Ejo Labs • Ex-Data Engineer at Roche & BMW Group</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in Data Engineering • B.Sc. in Electrical & Electronics Eng.</div>
+            <div><strong>Skills:</strong> Python & R, Big Data, Machine Learning, Biostatistics & Bioinformatics</div>
+          </div>
+        </div>
+
+        <!-- Bosco Kalinijabo -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/Bosco_Kalinijabo.jpg" alt="Bosco Kalinijabo" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Bosco Kalinijabo</div>
+          <div class="lecturer-title">Founder & CTO, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Founder & CTO, Ejo Labs • Ex-Digital Product Lead at BPR Bank</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in CS & Software Engineering (Constructor Univ.)</div>
+            <div><strong>Skills:</strong> Python, TypeScript, AI Agents, PostgreSQL, API & MLOps</div>
+          </div>
+        </div>
+
+        <!-- Joseph Fersh Nkurunziza -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/joseph-fersh-nkurunziza.jpeg" alt="Joseph Fersh Nkurunziza" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Joseph Fersh Nkurunziza</div>
+          <div class="lecturer-title">Co-founder & CBO, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Co-founder & CBO, Ejo Labs • Business & Strategy Specialist</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> Master of Business Administration (MBA)</div>
+            <div><strong>Skills:</strong> Business Strategy, Product Operations, Partnerships & Market Expansion</div>
+          </div>
+        </div>
+
+        <!-- Nicole Munezero -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/nicole-munezero.jpg" alt="Nicole Munezero" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Nicole Munezero</div>
+          <div class="lecturer-title">Co-founder & Head of Operations, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Co-founder & Head of Operations, Ejo Labs • Software Engineer</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Computer Engineering</div>
+            <div><strong>Skills:</strong> Software Engineering, Operations Management, Technical Support & Logistics</div>
+          </div>
+        </div>
+
+        <!-- Hugues Gashugi -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/hugues-gashugi.jpeg" alt="Hugues Gashugi" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Hugues Gashugi</div>
+          <div class="lecturer-title">Head of Growth, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Head of Growth, Ejo Labs • Users & Community Specialist</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Economics</div>
+            <div><strong>Skills:</strong> User Growth, Community Engagement, Product Marketing & Analytics</div>
+          </div>
+        </div>
+
+        <!-- Melyse Shema -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/melyse-shema.jpg" alt="Melyse Shema" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Melyse Shema</div>
+          <div class="lecturer-title">Head of Digital Transformation & Adoption, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Head of Digital Transformation & Adoption, Ejo Labs • Data Science Specialist</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in Data Science for Business and Society</div>
+            <div><strong>Skills:</strong> Data Science, Digital Transformation, Technology Adoption & Strategy</div>
+          </div>
+        </div>
+
+        <!-- Dr. Geistanger Andrea -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Dr_Geistanger_Andrea.jpeg" alt="Dr. Geistanger Andrea" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Dr. Geistanger Andrea</div>
+          <div class="lecturer-title">Data, AI & Analytics Leader</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> 20 years at Roche (Senior Director - MassSpec Biostatistics - Senior Data Science Leader)</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> PhD (Dr. rer. nat.), TU Dortmund • TÜV AI Manager</div>
+            <div><strong>Skills:</strong> Data Science, GenAI, biostatistics, project management, leadership</div>
+          </div>
+        </div>
+
+        <!-- Prof. Dr. Manuel Oriol -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Manuel_Oriol.jpeg" alt="Prof. Dr. Manuel Oriol" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Prof. Dr. Manuel Oriol</div>
+          <div class="lecturer-title">Leader in Tech & Software Engineering Professor</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Professor at HEIG-VD • Ex-ABB, ETH Zurich & Univ. of York</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> PhD in Computer Science (Univ. of Geneva)</div>
+            <div><strong>Skills:</strong> Software Engineering, AI & Embedded Systems, Automated Testing, System Architecture</div>
+          </div>
+        </div>
+
+        <!-- Dr. Stamp Fabian -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Dr_Stamp_Fabian.jpeg" alt="Dr. Stamp Fabian" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Dr. Stamp Fabian</div>
+          <div class="lecturer-title">Senior Data Scientist</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Senior Data Scientist at Roche (R&D Automation)</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> PhD in Medical Research / Diagnostics</div>
+            <div><strong>Skills:</strong> ML & AI, Algorithm Engineering, Automation, Cost-Benefit Optimization</div>
+          </div>
+        </div>
+
+        <!-- Henry Okonkwo -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Henry_Okonkwo.jpeg" alt="Henry Okonkwo" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Henry Okonkwo</div>
+          <div class="lecturer-title">Senior Software Engineer & AI Product Engineer</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Senior Software Engineer (Fintech & SaaS) • Creator of PermitRail</div>
+            <div><strong>Skills:</strong> Agentic AI Development, LangChain / LangGraph, RAG, TypeScript & Python</div>
+          </div>
+        </div>
+
+        <!-- Neha Fathima -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="background: linear-gradient(135deg, #1A2535, #E87722); color: #FFFFFF; font-weight: bold; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">NF</div>
+          <div class="lecturer-name">Neha Fathima</div>
+          <div class="lecturer-title">Software Engineer @ idealo internet GmbH</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Software Engineer at idealo internet GmbH • Ex-Quotient Tech</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in CS & Software Engineering (Constructor Univ.)</div>
+            <div><strong>Skills:</strong> Microservices, Cloud Solutions (AWS), Distributed Systems, Java & Spring Boot</div>
+          </div>
+        </div>
+
+        <!-- Muslim Baymerov -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Muslim_Baymerov.jpeg" alt="Muslim Baymerov" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Muslim Baymerov</div>
+          <div class="lecturer-title">Software Engineer</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Software Engineer at A-Pro Solutions • Data Analytics at BMW Group</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Computer Science (Constructor University)</div>
+            <div><strong>Skills:</strong> Python, Machine Learning, Data Pipelines (AWS & Snowflake), SQL</div>
+          </div>
+        </div>
+
+        <!-- Aubin Joanes IGIRANEZA -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Aubin_Joanes_Igiraneza.jpeg" alt="Aubin Joanes IGIRANEZA" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Aubin Joanes IGIRANEZA</div>
+          <div class="lecturer-title">Aerospace Engineer & Data Scientist</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Aerospace Consultant • Data Scientist (ex-Zipline)</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. Financial Eng. (WorldQuant Univ.) • B.Sc. Aerospace Eng. (METU Northern Cyprus)</div>
+            <div><strong>Skills:</strong> Data Analytics, Python, Web/Mobile Dev (React, Node), Aerospace Consultancy</div>
+          </div>
+        </div>
+
+        <!-- Richard IRAKOZE -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Richard_Irakoze.png" alt="Richard IRAKOZE" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Richard IRAKOZE</div>
+          <div class="lecturer-title">Founder & CEO, KinyatechAI Limited</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Founder & CEO, KinyatechAI (Kinyarwanda Speech, TTS & NLP)</div>
+            <div><strong>Skills:</strong> Deep Learning, Speech Synthesis, NLP, Conversational Commerce</div>
+          </div>
+        </div>
+
+        <!-- Valentin Niyonshuti -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Valentin_Niyonshuti.jpeg" alt="Valentin Niyonshuti" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Valentin Niyonshuti</div>
+          <div class="lecturer-title">Data Scientist & Software Engineer</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Founder, Trekko (Event discovery & ticketing MVP)</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. Data Science (Luiss Univ.) • B.Sc. Software Eng. (ALU)</div>
+            <div><strong>Skills:</strong> Data Science, Full-Stack Dev, DevOps, Agile Methodologies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page break for print -->
+  <div class="page-break"></div>
+
+  <!-- ── PROGRAM PARTNERS & SPONSORS ── -->
+  <section id="partners" class="section-padding" style="background-color: var(--bg-warm); border-top: 1px solid var(--border-color);">
+    <div class="wrapper">
+      <h2 class="section-title">Program Partners & Sponsors</h2>
+      <p style="text-align: center; max-width: 650px; margin: -1rem auto 2.5rem auto; color: var(--text-muted); font-size: 0.95rem;">
+        Ejo Labs is proud to collaborate with leading institutions and organizations committed to promoting inclusive AI, technology education for everyone, and youth development in technology.
+      </p>
+
+      <!-- Venue Partner Row -->
+      <div style="margin-top: 3rem; text-align: center;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Official Venue Partner</h3>
+        <p style="max-width: 650px; margin: 0 auto 1.5rem auto; color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
+          In recognition of their support, GIZ DTC is acknowledged as the Official Venue Partner, hosting our cohorts at the Kigali Innovation Hub.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <!-- GIZ Logo Card -->
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 1.5rem; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; overflow: hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.box-shadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.box-shadow='var(--shadow-sm)';">
+            <img src="assets/logos/logo_giz.png" alt="GIZ Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+          
+          <!-- DTC Logo Card -->
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 1.5rem; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; overflow: hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.box-shadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.box-shadow='var(--shadow-sm)';">
+            <img src="assets/logos/logo_dtc.png" alt="DTC Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+
+          <!-- German Cooperation Logo Card -->
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 1.5rem; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; overflow: hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.box-shadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.box-shadow='var(--shadow-sm)';">
+            <img src="assets/logos/logo_german_cooperation.png" alt="German Cooperation Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastructure Partner Row -->
+      <div style="margin-top: 3.5rem; text-align: center; border-top: 1px dashed var(--border-color); padding-top: 2.5rem;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Infrastructure Partner</h3>
+        <p style="max-width: 650px; margin: 0 auto 1.5rem auto; color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
+          AWS for Infrastructure
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <!-- AWS Logo Card -->
+          <div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 1.5rem; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; overflow: hidden;" onmouseover="this.style.transform='translateY(-2px)'; this.style.box-shadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.box-shadow='var(--shadow-sm)';">
+            <img src="assets/logos/logo_aws.svg" alt="Amazon Web Services Logo" style="max-width: 85%; max-height: 85%; object-fit: contain;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER CTA ── -->
+  <section class="footer-cta">
+    <div class="wrapper">
+      <h2>Let's build AI that works for Africa.</h2>
+      <p>Interested in sponsoring, lecturing, or hiring graduates from the Ejo Labs Summer Training Program 2026?</p>
+      
+      <div class="footer-contact-info">
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@ejolabs.com">info@ejolabs.com</a>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://ejolabs.com" target="_blank">ejolabs.com</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        &copy; 2026 Ejo Labs – Kigali, Rwanda • All rights reserved • Confidential & Proprietary
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function switchTrack(track) {
+      // Remove active class from all buttons
+      document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
+      // Remove active class from all syllabus containers
+      document.querySelectorAll('.syllabus-track-content').forEach(content => content.classList.remove('active'));
+      
+      // Add active class to selected button and container
+      const btn = event.currentTarget;
+      btn.classList.add('active');
+      
+      if (track === 'university') {
+        document.getElementById('university-syllabus').classList.add('active');
+      } else if (track === 'highschool') {
+        document.getElementById('highschool-syllabus').classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
