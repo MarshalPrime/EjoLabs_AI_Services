@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejo Labs Summer Training Program Curriculum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* ── BASE STYLING ── */
+    :root {
+      --primary-navy: #1A2535;
+      --brand-orange: #E87722;
+      --bg-warm: #FEF9F4;
+      --text-dark: #2D3748;
+      --text-muted: #6B7280;
+      --border-grey: #E5E7EB;
+      --font-headings: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background-color: #FFFFFF;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── PAGE DEFINITION & BREAKS ── */
+    @page {
+      size: A4 portrait;
+      margin: 1.8cm 1.5cm;
+    }
+
+    .page {
+      page-break-after: always;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 250mm; /* A4 vertical spacing */
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 {
+      font-family: var(--font-headings);
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--brand-orange);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .logo-img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .header-meta {
+      text-align: right;
+    }
+
+    .header-meta-title {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-meta-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── TITLE CARD ── */
+    .title-block {
+      background: linear-gradient(135deg, var(--primary-navy), #0C1522);
+      color: #FFFFFF;
+      padding: 2.2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--brand-orange);
+      color: #FFFFFF;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.8rem;
+    }
+
+    .main-title {
+      font-size: 2rem;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .main-title span {
+      color: var(--brand-orange);
+    }
+
+    .main-subtitle {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* ── GRID CARDS ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .info-card {
+      background-color: #FAFAFB;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      padding: 1.2rem;
+    }
+
+    .info-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1.5px solid var(--border-grey);
+      padding-bottom: 0.3rem;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      margin-bottom: 0.4rem;
+      font-size: 0.82rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .info-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--brand-orange);
+      font-weight: bold;
+    }
+
+    /* ── ASSESSMENT TABLE ── */
+    .assessment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+    }
+
+    .assessment-table th {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      text-align: left;
+      padding: 0.5rem 0.8rem;
+      font-family: var(--font-headings);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .assessment-table td {
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid var(--border-grey);
+      font-size: 0.8rem;
+    }
+
+    .assessment-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .weight-val {
+      font-family: var(--font-headings);
+      font-weight: 700;
+      color: var(--brand-orange);
+      text-align: right;
+    }
+
+    /* ── SYLLABUS LAYOUT ── */
+    .phase-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      border-left: 4px solid var(--brand-orange);
+      padding-left: 0.6rem;
+      color: var(--primary-navy);
+      font-family: var(--font-headings);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .syllabus-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    .syllabus-table th {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      padding: 0.6rem 0.8rem;
+      font-family: var(--font-headings);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .syllabus-table td {
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border-grey);
+      font-size: 0.78rem;
+      vertical-align: top;
+      line-height: 1.4;
+    }
+
+    .col-time {
+      width: 15%;
+      font-weight: 600;
+      color: var(--primary-navy);
+      white-space: nowrap;
+    }
+
+    .col-session {
+      width: 18%;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      color: var(--brand-orange);
+    }
+
+    .col-focus {
+      width: 47%;
+    }
+
+    .col-lecturer {
+      width: 20%;
+      font-weight: 500;
+      color: var(--primary-navy);
+    }
+
+    .syllabus-table tr:nth-child(even) td {
+      background-color: #FAFAFB;
+    }
+
+    .topics-list {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-grey);
+      padding-top: 0.6rem;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* ── CAPSTONE GRID ── */
+    .capstone-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .capstone-card {
+      background-color: #FAFAFB;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+
+    .capstone-card h4 {
+      font-family: var(--font-headings);
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      margin-bottom: 0.4rem;
+      border-bottom: 1px dashed var(--border-grey);
+      padding-bottom: 0.2rem;
+    }
+
+    .capstone-card ul {
+      list-style: none;
+    }
+
+    .capstone-card ul li {
+      font-size: 0.78rem;
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-left: 0.8rem;
+      color: var(--text-dark);
+    }
+
+    .capstone-card ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--brand-orange);
+      font-size: 0.7rem;
+    }
+
+    /* ── CLOSING BOXES ── */
+    .closing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .closing-card {
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      padding: 1.4rem;
+      background-color: #FAFAFB;
+      position: relative;
+    }
+
+    .closing-card h4 {
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      margin-bottom: 0.8rem;
+      border-bottom: 1.5px solid var(--border-grey);
+      padding-bottom: 0.3rem;
+    }
+
+    .closing-card ul {
+      list-style: none;
+    }
+
+    .closing-card ul li {
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+      position: relative;
+      padding-left: 0.9rem;
+    }
+
+    .closing-card ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--brand-orange);
+      font-size: 0.9rem;
+      top: -1px;
+    }
+
+    .time-badge {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.4rem;
+      background-color: #FFF5EC;
+      color: var(--brand-orange);
+      padding: 0.15rem 0.6rem;
+      border-radius: 50px;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =================================================== -->
+  <!-- PAGE 1: COVER, SPECS & ASSESSMENT WEIGHTS (PORTRAIT)-->
+  <!-- =================================================== -->
+  <div class="page">
+    <header class="doc-header">
+      <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="logo-img" />
+      <div class="header-meta">
+        <div class="header-meta-title">Program Syllabus</div>
+        <div class="header-meta-sub">2026 Academic Cohort</div>
+      </div>
+    </header>
+
+    <div class="title-block">
+      <div class="badge">Ejo Labs Summer Training Program 2026</div>
+      <h1 class="main-title">Summer Training <span>Program 2026</span></h1>
+      <p class="main-subtitle">Building the Next Generation of African AI Engineers</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Program Specifications</h3>
+        <ul class="info-list">
+          <li><strong>Orientation:</strong> Friday, 24 July 2026 (Joint)</li>
+          <li><strong>Program Weeks:</strong> 28 July – 21 August 2026 (4 Weeks)</li>
+          <li><strong>Closing Ceremony & Demos:</strong> Friday, 28 August 2026</li>
+          <li><strong>Schedule Structure:</strong> 2 sessions per week, 2 hours each (Tue & Fri)</li>
+          <li><strong>Workload:</strong> 4 hours live lectures + 4-6 hours practical coding</li>
+          <li><strong>Program Lead:</strong> Bosco Kalinijabo (Lead AI Engineer, Ejo Labs)</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Prerequisites & Environment</h3>
+        <ul class="info-list">
+          <li><strong>Target Audience:</strong> University students & self-taught developers</li>
+          <li><strong>Prior Experience:</strong> No prior AI or Machine Learning experience required</li>
+          <li><strong>Technical Base:</strong> Basic programming familiarity with Python recommended</li>
+          <li><strong>Required Equipment:</strong> Personal laptop (min. 8GB RAM) and stable internet</li>
+          <li><strong>Active Mentorship:</strong> Office hours and code reviews with Ejo Labs Engineers</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-card" style="margin-bottom: 2.2rem;">
+      <h3>Program Assessment & Grading Weights</h3>
+      <table class="assessment-table">
+        <thead>
+          <tr>
+            <th>Assessment Component</th>
+            <th style="text-align: right;">Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Attendance & Engagement:</strong> Punctual attendance and active technical discussions.</td>
+            <td class="weight-val">20%</td>
+          </tr>
+          <tr>
+            <td><strong>Weekly Labs Codebase:</strong> Clean execution of the 5 weekly codebase assignments.</td>
+            <td class="weight-val">20%</td>
+          </tr>
+          <tr>
+            <td><strong>Collaboration & Git Workflows:</strong> Group participation and Git contribution logs.</td>
+            <td class="weight-val">20%</td>
+          </tr>
+          <tr>
+            <td><strong>Capstone Project Deliverables:</strong> Code quality, Qdrant/EjoChat integration, and Cloud Run deploy.</td>
+            <td class="weight-val">30%</td>
+          </tr>
+          <tr>
+            <td><strong>Demo Day Technical Presentation:</strong> Live demonstration, architecture slides, and QA.</td>
+            <td class="weight-val">10%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="doc-footer">
+      <div>Ejo Labs © 2026 • Kigali, Rwanda • Confidential & Proprietary</div>
+      <div>Page 1 of 4</div>
+    </footer>
+  </div>
+
+  <!-- Page Break -->
+  <div class="page-break"></div>
+
+  <!-- =================================================== -->
+  <!-- PAGE 2: SYLLABUS PHASE 1 - WEEKS 1 & 2 (PORTRAIT)   -->
+  <!-- =================================================== -->
+  <div class="page">
+    <header class="doc-header">
+      <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="logo-img" />
+      <div class="header-meta">
+        <div class="header-meta-title">Timeline & Schedule</div>
+        <div class="header-meta-sub">Phase 1: Foundations</div>
+      </div>
+    </header>
+
+    <div class="phase-title">Phase 1: Foundations & Core Prompts</div>
+    <table class="syllabus-table">
+      <thead>
+        <tr>
+          <th style="width: 15%;">Date & Day</th>
+          <th style="width: 18%;">Session</th>
+          <th style="width: 47%;">Focus & Core Topics</th>
+          <th style="width: 20%;">Lecturer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-time">Fri, 25 Jul</td>
+          <td class="col-session">Orientation</td>
+          <td class="col-focus">
+            <strong>Welcome & Program Briefing</strong>
+            <div class="topics-list">Ejo Labs vision & team, live AI use cases, EjoChat API & EjoChat mobile app showcase, and interactive Kahoot games.</div>
+          </td>
+          <td class="col-lecturer">Ejo Labs Team</td>
+        </tr>
+        <tr>
+          <td class="col-time">Tue, 28 Jul</td>
+          <td class="col-session">W1 | Session 1</td>
+          <td class="col-focus">
+            <strong>Introduction to AI Engineering & Env Setup</strong>
+            <div class="topics-list">Core AI & LLM fundamentals, Git/GitHub branch workflows, Cursor/Claude setup, and Python refresh.</div>
+          </td>
+          <td class="col-lecturer">Bosco Kalinijabo</td>
+        </tr>
+        <tr>
+          <td class="col-time">Fri, 31 Jul</td>
+          <td class="col-session">W1 | Session 2</td>
+          <td class="col-focus">
+            <strong>Backend Development Fundamentals</strong>
+            <div class="topics-list">FastAPI routing, REST API request-response mechanics, PostgreSQL schema design, and SQLModel integrations.</div>
+          </td>
+          <td class="col-lecturer">Bosco Kalinijabo &<br/>Neha Fathima</td>
+        </tr>
+        <tr>
+          <td class="col-time">Tue, 04 Aug</td>
+          <td class="col-session">W2 | Session 3</td>
+          <td class="col-focus">
+            <strong>AI Product Design (Joint with HS Track)</strong>
+            <div class="topics-list">AI feasibility, UX patterns for model uncertainty, token costing (COGS), and failure fallback logic.</div>
+          </td>
+          <td class="col-lecturer">Bosco Kalinijabo &<br/>Prof. Dr. Manuel Oriol</td>
+        </tr>
+        <tr>
+          <td class="col-time">Fri, 07 Aug</td>
+          <td class="col-session">W2 | Session 4</td>
+          <td class="col-focus">
+            <strong>Prompt Engineering & LLM Fundamentals</strong>
+            <div class="topics-list">Tokens, context limits, role-prompting, few-shot layouts, prompt debugging, and structured JSON output.</div>
+          </td>
+          <td class="col-lecturer">Bosco Kalinijabo</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer class="doc-footer">
+      <div>Ejo Labs © 2026 • Kigali, Rwanda • Confidential & Proprietary</div>
+      <div>Page 2 of 4</div>
+    </footer>
+  </div>
+
+  <!-- Page Break -->
+  <div class="page-break"></div>
+
+  <!-- =================================================== -->
+  <!-- PAGE 3: SYLLABUS PHASE 2 - WEEKS 3 & 4 (PORTRAIT)   -->
+  <!-- =================================================== -->
+  <div class="page">
+    <header class="doc-header">
+      <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="logo-img" />
+      <div class="header-meta">
+        <div class="header-meta-title">Timeline & Schedule</div>
+        <div class="header-meta-sub">Phase 2: Integration & Agents</div>
+      </div>
+    </header>
+
+    <div class="phase-title">Phase 2: RAG, Agents & Career Readiness</div>
+    <table class="syllabus-table">
+      <thead>
+        <tr>
+          <th style="width: 15%;">Date & Day</th>
+          <th style="width: 18%;">Session</th>
+          <th style="width: 47%;">Focus & Core Topics</th>
+          <th style="width: 20%;">Lecturer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-time">Tue, 11 Aug</td>
+          <td class="col-session">W3 | Session 5</td>
+          <td class="col-focus">
+            <strong>AI Integration & Retrieval-Augmented Gen (RAG)</strong>
+            <div class="topics-list">Semantic document chunking, embeddings generation, Qdrant vector queries, and local EjoChat API integrations.</div>
+          </td>
+          <td class="col-lecturer">Ejo Labs Team &<br/>Henry Okonkwo</td>
+        </tr>
+        <tr>
+          <td class="col-time">Fri, 14 Aug</td>
+          <td class="col-session">W3 | Session 6</td>
+          <td class="col-focus">
+            <strong>AI Opportunity Discovery & Solution Design (Joint)</strong>
+            <div class="topics-list">Corporate operational audits, problem statement scoping, SWOT analysis, and design thinking outlines.</div>
+          </td>
+          <td class="col-lecturer">Protogene Hahirwabayo &<br/>Dr. Geistanger Andrea</td>
+        </tr>
+        <tr>
+          <td class="col-time">Tue, 18 Aug</td>
+          <td class="col-session">W4 | Session 7</td>
+          <td class="col-focus">
+            <strong>Introduction to AI Agents</strong>
+            <div class="topics-list">ReAct agent reasoning loops, function tool-calling configurations, memory state retention, and human-in-the-loop steps.</div>
+          </td>
+          <td class="col-lecturer">Bosco Kalinijabo &<br/>Protogene Hahirwabayo</td>
+        </tr>
+        <tr>
+          <td class="col-time">Fri, 21 Aug</td>
+          <td class="col-session">W4 | Session 8</td>
+          <td class="col-focus">
+            <strong>Career Development & Professional Skills</strong>
+            <div class="topics-list">GitHub developer portfolios, technical CV structures, tech recruitment prep, and open source contributions.</div>
+          </td>
+          <td class="col-lecturer">Dr. Stamp Fabian, Hugues Gashugi &<br/>Ejo Labs Team (Joint)</td>
+        </tr>
+        <tr>
+          <td class="col-time">Fri, 28 Aug</td>
+          <td class="col-session">Closing Day</td>
+          <td class="col-focus">
+            <strong>Demo Day Pitch & Closing Ceremony (Joint)</strong>
+            <div class="topics-list">Capstone presentations, hackathon awards, certificate ceremony, and thanking program sponsors.</div>
+          </td>
+          <td class="col-lecturer">Ejo Labs Team</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer class="doc-footer">
+      <div>Ejo Labs © 2026 • Kigali, Rwanda • Confidential & Proprietary</div>
+      <div>Page 3 of 4</div>
+    </footer>
+  </div>
+
+  <!-- Page Break -->
+  <div class="page-break"></div>
+
+  <!-- =================================================== -->
+  <!-- PAGE 4: CAPSTONE & CLOSING DAY DETAILS (PORTRAIT)   -->
+  <!-- =================================================== -->
+  <div class="page">
+    <header class="doc-header">
+      <img src="assets/ejolabs_logo.png" alt="Ejo Labs Logo" class="logo-img" />
+      <div class="header-meta">
+        <div class="header-meta-title">Project & Closing Day</div>
+        <div class="header-meta-sub">Detailed Requirements</div>
+      </div>
+    </header>
+
+    <div class="phase-title">Capstone Project Deliverables</div>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+      To graduate from the program and receive their Certificate, every team must design, build, and deploy a complete AI-powered application containing:
+    </p>
+
+    <div class="capstone-grid">
+      <div class="capstone-card">
+        <h4>1. Codebase & Documentation</h4>
+        <ul>
+          <li><strong>Clean Repository:</strong> Modular Python architecture versioned on GitHub with isolated configs.</li>
+          <li><strong>API Contract:</strong> Standard FastAPI routes documented via interactive Swagger UI.</li>
+          <li><strong>System Architecture:</strong> Detailed README containing a visual database and data flow diagram.</li>
+        </ul>
+      </div>
+
+      <div class="capstone-card">
+        <h4>2. AI Core & Database Integrations</h4>
+        <ul>
+          <li><strong>Semantic Indexing:</strong> Structured document ingestion using Qdrant collections.</li>
+          <li><strong>Grounded Context (RAG):</strong> Prompt logic connected to the Kinyarwanda-first EjoChat API.</li>
+          <li><strong>Output Enforcement:</strong> Strict JSON output schemas parsed and validated via Pydantic.</li>
+        </ul>
+      </div>
+
+      <div class="capstone-card">
+        <h4>3. DevOps & Hosting</h4>
+        <ul>
+          <li><strong>Containerization:</strong> Production-ready Dockerfile and local multi-service Compose scripts.</li>
+          <li><strong>Serverless Cloud:</strong> Live public API hosted on Google Cloud Run.</li>
+          <li><strong>Automation Pipeline:</strong> CI/CD setup via GitHub Actions triggering builds on merge.</li>
+        </ul>
+      </div>
+
+      <div class="capstone-card">
+        <h4>4. Production Best Practices</h4>
+        <ul>
+          <li><strong>Security Guards:</strong> Safe credentials storage and mitigation filters for prompt injections.</li>
+          <li><strong>Observability Tracing:</strong> Instrumented telemetry traces sent to Langfuse.</li>
+          <li><strong>Clean Log Pipes:</strong> Centralized error capturing and structured runtime logging.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase-title" style="margin-top: 1.8rem;">Closing Ceremony & Demo Day at GIZ DTC</div>
+    <div class="closing-card" style="margin-top: 1rem;">
+      <span class="time-badge">13:00 - 17:00</span>
+      <h4>Final Project Demo Day & Awards</h4>
+      <ul>
+        <li><strong>Venue Partnership:</strong> Hosted at the Kigali Innovation Hub (GIZ DTC Event Space) — 41 KN Str 17, Kacyiru Sector, Gasabo District, Kigali (Tickets will be published soon).</li>
+        <li><strong>Technical Capstone Pitches:</strong> Live demonstrations and architecture presentations evaluated by industry judges.</li>
+        <li><strong>Awards & Recognitions:</strong> Awarding the winner of the hackathon and presenting certificates of participation.</li>
+        <li><strong>Closing Remarks:</strong> Closing the event, thanking the sponsors, and opening the floor for networking (schedule kept flexible for adjustments).</li>
+      </ul>
+    </div>
+
+    <footer class="doc-footer">
+      <div>Contact: info@ejolabs.com • Website: ejolabs.com • Kigali, Rwanda</div>
+      <div>Page 4 of 4</div>
+    </footer>
+  </div>
+
+</body>
+</html>

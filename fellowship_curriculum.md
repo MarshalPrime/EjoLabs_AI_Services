@@ -4,7 +4,7 @@
 
 **Theme:** *Building the Next Generation of African AI Engineers*  
 **Program Duration:** 28 July – 28 August 2026 (5 Weeks)  
-**Orientation Day:** Friday, 25 July 2026  
+**Orientation Day:** Friday, 24 July 2026  
 **Closing Ceremony & Demo Day:** Tuesday, 1 September 2026  
 **Location:** Kigali, Rwanda & Online (Hybrid)  
 **Program Lead:** Bosco Kalinijabo, Lead AI Engineer, Ejo Labs  

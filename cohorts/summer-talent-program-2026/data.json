@@ -5,7 +5,7 @@
     "cohort": "summer-talent-program-2026",
     "year": 2026,
     "dates": {
-      "orientation": "Friday, 25 July 2026",
+      "orientation": "Friday, 24 July 2026",
       "start": "Monday, 27 July 2026",
       "end": "Friday, 21 August 2026",
       "demo_day": "Friday, 28 August 2026",
@@ -121,10 +121,28 @@
       ]
     },
     {
-      "category": "Infrastructure Partner",
-      "name": "AWS for Infrastructure",
+      "category": "School Access & Facilitation Partners",
+      "name": "MINICT and One Million Coders",
+      "role": "Facilitating school access and coordination",
       "logos": [
-        "assets/logos/logo_aws.svg"
+        "assets/logos/miniict.png",
+        "assets/logos/one-million-coders-logo.webp"
+      ]
+    },
+    {
+      "category": "Infrastructure Partners",
+      "name": "Cloud & AI Infrastructure Providers",
+      "logos": [
+        "assets/logos/logo_aws.svg",
+        "assets/logos/logo_gcp.svg"
+      ]
+    },
+    {
+      "category": "Official Event & Ticketing Partner",
+      "name": "Trekko",
+      "role": "Digital ticketing and event discovery for Demo Day and the Closing Ceremony",
+      "logos": [
+        "assets/logos/logo_trekko.jpg"
       ]
     }
   ]
