@@ -122,11 +122,10 @@
     },
     {
       "category": "School Access & Facilitation Partners",
-      "name": "MINICT and One Million Coders",
+      "name": "1 Million Rwandan Coders",
       "role": "Facilitating school access and coordination",
       "logos": [
-        "assets/logos/miniict.png",
-        "assets/logos/one-million-coders-logo.webp"
+        "assets/logos/logo_1million_coders.png"
       ]
     },
     {
@@ -135,6 +134,14 @@
       "logos": [
         "assets/logos/logo_aws.svg",
         "assets/logos/logo_gcp.svg"
+      ]
+    },
+    {
+      "category": "Hackathon & Workflow Automation Partner",
+      "name": "n8n",
+      "role": "Providing 110x n8n Cloud Pro licenses for hackathon participants to build AI agent workflows",
+      "logos": [
+        "assets/logos/logo_n8n.png"
       ]
     },
     {

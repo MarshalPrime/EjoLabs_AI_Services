@@ -1132,13 +1132,15 @@
     }
 
     .partner-logo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      display: flex;
+      justify-content: center;
       gap: 1.5rem;
-      align-items: stretch;
+      flex-wrap: wrap;
     }
 
     .partner-logo-card {
+      width: 240px;
+      max-width: 100%;
       min-height: 124px;
       background: #FFFFFF;
       border: 1px solid var(--border-grey);
@@ -3087,19 +3089,14 @@
       <!-- School Facilitation Partners Row -->
       <div class="partner-row">
         <h3 class="partner-row-title">School Access & Facilitation Partners</h3>
-        <!-- <p class="partner-row-desc">
-          Ministry of ICT and Innovation and One Million Coders support the program by facilitating school access and coordination, helping us reach students where learning communities are already active.
-        </p> -->
+        <p class="partner-row-desc">
+          1 Million Rwandan Coders supports the program by facilitating access to partner schools under the Smart Ibiruhuko initiative for our beneficiaries.
+        </p>
 
         <div class="partner-logo-grid">
-          <!-- MINICT Logo Card -->
-          <!-- <div class="partner-logo-card logo-card-square">
-            <img src="assets/logos/miniict.png" alt="MINICT Logo">
-          </div> -->
-
-          <!-- One Million Coders Logo Card -->
+          <!-- 1 Million Rwandan Coders Logo Card -->
           <div class="partner-logo-card">
-            <img src="assets/logos/one-million-coders-logo.webp" alt="One Million Coders Logo">
+            <img src="assets/logos/logo_1million_coders.png" alt="1 Million Rwandan Coders Logo" style="max-height: 64px; max-width: 85%; object-fit: contain;">
           </div>
         </div>
       </div>
@@ -3120,6 +3117,21 @@
           <!-- GCP Logo Card -->
           <div class="partner-logo-card">
             <img src="assets/logos/logo_gcp.svg" alt="Google Cloud Logo">
+          </div>
+        </div>
+      </div>
+
+      <!-- Hackathon & Workflow Automation Partner Row -->
+      <div class="partner-row">
+        <h3 class="partner-row-title">Hackathon & Workflow Automation Partner</h3>
+        <p class="partner-row-desc">
+          n8n is supporting our hackathon with 110x n8n Cloud Pro licenses ($6,600+ value), empowering participants to build advanced AI agent workflows and automation systems.
+        </p>
+
+        <div class="partner-logo-grid">
+          <!-- n8n Logo Card -->
+          <div class="partner-logo-card">
+            <img src="assets/logos/logo_n8n.png" alt="n8n Logo" style="max-height: 52px; max-width: 85%; object-fit: contain;">
           </div>
         </div>
       </div>
