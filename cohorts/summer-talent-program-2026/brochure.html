@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ejo Labs Summer Training Program – 2026</title>
+  <title>Ejo Labs Summer Talent Program - 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -127,6 +127,12 @@
       opacity: 1;
       color: var(--primary-orange);
       border-bottom: 2px solid var(--primary-orange);
+    }
+
+    .quick-links a.active-section {
+      opacity: 1;
+      color: var(--primary-orange);
+      border-bottom-color: var(--primary-orange);
     }
 
     .mobile-menu-btn {
@@ -623,6 +629,96 @@
       opacity: 0.7;
     }
 
+    .track-progression-note {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .track-progression-item {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .track-progression-label {
+      color: var(--orange-soft);
+      font-family: var(--font-headings);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .track-progression-path {
+      color: var(--text-light);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .track-context-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(120px, 0.5fr));
+      gap: 1rem;
+      align-items: stretch;
+      margin: 1.25rem 0 0;
+      padding: 1rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(232, 119, 34, 0.22);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 22px rgba(26, 37, 53, 0.05);
+    }
+
+    .track-context-main {
+      border-left: 4px solid var(--primary-orange);
+      padding-left: 0.9rem;
+    }
+
+    .track-context-label {
+      color: var(--primary-orange);
+      font-family: var(--font-headings);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .track-context-title {
+      color: var(--primary-dark);
+      font-family: var(--font-headings);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .track-context-copy {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .track-context-stat {
+      background: var(--orange-light);
+      border-radius: 8px;
+      padding: 0.8rem;
+    }
+
+    .track-context-stat strong {
+      display: block;
+      color: var(--primary-dark);
+      font-family: var(--font-headings);
+      font-size: 0.95rem;
+      line-height: 1.2;
+    }
+
+    .track-context-stat span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+
     /* ── TIMELINE WEEK-BY-WEEK ACCORDION ───────────────────────────────────── */
     .timeline-container {
       margin-top: 2rem;
@@ -696,6 +792,16 @@
       transform: translateY(-2px);
     }
 
+    .session-card.joint-session {
+      border-color: rgba(232, 119, 34, 0.36);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F1 100%);
+    }
+
+    .session-card.joint-session::before {
+      background: linear-gradient(180deg, var(--primary-orange), var(--orange-soft));
+      width: 6px;
+    }
+
     .session-top-meta {
       display: flex;
       justify-content: space-between;
@@ -722,6 +828,22 @@
       font-family: var(--font-headings);
       font-weight: 600;
       font-size: 0.75rem;
+    }
+
+    .joint-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      background: rgba(232, 119, 34, 0.12);
+      color: var(--primary-orange);
+      border: 1px solid rgba(232, 119, 34, 0.3);
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-family: var(--font-headings);
     }
 
     .session-time {
@@ -766,10 +888,17 @@
     .session-content-block h4 {
       font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--primary-dark);
+      letter-spacing: 0.04em;
+      color: var(--primary-orange);
       font-weight: 700;
       margin-top: 0.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+      padding: 0.15rem 0.5rem;
+      background: rgba(232, 119, 34, 0.09);
+      border-radius: 999px;
     }
 
     .session-content-block ul {
@@ -801,6 +930,7 @@
       border-radius: 8px;
       padding: 0.9rem 1.2rem;
       font-size: 0.88rem;
+      margin-top: auto;
     }
 
     .lab-box p strong {
@@ -814,6 +944,7 @@
       border-radius: 8px;
       padding: 0.9rem 1.2rem;
       font-size: 0.88rem;
+      box-shadow: inset 0 3px 0 rgba(26, 37, 53, 0.08);
     }
 
     .deliverables-box p strong {
@@ -1226,6 +1357,12 @@
       .roadmap-step-dot {
         margin-bottom: 0.4rem;
       }
+      .track-progression-note {
+        grid-template-columns: 1fr;
+      }
+      .track-context-card {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ── PRINT-SPECIFIC CSS RULES ────────────────────────────────────────── */
@@ -1342,6 +1479,19 @@
       .roadmap-step-dot {
         border-color: #E87722 !important;
         color: #FFFFFF !important;
+      }
+
+      .track-progression-item {
+        border-color: rgba(255, 255, 255, 0.25) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .track-context-card {
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
       /* Timeline header formatting */
@@ -1471,6 +1621,7 @@
       </button>
       <nav class="quick-links">
         <a href="#summary" onclick="closeMobileNav()">Overview</a>
+        <a href="#progression" onclick="closeMobileNav()">Progression</a>
         <a href="#curriculum" onclick="closeMobileNav()">Syllabus</a>
         <a href="#closing" onclick="closeMobileNav()">Closing Day</a>
         <a href="#lecturers" onclick="closeMobileNav()">Team & Speakers</a>
@@ -1485,7 +1636,7 @@
     <div class="wrapper hero-container">
       <img src="assets/logos/ejolabs_logo.png" alt="Ejo Labs Logo" class="hero-logo" />
       <div class="badge-fellowship">Flagship Program</div>
-      <h1 class="hero-title">Summer Training <span>Program 2026</span></h1>
+      <h1 class="hero-title">Summer Talent <span>Program 2026</span></h1>
       <p class="hero-subtitle">Building the Next Generation of African AI Engineers</p>
       
       <div class="hero-meta-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
@@ -1529,10 +1680,10 @@
         <div class="summary-main-card">
           <h3 class="summary-title-alt">Why This Program Exists</h3>
           <p>
-            Artificial Intelligence is reshaping global industries, creating an urgent demand for software engineers who can move beyond basic API tutorials and build robust, production-grade applications. The <strong>Ejo Labs Summer Training Program 2026</strong> was established to address this critical skills gap in Africa.
+            The <strong>Ejo Labs Summer Talent Program 2026</strong> introduces young learners to software engineering, Artificial Intelligence, and cloud computing through beginner-friendly, hands-on practice. The program gives participants a structured way to spend the holiday building useful technical skills, working in teams, and growing confidence through real projects.
           </p>
           <p>
-            By combining traditional software engineering discipline with advanced agentic workflows and local data sovereignty, this intensive program equips participants to design, build, test, and deploy scalable AI products that solve real-world African challenges.
+            University participants build toward a portfolio-ready AI application, while high school participants discover programming, computational thinking, and responsible AI through guided projects. Both tracks share selected joint sessions so students can learn from each other while still following a pace that fits their starting level.
           </p>
           
           <h3 class="summary-title-alt" style="margin-top: 2rem;">Teaching Philosophy</h3>
@@ -1547,9 +1698,9 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
               Fast Facts
             </h3>
-            <p style="margin-bottom: 0.8rem;"><strong>Level:</strong> Beginner-friendly entry with an advanced vertical progression path. No prior AI/ML experience required.</p>
-            <p style="margin-bottom: 0.8rem;"><strong>Structure:</strong> 8 sessions over 4 weeks, culminating in a live Cloud deployment.</p>
-            <p><strong>Capstone:</strong> Build a unified, scalable local document RAG system powered by the EjoChat API and Qdrant.</p>
+            <p style="margin-bottom: 0.8rem;"><strong>Level:</strong> Beginner-friendly. No prior AI experience is required.</p>
+            <p style="margin-bottom: 0.8rem;"><strong>Structure:</strong> Orientation, weekly hands-on sessions, joint learning moments, and a shared Closing / Hackathon Day.</p>
+            <p><strong>Capstone:</strong> One continuous project developed step by step, ending with demos, awards, certificates, and networking.</p>
           </div>
           
           <div>
@@ -1566,22 +1717,22 @@
                 <div class="pillar-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                 </div>
-                <div class="pillar-title">Production AI</div>
-                <div class="pillar-desc">Prompt templates, RAG, tool calling, memory.</div>
+                <div class="pillar-title">Practical AI</div>
+                <div class="pillar-desc">Prompts, EjoChat API, RAG basics, and responsible use.</div>
               </div>
               <div class="pillar-card">
                 <div class="pillar-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
-                <div class="pillar-title">Security & Eval</div>
-                <div class="pillar-desc">Injection guards, observability, QA.</div>
+                <div class="pillar-title">Responsible Use</div>
+                <div class="pillar-desc">Privacy, safety, consent, and human judgment.</div>
               </div>
               <div class="pillar-card">
                 <div class="pillar-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                 </div>
-                <div class="pillar-title">DevOps Cloud</div>
-                <div class="pillar-desc">Docker, GCP, CI/CD, cost controls.</div>
+                <div class="pillar-title">Cloud Basics</div>
+                <div class="pillar-desc">Docker, Google Cloud, GitHub Actions, and demos.</div>
               </div>
             </div>
           </div>
@@ -1604,35 +1755,35 @@
               <div class="competence-num">1</div>
               <div class="competence-text">
                 <h4>Software Engineering Foundations</h4>
-                <p>Establishing proper Git repository design, asynchronous python development, environment isolation, and API architecture.</p>
+                <p>Learning Git, GitHub, Python setup, project structure, APIs, and database fundamentals.</p>
               </div>
             </div>
             <div class="competence-item">
               <div class="competence-num">2</div>
               <div class="competence-text">
                 <h4>AI Application Development</h4>
-                <p>Mastering prompt templating, handling structured JSON output schemas, integrating vector similarity search, and semantic RAG grounding.</p>
+                <p>Practicing prompt engineering, using the EjoChat API, and learning beginner-friendly RAG concepts.</p>
               </div>
             </div>
             <div class="competence-item">
               <div class="competence-num">3</div>
               <div class="competence-text">
-                <h4>Production Reliability</h4>
-                <p>Instrumenting applications with telemetry tracing, establishing hallucination criteria, tracking latency, and testing stochastic behaviors.</p>
+                <h4>Project Collaboration</h4>
+                <p>Working in teams, using pull requests, getting mentor feedback, and improving projects week by week.</p>
               </div>
             </div>
             <div class="competence-item">
               <div class="competence-num">4</div>
               <div class="competence-text">
-                <h4>DevOps & Serverless Cloud</h4>
-                <p>Containerizing software using Docker, orchestrating postgres/qdrant nodes locally with Compose, and deploying directly to Google Cloud Run with automated pipelines.</p>
+                <h4>Cloud & DevOps Foundations</h4>
+                <p>Introducing Docker, Google Cloud Platform, GitHub Actions, deployment checks, and demo readiness.</p>
               </div>
             </div>
             <div class="competence-item">
               <div class="competence-num">5</div>
               <div class="competence-text">
-                <h4>Responsible AI & Compliance</h4>
-                <p>Defending APIs against prompt injection, shielding access logs, and aligning architectures with <strong>Rwanda's Data Protection and Privacy Law</strong>.</p>
+                <h4>Responsible AI</h4>
+                <p>Discussing privacy, security, consent, AI limitations, hallucinations, and when AI is not the right answer.</p>
               </div>
             </div>
           </div>
@@ -1696,7 +1847,7 @@
   <div class="page-break"></div>
 
   <!-- ── CURRICULUM ROADMAP DIAGRAM (VISUAL OUTLINE) ── -->
-  <div class="wrapper" style="margin-top: 2rem;">
+  <div id="progression" class="wrapper" style="margin-top: 2rem;">
     <div class="roadmap-wrapper">
       <div class="roadmap-title">Program Progression Pathway</div>
       <div class="roadmap-steps">
@@ -1721,6 +1872,16 @@
           <div class="roadmap-step-desc">AI Agents, Portfolios & Demo Day</div>
         </div>
       </div>
+      <div class="track-progression-note" aria-label="Track progression summary">
+        <div class="track-progression-item">
+          <div class="track-progression-label">High School Track</div>
+          <div class="track-progression-path">Discover technology and computational thinking -> learn Python basics -> use AI responsibly -> build a first AI application -> present with confidence.</div>
+        </div>
+        <div class="track-progression-item">
+          <div class="track-progression-label">University Track</div>
+          <div class="track-progression-path">Set up engineering foundations -> design an AI product -> integrate APIs and RAG basics -> explore agents and cloud deployment -> present a portfolio-ready project.</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1739,6 +1900,26 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16.5"/></svg>
           High School Track
         </button>
+      </div>
+
+      <div class="track-context-card" aria-live="polite">
+        <div class="track-context-main">
+          <div class="track-context-label" id="track-context-label">Current track</div>
+          <div class="track-context-title" id="track-context-title">University Cohort Track</div>
+          <div class="track-context-copy" id="track-context-copy">Beginner-friendly AI engineering for university students and young developers, building toward a portfolio-ready AI-powered capstone.</div>
+        </div>
+        <div class="track-context-stat">
+          <strong id="track-context-sessions">8 sessions</strong>
+          <span>plus orientation and closing day</span>
+        </div>
+        <div class="track-context-stat">
+          <strong id="track-context-days">Tuesday & Friday</strong>
+          <span>10:00 - 12:00 CAT</span>
+        </div>
+        <div class="track-context-stat">
+          <strong id="track-context-goal">Portfolio project</strong>
+          <span>AI app, RAG basics, agents, cloud, and demo readiness</span>
+        </div>
       </div>
 
       <div id="university-syllabus" class="syllabus-track-content active">
@@ -1772,12 +1953,12 @@
                 <div class="session-content-block">
                   <h4>What to Expect:</h4>
                   <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
-                    A welcoming, high-energy, and joint introduction to the Ejo Labs Summer Training Program 2026. We aim to leave a lasting impression by showcasing real-world AI applications and ensuring everyone gets to know our vision, team, and EjoChat products from day one.
+                    A welcoming, high-energy, and joint introduction to the Ejo Labs Summer Talent Program 2026. We aim to leave a lasting impression by showcasing real-world AI applications and ensuring everyone gets to know our vision, team, and EjoChat products from day one.
                   </p>
                   <h4>Agenda & Focus Areas:</h4>
                   <ul>
                     <li><strong>Meet Ejo Labs Team:</strong> Introductions to your instructors, program leads, mentors, and fellow student cohorts.</li>
-                    <li><strong>Program Inspiration & Goals:</strong> An overview of the Summer Training Program, the weekly syllabus, and capstone expectations.</li>
+                    <li><strong>Program Inspiration & Goals:</strong> An overview of the Summer Talent Program, the weekly syllabus, and capstone expectations.</li>
                     <li><strong>Live AI Use Cases:</strong> Real-world demonstrations of advanced prompting, the EjoChat API, and showcasing EjoChat mobile app.</li>
                     <li><strong>Interactive Icebreakers:</strong> Playing games using Kahoot (a format we will use all along the program) to connect with peers.</li>
                     <li><strong>Environment Check & Prep:</strong> High-level walkthrough of what to expect, tools setup verification, and open Q&A.</li>
@@ -1929,7 +2110,7 @@
             <div class="session-card">
               <div class="session-top-meta">
                 <div class="session-badge-col">
-                  <span class="session-num">Session 4</span>
+                  <span class="session-num">Session 4 (Joint)</span>
                   <span class="session-time">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     10:00 - 12:00 CAT
@@ -1941,28 +2122,28 @@
                 </span>
               </div>
               <div class="session-title-block">
-                <h3>Prompt Engineering & LLM Fundamentals</h3>
+                <h3>Prompt Engineering & LLM Fundamentals (Joint with HS Track)</h3>
                 <span class="session-lecturer">Lead Lecturer: Bosco Kalinijabo</span>
               </div>
               <div class="session-content-block">
                 <h4>Learning Objectives:</h4>
                 <ul>
-                  <li>Write clear, structured system and user prompts utilizing role-prompting and few-shot examples.</li>
+                  <li>Write clear, structured prompts using instructions, context, role prompting, and few-shot examples.</li>
                   <li>Understand token mechanics, context windows, temperature ranges, and how hallucinations occur.</li>
-                  <li>Debug and version control prompts effectively within coding workflows.</li>
+                  <li>Debug prompts and keep track of prompt versions during project work.</li>
                 </ul>
                 <h4>Topics Covered:</h4>
                 <ul>
                   <li>Core prompt architecture: instructions, background context, few-shot examples, and format constraints.</li>
                   <li>Prompting AI coding assistants effectively to optimize development speed.</li>
-                  <li>Model evaluation parameters: balancing cost, speed, and quality for various enterprise tasks.</li>
+                  <li>Model selection basics: balancing cost, speed, and quality for different tasks.</li>
                 </ul>
               </div>
               <div class="lab-box">
-                <p><strong>Practical Lab:</strong> Design, test, and version control prompt templates for text categorization, extraction, and validation.</p>
+                <p><strong>Practical Lab:</strong> Write and test prompts for a few different AI tasks, then compare what makes a prompt clear or confusing.</p>
               </div>
               <div class="deliverables-box">
-                <p><strong>Session Deliverables:</strong> A version-controlled prompt directory (`prompts.yaml`) containing validated prompt templates.</p>
+                <p><strong>Session Deliverables:</strong> A small set of tested prompt examples for the capstone project.</p>
               </div>
             </div>
           </div>
@@ -2091,22 +2272,22 @@
               <div class="session-content-block">
                 <h4>Learning Objectives:</h4>
                 <ul>
-                  <li>Explain the architecture of an AI agent, including reasoning loops (ReAct) and memory states.</li>
-                  <li>Enable agents to select and execute custom python function tools dynamically.</li>
-                  <li>Implement human-in-the-loop oversight mechanisms for high-impact actions.</li>
+                  <li>Explain what an AI agent is and how agents use tools to get things done.</li>
+                  <li>Understand simple agent workflows and the idea of giving an agent memory.</li>
+                  <li>Describe why human oversight matters when AI systems take actions.</li>
                 </ul>
                 <h4>Topics Covered:</h4>
                 <ul>
-                  <li>Agent loops vs. chain execution, writing tool descriptions, and designing agent system prompts.</li>
-                  <li>Function tool-calling: parameter schema generation and input parsing.</li>
-                  <li>Managing short-term session memory and thread states in interactive environments.</li>
+                  <li>AI agents: what they are, how they use tools, and where they are useful.</li>
+                  <li>Memory and simple workflows: keeping track of context across steps.</li>
+                  <li>Human-in-the-loop: deciding when people should review or approve actions.</li>
                 </ul>
               </div>
               <div class="lab-box">
-                <p><strong>Practical Lab:</strong> Expose custom calculation and query tools to a model-based agent loop and test its task-solving capability.</p>
+                <p><strong>Practical Lab:</strong> Experiment with a simple agent workflow for the capstone project.</p>
               </div>
               <div class="deliverables-box">
-                <p><strong>Session Deliverables:</strong> A running backend agent endpoint that dynamically resolves user requests by calling custom tools.</p>
+                <p><strong>Session Deliverables:</strong> A short agent workflow demo or plan connected to the capstone project.</p>
               </div>
             </div>
 
@@ -2186,12 +2367,12 @@
                 <div class="session-content-block">
                   <h4>What to Expect:</h4>
                   <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
-                    A welcoming, high-energy, and joint introduction to the Ejo Labs Summer Training Program 2026. We aim to leave a lasting impression by showcasing real-world AI applications and ensuring everyone gets to know our vision, team, and EjoChat products from day one.
+                    A welcoming, high-energy, and joint introduction to the Ejo Labs Summer Talent Program 2026. We aim to leave a lasting impression by showcasing real-world AI applications and ensuring everyone gets to know our vision, team, and EjoChat products from day one.
                   </p>
                   <h4>Agenda & Focus Areas:</h4>
                   <ul>
                     <li><strong>Meet Ejo Labs Team:</strong> Introductions to your instructors, program leads, mentors, and fellow student cohorts.</li>
-                    <li><strong>Program Inspiration & Goals:</strong> An overview of the Summer Training Program, the weekly syllabus, and capstone expectations.</li>
+                    <li><strong>Program Inspiration & Goals:</strong> An overview of the Summer Talent Program, the weekly syllabus, and capstone expectations.</li>
                     <li><strong>Live AI Use Cases:</strong> Real-world demonstrations of advanced prompting, the EjoChat API, and showcasing EjoChat mobile app.</li>
                     <li><strong>Interactive Icebreakers:</strong> Playing games using Kahoot (a format we will use all along the program) to connect with peers.</li>
                     <li><strong>Environment Check & Prep:</strong> High-level walkthrough of what to expect, tools setup verification, and open Q&A.</li>
@@ -2223,28 +2404,28 @@
                   </span>
                 </div>
                 <div class="session-title-block">
-                  <h3>Welcome to Technology, AI & Prompt Engineering</h3>
+                  <h3>Welcome to Technology & AI + Computational Thinking</h3>
                   <span class="session-lecturer">Lecturers: Melyse Shema & Protogene Hahirwabayo</span>
                 </div>
                 <div class="session-content-block">
                   <h4>Learning Objectives:</h4>
                   <ul>
-                    <li>Understand programming, computational thinking, and how AI affects daily life.</li>
-                    <li>Explain differences between traditional code and AI models, writing effective prompts.</li>
-                    <li>Discuss responsible AI, safety, privacy boundaries, and ethical constraints.</li>
+                    <li>Understand what programming is and what engineers do.</li>
+                    <li>Explain artificial intelligence in simple terms and identify real-world AI examples.</li>
+                    <li>Break simple real-life problems into smaller steps using computational thinking.</li>
                   </ul>
                   <h4>Topics Covered:</h4>
                   <ul>
-                    <li>Tech Careers & AI Foundations: What software/AI engineers do, model mechanics, and AI concepts.</li>
-                    <li>Computational Thinking & Prompt Engineering: Problem decomposition, role definition, and context injection.</li>
-                    <li>Responsible AI: Privacy boundaries, hallucination issues, and ethical constraints.</li>
+                    <li>Welcome to technology: programming, engineering work, and careers in technology.</li>
+                    <li>AI foundations: what AI is, how it is changing the world, and examples students can recognize.</li>
+                    <li>Computational thinking: breaking problems into smaller parts, finding patterns, and writing simple algorithms.</li>
                   </ul>
                 </div>
                 <div class="lab-box">
-                  <p><strong>Practical Lab:</strong> Logically solve real-world problems and experiment with prompt templates to transform data using AI model interfaces.</p>
+                  <p><strong>Practical Lab:</strong> Solve simple real-life problems without writing code, using step-by-step logic and group discussion.</p>
                 </div>
                 <div class="deliverables-box">
-                  <p><strong>Session Deliverables:</strong> A combined logic flowchart and prompt-guide template sheet containing tested system prompts.</p>
+                  <p><strong>Session Deliverables:</strong> A simple problem breakdown or flowchart showing how a student would solve a task step by step.</p>
                 </div>
               </div>
 
@@ -2379,6 +2560,46 @@
                   <p><strong>Session Deliverables:</strong> A Product Specification sheet outlining target personas, UI wireframes, and fallback handlers.</p>
                 </div>
               </div>
+
+              <div class="session-card">
+                <div class="session-top-meta">
+                  <div class="session-badge-col">
+                    <span class="session-num">Session 5 (Joint)</span>
+                    <span class="session-time">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      10:00 - 12:00 CAT
+                    </span>
+                  </div>
+                  <span class="session-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Friday, 7 August 2026
+                  </span>
+                </div>
+                <div class="session-title-block">
+                  <h3>Prompt Engineering & LLM Fundamentals</h3>
+                  <span class="session-lecturer">Lead Lecturer: Bosco Kalinijabo</span>
+                </div>
+                <div class="session-content-block">
+                  <h4>Learning Objectives:</h4>
+                  <ul>
+                    <li>Write clear prompts using instructions, context, examples, and role prompting.</li>
+                    <li>Understand large language models, tokens, context windows, and hallucinations in beginner-friendly terms.</li>
+                    <li>Improve prompts by comparing good and bad examples.</li>
+                  </ul>
+                  <h4>Topics Covered:</h4>
+                  <ul>
+                    <li>Prompt structure: instructions, context, examples, and expected formats.</li>
+                    <li>Prompting AI coding assistants effectively while still learning the code.</li>
+                    <li>LLM basics: tokens, context windows, temperature, cost, quality, and model choice.</li>
+                  </ul>
+                </div>
+                <div class="lab-box">
+                  <p><strong>Practical Lab:</strong> Write and test prompts for a few different AI tasks, then compare which prompts work best and why.</p>
+                </div>
+                <div class="deliverables-box">
+                  <p><strong>Session Deliverables:</strong> A short prompt practice sheet with improved prompt examples for the capstone idea.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -2395,7 +2616,7 @@
               <div class="session-card">
                 <div class="session-top-meta">
                   <div class="session-badge-col">
-                    <span class="session-num">Session 5</span>
+                    <span class="session-num">Session 6</span>
                     <span class="session-time">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                       10:00 - 12:00 CAT
@@ -2435,7 +2656,7 @@
               <div class="session-card">
                 <div class="session-top-meta">
                   <div class="session-badge-col">
-                    <span class="session-num">Session 6 (Joint)</span>
+                    <span class="session-num">Session 7 (Joint)</span>
                     <span class="session-time">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                       10:00 - 12:00 CAT
@@ -2487,7 +2708,7 @@
               <div class="session-card">
                 <div class="session-top-meta">
                   <div class="session-badge-col">
-                    <span class="session-num">Session 7</span>
+                    <span class="session-num">Session 8</span>
                     <span class="session-time">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                       10:00 - 12:00 CAT
@@ -2527,7 +2748,7 @@
               <div class="session-card">
                 <div class="session-top-meta">
                   <div class="session-badge-col">
-                    <span class="session-num">Session 8</span>
+                    <span class="session-num">Session 9</span>
                     <span class="session-time">
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                       10:00 - 12:00 CAT
@@ -2632,65 +2853,10 @@
           <div class="lecturer-name">Bosco Kalinijabo</div>
           <div class="lecturer-title">Founder & CTO, Ejo Labs</div>
           <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Founder & CTO, Ejo Labs • Ex-Digital Product Lead at BPR Bank</div>
+            
+              <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Founder & CTO, Ejo Labs • Ex-Digital Product Lead at BPR Bank</div>
             <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in CS & Software Engineering (Constructor Univ.)</div>
             <div><strong>Skills:</strong> Python, TypeScript, AI Agents, PostgreSQL, API & MLOps</div>
-          </div>
-        </div>
-
-        <!-- Joseph Fersh Nkurunziza -->
-        <div class="lecturer-card">
-          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
-            <img src="assets/team/joseph-fersh-nkurunziza.jpeg" alt="Joseph Fersh Nkurunziza" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="lecturer-name">Joseph Fersh Nkurunziza</div>
-          <div class="lecturer-title">Co-founder & CBO, Ejo Labs</div>
-          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Co-founder & CBO, Ejo Labs • Business & Strategy Specialist</div>
-            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> Master of Business Administration (MBA)</div>
-            <div><strong>Skills:</strong> Business Strategy, Product Operations, Partnerships & Market Expansion</div>
-          </div>
-        </div>
-
-        <!-- Nicole Munezero -->
-        <div class="lecturer-card">
-          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
-            <img src="assets/team/nicole-munezero.jpg" alt="Nicole Munezero" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="lecturer-name">Nicole Munezero</div>
-          <div class="lecturer-title">Co-founder & Head of Operations, Ejo Labs</div>
-          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Co-founder & Head of Operations, Ejo Labs • Software Engineer</div>
-            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Computer Engineering</div>
-            <div><strong>Skills:</strong> Software Engineering, Operations Management, Technical Support & Logistics</div>
-          </div>
-        </div>
-
-        <!-- Hugues Gashugi -->
-        <div class="lecturer-card">
-          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
-            <img src="assets/team/hugues-gashugi.jpeg" alt="Hugues Gashugi" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="lecturer-name">Hugues Gashugi</div>
-          <div class="lecturer-title">Head of Growth, Ejo Labs</div>
-          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Head of Growth, Ejo Labs • Users & Community Specialist</div>
-            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Economics</div>
-            <div><strong>Skills:</strong> User Growth, Community Engagement, Product Marketing & Analytics</div>
-          </div>
-        </div>
-
-        <!-- Melyse Shema -->
-        <div class="lecturer-card">
-          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
-            <img src="assets/team/melyse-shema.jpg" alt="Melyse Shema" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="lecturer-name">Melyse Shema</div>
-          <div class="lecturer-title">Head of Digital Transformation & Adoption, Ejo Labs</div>
-          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Head of Digital Transformation & Adoption, Ejo Labs • Data Science Specialist</div>
-            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in Data Science for Business and Society</div>
-            <div><strong>Skills:</strong> Data Science, Digital Transformation, Technology Adoption & Strategy</div>
           </div>
         </div>
 
@@ -2705,20 +2871,6 @@
             <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> 20 years at Roche (Senior Director - MassSpec Biostatistics - Senior Data Science Leader)</div>
             <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> PhD (Dr. rer. nat.), TU Dortmund • TÜV AI Manager</div>
             <div><strong>Skills:</strong> Data Science, GenAI, biostatistics, project management, leadership</div>
-          </div>
-        </div>
-
-        <!-- Prof. Dr. Manuel Oriol -->
-        <div class="lecturer-card">
-          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
-            <img src="assets/guests/Manuel_Oriol.jpeg" alt="Prof. Dr. Manuel Oriol" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="lecturer-name">Prof. Dr. Manuel Oriol</div>
-          <div class="lecturer-title">Leader in Tech & Software Engineering Professor</div>
-          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Professor at HEIG-VD • Ex-ABB, ETH Zurich & Univ. of York</div>
-            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> PhD in Computer Science (Univ. of Geneva)</div>
-            <div><strong>Skills:</strong> Software Engineering, AI & Embedded Systems, Automated Testing, System Architecture</div>
           </div>
         </div>
 
@@ -2744,21 +2896,21 @@
           <div class="lecturer-name">Henry Okonkwo</div>
           <div class="lecturer-title">Senior Software Engineer & AI Product Engineer</div>
           <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Senior Software Engineer (Fintech & SaaS) • Creator of PermitRail</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Senior Software Engineer (Fintech & SaaS)</div>
             <div><strong>Skills:</strong> Agentic AI Development, LangChain / LangGraph, RAG, TypeScript & Python</div>
           </div>
         </div>
 
-        <!-- Neha Fathima -->
+        <!-- Annalis Kirwa -->
         <div class="lecturer-card">
           <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
-            <img src="assets/guests/Neha_Fathima.jpeg" alt="Neha Fathima" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="assets/guests/Annalis-Kirwa.jpeg" alt="Annalis Kirwa" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
-          <div class="lecturer-name">Neha Fathima</div>
-          <div class="lecturer-title">Software Engineer @ idealo internet GmbH</div>
+          <div class="lecturer-name">Annalis Kirwa</div>
+          <div class="lecturer-title">Software Engineer ,Mastercard</div>
           <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Software Engineer at idealo internet GmbH • Ex-Quotient Tech</div>
-            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in CS & Software Engineering (Constructor Univ.)</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Software Engineer at Mastercard</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in Data Science, University of London</div>
             <div><strong>Skills:</strong> Microservices, Cloud Solutions (AWS), Distributed Systems, Java & Spring Boot</div>
           </div>
         </div>
@@ -2771,7 +2923,8 @@
           <div class="lecturer-name">Muslim Baymerov</div>
           <div class="lecturer-title">Software Engineer</div>
           <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
-            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Software Engineer at A-Pro Solutions • Data Analytics at BMW Group</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Linkedin:</strong> </div>
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Software Engineer at A-Pro Solutions</div>
             <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Computer Science (Constructor University)</div>
             <div><strong>Skills:</strong> Python, Machine Learning, Data Pipelines (AWS & Snowflake), SQL</div>
           </div>
@@ -2817,6 +2970,80 @@
             <div><strong>Skills:</strong> Data Science, Full-Stack Dev, DevOps, Agile Methodologies</div>
           </div>
         </div>
+
+        <!-- Joseph Fersh Nkurunziza -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/joseph-fersh-nkurunziza.jpeg" alt="Joseph Fersh Nkurunziza" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Joseph Fersh Nkurunziza</div>
+          <div class="lecturer-title">Co-founder & CBO, Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Co-founder & CBO, Ejo Labs • Business & Strategy Specialist</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> Master of Business Administration (MBA)</div>
+            <div><strong>Skills:</strong> Business Strategy, Product Operations, Partnerships & Market Expansion</div>
+          </div>
+        </div>
+
+        <!-- Nicole Munezero -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/nicole-munezero.jpg" alt="Nicole Munezero" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Nicole Munezero</div>
+          <div class="lecturer-title">Co-founder & Head of Operations ,Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Co-founder & Head of Operations, Ejo Labs • Software Engineer</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Computer Engineering</div>
+            <div><strong>Skills:</strong> Software Engineering, Operations Management, Technical Support & Logistics</div>
+          </div>
+        </div>
+
+        <!-- Hugues Gashugi -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/hugues-gashugi.jpeg" alt="Hugues Gashugi" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Hugues Gashugi</div>
+          <div class="lecturer-title">Head of Growth ,Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Head of Growth, Ejo Labs • Users & Community Specialist</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> B.Sc. in Economics</div>
+            <div><strong>Skills:</strong> User Growth, Community Engagement, Product Marketing & Analytics</div>
+          </div>
+        </div>
+
+        <!-- Melyse Shema -->
+        <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/team/melyse-shema.jpg" alt="Melyse Shema" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Melyse Shema</div>
+          <div class="lecturer-title">Head of Strategic Engagement and Partnerships ,Ejo Labs</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Head of Digital Transformation & Adoption, Ejo Labs • Data Science Specialist</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> M.Sc. in Data Science for Business and Society</div>
+            <div><strong>Skills:</strong> Data Science, Digital Transformation, Technology Adoption & Strategy</div>
+          </div>
+        </div>
+
+        
+
+        <!-- Prof. Dr. Manuel Oriol -->
+        <!-- <div class="lecturer-card">
+          <div class="lecturer-avatar" style="overflow: hidden; background: none; border: 3px solid #FFFFFF;">
+            <img src="assets/guests/Manuel_Oriol.jpeg" alt="Prof. Dr. Manuel Oriol" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="lecturer-name">Prof. Dr. Manuel Oriol</div>
+          <div class="lecturer-title">Leader in Tech & Software Engineering Professor</div>
+          <div class="lecturer-bio" style="font-size: 0.8rem; line-height: 1.4; text-align: left; margin-top: 0.5rem;">
+            <div style="margin-bottom: 0.4rem;"><strong>Experience:</strong> Professor at HEIG-VD • Ex-ABB, ETH Zurich & Univ. of York</div>
+            <div style="margin-bottom: 0.4rem;"><strong>Education:</strong> PhD in Computer Science (Univ. of Geneva)</div>
+            <div><strong>Skills:</strong> Software Engineering, AI & Embedded Systems, Automated Testing, System Architecture</div>
+          </div>
+        </div> -->
+
+        
       </div>
     </div>
   </section>
@@ -2860,15 +3087,15 @@
       <!-- School Facilitation Partners Row -->
       <div class="partner-row">
         <h3 class="partner-row-title">School Access & Facilitation Partners</h3>
-        <p class="partner-row-desc">
+        <!-- <p class="partner-row-desc">
           Ministry of ICT and Innovation and One Million Coders support the program by facilitating school access and coordination, helping us reach students where learning communities are already active.
-        </p>
+        </p> -->
 
         <div class="partner-logo-grid">
           <!-- MINICT Logo Card -->
-          <div class="partner-logo-card logo-card-square">
+          <!-- <div class="partner-logo-card logo-card-square">
             <img src="assets/logos/miniict.png" alt="MINICT Logo">
-          </div>
+          </div> -->
 
           <!-- One Million Coders Logo Card -->
           <div class="partner-logo-card">
@@ -2918,7 +3145,7 @@
   <section class="footer-cta">
     <div class="wrapper">
       <h2>Let's build AI that works for Africa.</h2>
-      <p>Interested in sponsoring, lecturing, or hiring graduates from the Ejo Labs Summer Training Program 2026?</p>
+      <p>Interested in sponsoring, lecturing, or hiring graduates from the Ejo Labs Summer Talent Program 2026?</p>
       
       <div class="footer-contact-info">
         <div class="contact-item">
@@ -2938,6 +3165,25 @@
   </section>
 
   <script>
+    const trackContext = {
+      university: {
+        title: 'University Cohort Track',
+        copy: 'Beginner-friendly AI engineering for university students and young developers, building toward a portfolio-ready AI-powered capstone.',
+        sessions: '8 sessions',
+        days: 'Tuesday & Friday',
+        goal: 'Portfolio project',
+        goalDetail: 'AI app, RAG basics, agents, cloud, and demo readiness'
+      },
+      highschool: {
+        title: 'High School Cohort Track',
+        copy: 'A discovery-to-build path for students with little or no programming background, paced around Python basics, responsible AI, and a first AI application.',
+        sessions: '9 sessions',
+        days: 'Monday & Thursday, plus joint dates',
+        goal: 'First AI app',
+        goalDetail: 'Computational thinking, Python, prompt practice, mentorship, and presentation readiness'
+      }
+    };
+
     function toggleMobileNav() {
       const nav = document.querySelector('.quick-links');
       if (nav) nav.classList.toggle('mobile-open');
@@ -2948,21 +3194,63 @@
     }
 
     function switchTrack(track) {
-      // Remove active class from all buttons
       document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
-      // Remove active class from all syllabus containers
       document.querySelectorAll('.syllabus-track-content').forEach(content => content.classList.remove('active'));
       
-      // Add active class to selected button and container
-      const btn = event.currentTarget;
-      btn.classList.add('active');
+      const btn = document.querySelector(`.track-btn[onclick*="${track}"]`);
+      if (btn) btn.classList.add('active');
       
       if (track === 'university') {
         document.getElementById('university-syllabus').classList.add('active');
       } else if (track === 'highschool') {
         document.getElementById('highschool-syllabus').classList.add('active');
       }
+
+      const context = trackContext[track];
+      if (!context) return;
+      document.getElementById('track-context-title').textContent = context.title;
+      document.getElementById('track-context-copy').textContent = context.copy;
+      document.getElementById('track-context-sessions').textContent = context.sessions;
+      document.getElementById('track-context-days').textContent = context.days;
+      document.getElementById('track-context-goal').textContent = context.goal;
+      document.getElementById('track-context-goal').nextElementSibling.textContent = context.goalDetail;
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.session-card').forEach(card => {
+        const sessionNum = card.querySelector('.session-num');
+        const sessionDate = card.querySelector('.session-date');
+        const isJoint = [sessionNum, sessionDate].some(item => item && item.textContent.includes('Joint'));
+        if (!isJoint) return;
+        card.classList.add('joint-session');
+        if (!card.querySelector('.joint-badge')) {
+          const lecturer = card.querySelector('.session-lecturer');
+          const badge = document.createElement('span');
+          badge.className = 'joint-badge';
+          badge.textContent = 'Joint session';
+          if (lecturer) lecturer.insertAdjacentElement('afterend', badge);
+        }
+      });
+
+      const navLinks = Array.from(document.querySelectorAll('.quick-links a[href^="#"]'));
+      const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver(entries => {
+          const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (!visible) return;
+          navLinks.forEach(link => {
+            link.classList.toggle('active-section', link.getAttribute('href') === `#${visible.target.id}`);
+          });
+        }, { rootMargin: '-30% 0px -55% 0px', threshold: [0.1, 0.25, 0.5] });
+
+        sections.forEach(section => observer.observe(section));
+      }
+    });
   </script>
 </body>
 </html>

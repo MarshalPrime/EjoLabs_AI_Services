@@ -1,6 +1,6 @@
 {
   "program": {
-    "title": "Ejo Labs Summer Training Program 2026",
+    "title": "Ejo Labs Summer Talent Program 2026",
     "subtitle": "Building the Next Generation of African AI Engineers",
     "cohort": "summer-talent-program-2026",
     "year": 2026,
@@ -28,7 +28,7 @@
       "id": "highschool",
       "name": "High School Cohort Track",
       "target_audience": "High school students & young tech enthusiasts",
-      "sessions_count": 8
+      "sessions_count": 9
     }
   ],
   "team": [
@@ -59,7 +59,7 @@
     },
     {
       "name": "Melyse Shema",
-      "role": "Head of Digital Transformation & Adoption, Ejo Labs",
+      "role": "Head of Strategic Engagement and Partnerships @Ejo Labs",
       "image": "assets/team/melyse-shema.jpg"
     }
   ],
@@ -85,8 +85,8 @@
       "image": "assets/guests/Henry_Okonkwo.jpeg"
     },
     {
-      "name": "Neha Fathima",
-      "role": "Software Engineer @ idealo internet GmbH",
+      "name": "Annalis Kirwa",
+      "role": "Software Engineer @ Mastercard",
       "image": null
     },
     {
