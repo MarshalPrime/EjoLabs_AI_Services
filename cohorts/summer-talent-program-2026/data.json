@@ -1,6 +1,6 @@
 {
   "program": {
-    "title": "Ejo Labs Summer Talent Program 2026",
+    "title": "Ejo Labs Summer Training Program 2026",
     "subtitle": "Building the Next Generation of African AI Engineers",
     "cohort": "summer-talent-program-2026",
     "year": 2026,
@@ -12,7 +12,7 @@
       "session_time": "10:00 - 12:00 CAT"
     },
     "venue": {
-      "name": "Kigali Innovation Hub (GIZ DTC Event Space)",
+      "name": "Career Center Building (GIZ DTC Event Space)",
       "address": "Career Center Building, 7th Floor, KG 541 St, Kigali, Rwanda"
     },
     "philosophy": "We believe in AI for Everyone, empowering youth to lead the next wave of technology enthusiasts across Africa. By demystifying artificial intelligence and equipping young minds with practical engineering skills, we cultivate community innovators who not only master modern technology, but actively teach, inspire, and uplift their local communities to build a digitally empowered future."
@@ -22,13 +22,13 @@
       "id": "university",
       "name": "University Cohort Track",
       "target_audience": "University students & young developers",
-      "sessions_count": 9
+      "sessions_count": 10
     },
     {
       "id": "highschool",
       "name": "High School Cohort Track",
       "target_audience": "High school students & young tech enthusiasts",
-      "sessions_count": 9
+      "sessions_count": 11
     }
   ],
   "team": [
@@ -113,6 +113,16 @@
       "name": "Salm Bashemakh",
       "role": "Cybersecurity Specialist & Network Security Engineer",
       "image": "assets/guests/Salm_Bashemakh.png"
+    },
+    {
+      "name": "Bonaventure F. P. Dossou",
+      "role": "CS PhD Candidate @ McGill University • Research Fellow @ RBC BorealisAI",
+      "image": "assets/guests/Bonaventure_Dossou.png"
+    },
+    {
+      "name": "NIYONSHUTI Yves",
+      "role": "Founder & CEO at Mpuza Inc. | Machine Learning Engineer",
+      "image": "assets/guests/Niyonshuti_Yves.jpeg"
     }
   ],
   "partners": [
