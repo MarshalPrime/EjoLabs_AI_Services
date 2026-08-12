@@ -22,13 +22,13 @@
       "id": "university",
       "name": "University Cohort Track",
       "target_audience": "University students & young developers",
-      "sessions_count": 10
+      "sessions_count": 11
     },
     {
       "id": "highschool",
       "name": "High School Cohort Track",
       "target_audience": "High school students & young tech enthusiasts",
-      "sessions_count": 11
+      "sessions_count": 12
     }
   ],
   "team": [
